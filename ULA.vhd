@@ -30,7 +30,7 @@ BEGIN
     BEGIN
         CASE c IS
             WHEN "0000" =>
-                enable_comp1 <= '1';  -- Use <= for signal assignment
+                enable_components(0) <= '1';  -- Use <= for signal assignment
             WHEN OTHERS =>
                 enable_comp1 <= '0';  -- Set to '0' for other cases
         END CASE;
