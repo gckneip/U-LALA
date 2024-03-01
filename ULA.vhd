@@ -26,13 +26,13 @@ COMPONENT comp_de_um IS
 	);
 END COMPONENT;
 BEGIN
-    PROCESS (c)  -- Sensitivity list should include signals used in the process
+    PROCESS (c)  
     BEGIN
         CASE c IS
             WHEN "0000" =>
-                enable_components(0) <= '1';  -- Use <= for signal assignment
+                enable_components(0) <= '1';  
             WHEN OTHERS =>
-                enable_comp1 <= '0';  -- Set to '0' for other cases
+                enable_comp1 <= '0'; 
         END CASE;
     END PROCESS;
 	

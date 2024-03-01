@@ -55,3 +55,4 @@ set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_
 set_global_assignment -name VHDL_FILE "../Gerson 3.1/Gerson 3.1/output_files/full_adder.vhd"
 set_global_assignment -name VHDL_FILE "../Gerson 3.1/Gerson 3.1/output_files/half_adder.vhd"
 set_global_assignment -name VHDL_FILE "../Gerson 3.1/Gerson 3.1/output_files/four_bit_adder.vhd"
+set_global_assignment -name VHDL_FILE muxFinal.vhd
