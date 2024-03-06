@@ -63,7 +63,7 @@ soma4: full_adder
 				,c_out => c(4)
 				);
 
-overflow <= (NOT(a(4)) AND NOT(b(4)) AND c(3)) OR (a(4) AND b(4) AND NOT(c(3))); 
+overflow <= (NOT(a(4)) AND NOT(b(4)) AND c(4)) OR (a(4) AND b(4) AND NOT(c(4))); 
 s(4) <= ((a(4) AND b(4)) OR (a(4) AND NOT(c(4))) OR (b(4) AND NOT(c(4)))) AND (foda(0) OR foda(1) OR foda(2) OR foda(3));
 	
 END arq_five_bits_sub_adder;
