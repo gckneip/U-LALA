@@ -1,0 +1,55 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY shift_l IS
+	PORT(
+			a:IN std_logic_vector(4 downto 0);
+			s:OUT std_logic_vector(4 downto 0)	
+	);
+END shift_l;
+
+ARCHITECTURE shift_l OF shift_l IS
+
+SIGNAL d: std_logic_vector(2 downto 0);
+
+COMPONENT mux_2_1
+	PORT(
+			a,b,control:IN std_logic;
+			s:OUT std_logic	
+	);
+END COMPONENT;
+
+BEGIN
+d(0) <= a(0);
+d(1) <= a(1);
+d(2) <= a(2);
+	mux_1: mux_2_1
+		port map(a => d(0)
+					,b => '0'
+					,control => '1'
+					,s => s(0)
+					);
+					
+	mux_2: mux_2_1
+		port map(a => d(1)
+					,b => d(0)
+					,control => '1'
+					,s => s(1)
+					);
+					
+	mux_3: mux_2_1
+		port map(a => d(2)
+					,b => d(1)
+					,control => '1'
+					,s => s(2)
+					);
+				
+	mux_4: mux_2_1
+		port map(a => a(3)
+					,b => d(2)
+					,control => '1'
+					,s => s(3)
+					);
+
+s(4) <= a(4);
+END shift_l;

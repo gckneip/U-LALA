@@ -1,0 +1,15 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY or_gate IS
+	PORT(
+			a,b:IN std_logic_vector(4 downto 0);
+			s:OUT std_logic_vector(4 downto 0)	
+	);
+END or_gate;
+
+ARCHITECTURE or_gate OF or_gate IS
+
+BEGIN
+	s <= a OR b;
+END or_gate;
