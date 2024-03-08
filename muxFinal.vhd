@@ -2,20 +2,21 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+TYPE MatrizMUX IS ARRAY(15 downto 0) OF std_logic_vector(4 downto 0);
 
 entity muxFinal is
     Port ( 
-        inputs : in STD_LOGIC_VECTOR(15 downto 0)(3 downto 0);
-        select : in STD_LOGIC_VECTOR(3 downto 0);
-        output : out STD_LOGIC_VECTOR(3 downto 0)
+        inputs : matrizMUX;
+        seleciona : in STD_LOGIC_VECTOR(3 downto 0);
+        output : out STD_LOGIC_VECTOR(4 downto 0)
     );
 end muxFinal;
 
 architecture arq_muxFinal of muxFinal is
 begin
-    process(select, inputs)
+    process(seleciona, inputs)
     begin
-        case select is
+        case seleciona is
             when "0000" =>
                 output <= inputs(0);
             when "0001" =>
