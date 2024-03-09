@@ -12,7 +12,7 @@ END nor_gate;
 ARCHITECTURE nor_gate OF nor_gate IS
 
 BEGIN
-	PROCESS
+	PROCESS(enable,a,b)
 	BEGIN
 		IF enable = '1' THEN
 			s <= NOT(b OR a);

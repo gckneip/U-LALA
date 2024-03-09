@@ -12,7 +12,7 @@ END or_gate;
 ARCHITECTURE or_gate OF or_gate IS
 
 BEGIN
-	PROCESS
+	PROCESS(enable,a,b)
 	BEGIN
 		IF enable = '1' THEN
 			s <= a OR b;

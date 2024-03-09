@@ -2,8 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-TYPE MatrizMUX IS ARRAY(15 downto 0) OF std_logic_vector(4 downto 0);
-
+use WORK.pacoteBodePunha.ALL;
 entity muxFinal is
     Port ( 
         inputs : matrizMUX;

@@ -21,7 +21,7 @@ COMPONENT mux_2_1
 END COMPONENT;
 
 BEGIN
-	PROCESS
+	PROCESS(enable,a)
 	BEGIN
 		IF enable = '1' THEN
 			s(4) <= a(4);

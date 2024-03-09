@@ -12,7 +12,7 @@ END nand_gate;
 ARCHITECTURE nand_gate OF nand_gate IS
 
 BEGIN
-	PROCESS
+	PROCESS(enable,a,b)
 	BEGIN
 		IF enable = '1' THEN
 			s <= b NAND a;

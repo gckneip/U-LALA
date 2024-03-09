@@ -1,5 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
+USE WORK.pacoteBodePunha.all;
 
 ENTITY ULA IS
 	PORT(
@@ -9,9 +10,6 @@ ENTITY ULA IS
 	);
 END ULA;
 ARCHITECTURE arq_ULA OF ULA IS
-
-
-TYPE MatrizMUX IS ARRAY(15 downto 0) OF std_logic_vector(4 downto 0);
 
 SIGNAL n: std_logic_vector(4 downto 0);
 SIGNAL enable_components : std_logic_vector (15 downto 0);
@@ -78,7 +76,8 @@ END COMPONENT;
 COMPONENT shift_l
 	PORT(
 			a:IN std_logic_vector(4 downto 0);
-			s:OUT std_logic_vector(4 downto 0)	
+			s:OUT std_logic_vector(4 downto 0);
+			enable: IN std_logic
 	);
 END COMPONENT;
 
@@ -126,9 +125,9 @@ BEGIN
 	 
 	 MUX_Final: muxFinal
 		PORT MAP(
-			entradaMUXFinal => inputs,
+			inputs => entradaMUXFinal,
 			seleciona => c,
-			s => output
+			output => s
 		);
 	 
 	 
@@ -136,54 +135,54 @@ BEGIN
 		PORT MAP (
 			a => a,
 			b => b,
-			entradaMUXFinal(0) => s,
-			enable_components(0) => enable
+			s => entradaMUXFinal(0),
+			enable => enable_components(0)
 		);
 		
 	ORGate: or_gate
 		PORT MAP (
 			a => a,
 			b => b,
-			entradaMUXFinal(1) => s,
-			enable_components(1) => enable
+			s => entradaMUXFinal(1),
+			enable => enable_components(1)
 		);
 		
 	NANDGate: nand_gate
 		PORT MAP (
 			a => a,
 			b => b,
-			entradaMUXFinal(2) => s,
-			enable_components(2) => enable
+			s => entradaMUXFinal(2),
+			enable => enable_components(2)
 		);
 		
 	NORGate: nor_gate
 		PORT MAP (
 			a => a,
 			b => b,
-			entradaMUXFinal(3) => s,
-			enable_components(3) => enable
+			s => entradaMUXFinal(3),
+			enable => enable_components(3)
 		);
 	
 	complementadorDeUm: comp_de_um
 		PORT MAP (
 			a     => a,
-			s      => n,
-			entradaMUXFinal(6) => s,
-			enable_components(6) => enable
+			s => entradaMUXFinal(6),
+			enable => enable_components(6)
 		);
 		
 	ShiftRight: shift_r
 		PORT MAP (
 			a(4 downto 0) => a,
-			entradaMUXFinal(12) => s,
-			enable_components(12) => enable
+			s => entradaMUXFinal(12),
+			enable => enable_components(12)
 
 		);
 		
 	ShiftLeft: shift_l
 		PORT MAP (
 			a => a,
-			entradaMUXFinal(13) => s
+			s => entradaMUXFinal(13),
+			enable => enable_components(13)
 		);
 
 END arq_ULA;

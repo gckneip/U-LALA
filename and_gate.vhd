@@ -12,7 +12,7 @@ END and_gate;
 ARCHITECTURE and_gate OF and_gate IS
 
 BEGIN
-	PROCESS
+	PROCESS(a,b,enable)
 	BEGIN
 		if(enable = '1') THEN
 			s <= a AND b;
