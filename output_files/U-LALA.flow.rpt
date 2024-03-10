@@ -1,5 +1,5 @@
 Flow report for U-LALA
-Sat Mar 09 13:07:28 2024
+Sat Mar 09 13:42:25 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat Mar 09 13:07:24 2024           ;
+; Flow Status                        ; Successful - Sat Mar 09 13:42:25 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; U-LALA                                          ;
 ; Top-level Entity Name              ; ULA                                             ;
@@ -97,7 +97,15 @@ applicable agreement for further details.
 ; Fitter                    ; 00:00:13     ; 1.0                     ; 4882 MB             ; 00:00:09                           ;
 ; Assembler                 ; 00:00:04     ; 1.0                     ; 4564 MB             ; 00:00:03                           ;
 ; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4539 MB             ; 00:00:02                           ;
-; Total                     ; 00:00:23     ; --                      ; --                  ; 00:00:17                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4519 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4518 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4518 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4518 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4518 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4518 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4518 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4518 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:36     ; --                      ; --                  ; 00:00:25                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -110,6 +118,14 @@ applicable agreement for further details.
 ; Fitter                    ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
 ; Assembler                 ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; ITLNB108         ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -120,6 +136,14 @@ quartus_map --read_settings_files=on --write_settings_files=off U-LALA -c U-LALA
 quartus_fit --read_settings_files=off --write_settings_files=off U-LALA -c U-LALA
 quartus_asm --read_settings_files=off --write_settings_files=off U-LALA -c U-LALA
 quartus_sta U-LALA -c U-LALA
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog U-LALA -c U-LALA --vector_source=C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/Waveform.vwf --testbench_file=./simulation/qsim/U-LALA.vt
+quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog U-LALA -c U-LALA
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog U-LALA -c U-LALA --vector_source=C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/Waveform.vwf --testbench_file=./simulation/qsim/U-LALA.vt
+quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog U-LALA -c U-LALA
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog U-LALA -c U-LALA --vector_source=C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/Waveform.vwf --testbench_file=./simulation/qsim/U-LALA.vt
+quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog U-LALA -c U-LALA
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog U-LALA -c U-LALA --vector_source=C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/Waveform.vwf --testbench_file=./simulation/qsim/U-LALA.vt
+quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog U-LALA -c U-LALA
 
 
 

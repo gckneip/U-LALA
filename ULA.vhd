@@ -6,7 +6,10 @@ ENTITY ULA IS
 	PORT(
 	a,b:IN std_logic_vector(4 downto 0);
 	c: IN std_logic_vector(3 downto 0);
-	s: out std_logic_vector(4 downto 0)
+	s: out std_logic_vector(4 downto 0);
+	ledNegativo: OUT std_logic;
+	ledZero: OUT std_logic;
+	led Overflow: OUT std_logic
 	);
 END ULA;
 ARCHITECTURE arq_ULA OF ULA IS
@@ -14,6 +17,7 @@ ARCHITECTURE arq_ULA OF ULA IS
 SIGNAL n: std_logic_vector(4 downto 0);
 SIGNAL enable_components : std_logic_vector (15 downto 0);
 SIGNAL entradaMUXFinal: MatrizMUX;
+SIGNAL saidaMUXFinal: std_logic_vector (4 downto 0);
 
 
 COMPONENT muxFinal 
@@ -81,6 +85,12 @@ COMPONENT shift_l
 	);
 END COMPONENT;
 
+COMPONENT conversor_display7Seg
+	PORT (
+		entrada: IN std_logic_vector(4 downto 0);
+		saida: OUT std_logic_vector(20 downto 0)
+	);
+END COMPONENT;
 
 
 BEGIN
@@ -127,7 +137,7 @@ BEGIN
 		PORT MAP(
 			inputs => entradaMUXFinal,
 			seleciona => c,
-			output => s
+			output => saidaMUXFinal
 		);
 	 
 	 
@@ -184,5 +194,18 @@ BEGIN
 			s => entradaMUXFinal(13),
 			enable => enable_components(13)
 		);
+		
+	Conversor7Seg: conversor_display7Seg
+		PORT MAP (
+			entrada => saidaMUXFinal
+			saida => s
+		)
+		
+		
+		
+		PROCESS(saidaMUXFinal)
+		BEGIN
+			ledZero <= saidaMUXFinal(3 downto 0) NOR "0000"
+		END PROCESS
 
 END arq_ULA;

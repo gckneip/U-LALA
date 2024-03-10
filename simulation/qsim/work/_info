@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\gustavo.kneip\Documents\ufpel\TD\trabalho_ULA_Antonio_Gustavo\simulation\qsim
+vULA
+Z1 !s100 Shgn;CZfFb8fm;mlSeD=82
+Z2 I^0<ddh<ZfRXNS8gzXFcY43
+Z3 VSkGF<lQGOZ;dF`cOYof012
+Z4 dC:\Users\gustavo.kneip\Documents\ufpel\TD\trabalho_ULA_Antonio_Gustavo\simulation\qsim
+Z5 w1710009745
+Z6 8U-LALA.vo
+Z7 FU-LALA.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|U-LALA.vo|
+Z10 o-work work -O0
+Z11 n@u@l@a
+!i10b 1
+!s85 0
+Z12 !s108 1710009747.158000
+Z13 !s107 U-LALA.vo|
+!s101 -O0
+vULA_vlg_check_tst
+!i10b 1
+Z14 !s100 nQO^Qk<^0o^Z33nfjaIgn0
+Z15 IYb_WSZUiSH322F=@DJOZB0
+Z16 VRMG]`WHdj^UOX@z::X<BJ2
+R4
+Z17 w1710009743
+Z18 8U-LALA.vt
+Z19 FU-LALA.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z20 !s108 1710009747.332000
+Z21 !s107 U-LALA.vt|
+Z22 !s90 -work|work|U-LALA.vt|
+!s101 -O0
+R10
+Z23 n@u@l@a_vlg_check_tst
+vULA_vlg_sample_tst
+!i10b 1
+Z24 !s100 DV`3^D[VBzQQ3US;GbNRc1
+Z25 ID7g]a1oN3jM6leIil>5F73
+Z26 VGb]JU<T4H?k:D6AGVjXIE3
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@u@l@a_vlg_sample_tst
+vULA_vlg_vec_tst
+!i10b 1
+!s100 0n1z;dNT8L`5eiNmnLT]H2
+ITAN42Kd82jg?25>f]]jaL2
+Z28 V@H?nKIIOPXSf=Pjh4d^VA0
+R4
+R17
+R18
+R19
+Z29 L0 227
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@u@l@a_vlg_vec_tst
