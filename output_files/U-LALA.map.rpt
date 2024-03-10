@@ -1,5 +1,5 @@
 Analysis & Synthesis report for U-LALA
-Sat Mar 09 13:07:04 2024
+Sun Mar 10 11:21:31 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -15,9 +15,12 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Port Connectivity Checks: "muxFinal:MUX_Final"
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 10. Port Connectivity Checks: "five_bits_sub_adder:subtrator"
+ 11. Port Connectivity Checks: "five_bits_sub_adder:somador"
+ 12. Port Connectivity Checks: "comp_de_dois:complementadorDeDois|five_bits_sub_adder:adder_sub"
+ 13. Port Connectivity Checks: "muxFinal:MUX_Final"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +46,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 09 13:07:04 2024           ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 10 11:21:31 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; U-LALA                                          ;
 ; Top-level Entity Name              ; ULA                                             ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 24                                              ;
-;     Total combinational functions  ; 24                                              ;
+; Total logic elements               ; 53                                              ;
+;     Total combinational functions  ; 53                                              ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 19                                              ;
+; Total pins                         ; 38                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -156,22 +159,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; shift_r.vhd                      ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/shift_r.vhd         ;         ;
-; shift_l.vhd                      ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/shift_l.vhd         ;         ;
-; or_gate.vhd                      ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/or_gate.vhd         ;         ;
-; nor_gate.vhd                     ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/nor_gate.vhd        ;         ;
-; nand_gate.vhd                    ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/nand_gate.vhd       ;         ;
-; and_gate.vhd                     ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/and_gate.vhd        ;         ;
-; comp_de_um.vhd                   ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/comp_de_um.vhd      ;         ;
-; ULA.vhd                          ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/ULA.vhd             ;         ;
-; muxFinal.vhd                     ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/muxFinal.vhd        ;         ;
-; pacoteBodePunha.vhd              ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/pacoteBodePunha.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                      ;
++------------------------------------------------------+-----------------+-----------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                     ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                     ; Library ;
++------------------------------------------------------+-----------------+-----------------------+--------------------------------------------------------------------------------------------------+---------+
+; xor_gate.vhd                                         ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/xor_gate.vhd              ;         ;
+; xnor_gate.vhd                                        ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/xnor_gate.vhd             ;         ;
+; shift_r.vhd                                          ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/shift_r.vhd               ;         ;
+; shift_l.vhd                                          ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/shift_l.vhd               ;         ;
+; or_gate.vhd                                          ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/or_gate.vhd               ;         ;
+; nor_gate.vhd                                         ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/nor_gate.vhd              ;         ;
+; nand_gate.vhd                                        ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/nand_gate.vhd             ;         ;
+; and_gate.vhd                                         ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/and_gate.vhd              ;         ;
+; comp_de_um.vhd                                       ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/comp_de_um.vhd            ;         ;
+; ULA.vhd                                              ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/ULA.vhd                   ;         ;
+; ../Gerson 3.1/Gerson 3.1/output_files/full_adder.vhd ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/Gerson 3.1/Gerson 3.1/output_files/full_adder.vhd      ;         ;
+; muxFinal.vhd                                         ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/muxFinal.vhd              ;         ;
+; pacoteBodePunha.vhd                                  ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/pacoteBodePunha.vhd       ;         ;
+; comp_de_dois.vhd                                     ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/comp_de_dois.vhd          ;         ;
+; five_bits_sub_adder.vhd                              ; yes             ; User VHDL File        ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/five_bits_sub_adder.vhd   ;         ;
+; conversor_display7seg.vhd                            ; yes             ; Auto-Found VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/conversor_display7seg.vhd ;         ;
++------------------------------------------------------+-----------------+-----------------------+--------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -179,39 +188,49 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 24    ;
+; Estimated Total logic elements              ; 53    ;
 ;                                             ;       ;
-; Total combinational functions               ; 24    ;
+; Total combinational functions               ; 53    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 21    ;
-;     -- 3 input functions                    ; 1     ;
-;     -- <=2 input functions                  ; 2     ;
+;     -- 4 input functions                    ; 36    ;
+;     -- 3 input functions                    ; 16    ;
+;     -- <=2 input functions                  ; 1     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 24    ;
+;     -- normal mode                          ; 53    ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 0     ;
 ;     -- Dedicated logic registers            ; 0     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 19    ;
+; I/O pins                                    ; 38    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; c[1]  ;
-; Maximum fan-out                             ; 11    ;
-; Total fan-out                               ; 96    ;
-; Average fan-out                             ; 2.23  ;
+; Maximum fan-out node                        ; c[0]  ;
+; Maximum fan-out                             ; 16    ;
+; Total fan-out                               ; 208   ;
+; Average fan-out                             ; 2.29  ;
 +---------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                             ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
-; |ULA                       ; 24 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |ULA                    ; work         ;
-;    |muxFinal:MUX_Final|    ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|muxFinal:MUX_Final ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                        ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Library Name ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+--------------+
+; |ULA                                     ; 53 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |ULA                                                                 ; work         ;
+;    |comp_de_dois:complementadorDeDois|   ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|comp_de_dois:complementadorDeDois                               ; work         ;
+;       |five_bits_sub_adder:adder_sub|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|comp_de_dois:complementadorDeDois|five_bits_sub_adder:adder_sub ; work         ;
+;    |conversor_display7Seg:Conversor7Seg| ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|conversor_display7Seg:Conversor7Seg                             ; work         ;
+;    |five_bits_sub_adder:somador|         ; 4 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:somador                                     ; work         ;
+;       |full_adder:soma2|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:somador|full_adder:soma2                    ; work         ;
+;       |full_adder:soma3|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:somador|full_adder:soma3                    ; work         ;
+;    |five_bits_sub_adder:subtrator|       ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:subtrator                                   ; work         ;
+;       |full_adder:soma2|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:subtrator|full_adder:soma2                  ; work         ;
+;       |full_adder:soma3|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:subtrator|full_adder:soma3                  ; work         ;
+;    |muxFinal:MUX_Final|                  ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|muxFinal:MUX_Final                                              ; work         ;
+;    |xnor_gate:XNORGate|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|xnor_gate:XNORGate                                              ; work         ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -235,8 +254,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; 17:1               ; 3 bits    ; 33 LEs        ; 18 LEs               ; 15 LEs                 ; No         ; |ULA|muxFinal:MUX_Final|Mux3 ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |ULA|muxFinal:MUX_Final|Mux2 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "five_bits_sub_adder:subtrator"                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; issubtrator ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; overflow    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "five_bits_sub_adder:somador"                                                               ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; issubtrator ; Input  ; Info     ; Stuck at GND                                                                        ;
+; overflow    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comp_de_dois:complementadorDeDois|five_bits_sub_adder:adder_sub"                                                                                    ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                      ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; b[4..1]     ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; b[0]        ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; issubtrator ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; overflow    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; enable      ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------+
@@ -245,8 +297,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Port           ; Type  ; Severity ; Details      ;
 +----------------+-------+----------+--------------+
 ; inputs[15..14] ; Input ; Info     ; Stuck at GND ;
-; inputs[11..7]  ; Input ; Info     ; Stuck at GND ;
-; inputs[5..4]   ; Input ; Info     ; Stuck at GND ;
+; inputs[11..10] ; Input ; Info     ; Stuck at GND ;
 +----------------+-------+----------+--------------+
 
 
@@ -255,7 +306,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -265,12 +316,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Mar 09 13:07:00 2024
+    Info: Processing started: Sun Mar 10 11:21:25 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off U-LALA -c U-LALA
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file adder-sub-realoficial.vhd
-    Info (12022): Found design unit 1: five_bits_sub_adder-arq_five_bits_sub_adder
-    Info (12023): Found entity 1: five_bits_sub_adder
 Info (12021): Found 2 design units, including 1 entities, in source file xor_gate.vhd
     Info (12022): Found design unit 1: xor_gate-xor_gate
     Info (12023): Found entity 1: xor_gate
@@ -294,11 +342,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file nor_gat
 Info (12021): Found 2 design units, including 1 entities, in source file nand_gate.vhd
     Info (12022): Found design unit 1: nand_gate-nand_gate
     Info (12023): Found entity 1: nand_gate
-Info (12021): Found 2 design units, including 1 entities, in source file mux_2_1.vhd
-    Info (12022): Found design unit 1: mux_2_1-mux_2_1
-    Info (12023): Found entity 1: mux_2_1
-Info (12021): Found 1 design units, including 1 entities, in source file complementodedois.vhd
-    Info (12023): Found entity 1: comp_de_dois
+Warning (12019): Can't analyze file -- file mux_2_1.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file and_gate.vhd
     Info (12022): Found design unit 1: and_gate-and_gate
     Info (12023): Found entity 1: and_gate
@@ -322,18 +366,29 @@ Info (12021): Found 2 design units, including 1 entities, in source file muxfina
     Info (12023): Found entity 1: muxFinal
 Info (12021): Found 1 design units, including 0 entities, in source file pacotebodepunha.vhd
     Info (12022): Found design unit 1: pacoteBodePunha
+Info (12021): Found 2 design units, including 1 entities, in source file comp_de_dois.vhd
+    Info (12022): Found design unit 1: comp_de_dois-arq_comp_de_dois
+    Info (12023): Found entity 1: comp_de_dois
+Info (12021): Found 2 design units, including 1 entities, in source file five_bits_sub_adder.vhd
+    Info (12022): Found design unit 1: five_bits_sub_adder-arq_five_bits_sub_adder
+    Info (12023): Found entity 1: five_bits_sub_adder
 Info (12127): Elaborating entity "ULA" for the top level hierarchy
-Warning (10631): VHDL Process Statement warning at ULA.vhd(87): inferring latch(es) for signal or variable "enable_components", which holds its previous value in one or more paths through the process
-Warning (10873): Using initial value X (don't care) for net "entradaMUXFinal[15..14]" at ULA.vhd(16)
-Warning (10873): Using initial value X (don't care) for net "entradaMUXFinal[11..7]" at ULA.vhd(16)
-Warning (10873): Using initial value X (don't care) for net "entradaMUXFinal[5..4]" at ULA.vhd(16)
-Info (10041): Inferred latch for "enable_components[0]" at ULA.vhd(87)
-Info (10041): Inferred latch for "enable_components[1]" at ULA.vhd(87)
-Info (10041): Inferred latch for "enable_components[2]" at ULA.vhd(87)
-Info (10041): Inferred latch for "enable_components[3]" at ULA.vhd(87)
-Info (10041): Inferred latch for "enable_components[6]" at ULA.vhd(87)
-Info (10041): Inferred latch for "enable_components[12]" at ULA.vhd(87)
-Info (10041): Inferred latch for "enable_components[13]" at ULA.vhd(87)
+Warning (10541): VHDL Signal Declaration warning at ULA.vhd(12): used implicit default value for signal "ledOverflow" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10631): VHDL Process Statement warning at ULA.vhd(131): inferring latch(es) for signal or variable "enable_components", which holds its previous value in one or more paths through the process
+Warning (10873): Using initial value X (don't care) for net "entradaMUXFinal[15..14]" at ULA.vhd(19)
+Warning (10873): Using initial value X (don't care) for net "entradaMUXFinal[11..10]" at ULA.vhd(19)
+Info (10041): Inferred latch for "enable_components[0]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[1]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[2]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[3]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[4]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[5]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[6]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[7]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[8]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[9]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[12]" at ULA.vhd(131)
+Info (10041): Inferred latch for "enable_components[13]" at ULA.vhd(131)
 Info (12128): Elaborating entity "muxFinal" for hierarchy "muxFinal:MUX_Final"
 Info (12128): Elaborating entity "and_gate" for hierarchy "and_gate:ANDGate"
 Warning (10631): VHDL Process Statement warning at and_gate.vhd(15): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
@@ -363,7 +418,31 @@ Info (10041): Inferred latch for "s[1]" at nor_gate.vhd(15)
 Info (10041): Inferred latch for "s[2]" at nor_gate.vhd(15)
 Info (10041): Inferred latch for "s[3]" at nor_gate.vhd(15)
 Info (10041): Inferred latch for "s[4]" at nor_gate.vhd(15)
+Info (12128): Elaborating entity "xor_gate" for hierarchy "xor_gate:XORGate"
+Warning (10631): VHDL Process Statement warning at xor_gate.vhd(16): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at xor_gate.vhd(16)
+Info (10041): Inferred latch for "s[1]" at xor_gate.vhd(16)
+Info (10041): Inferred latch for "s[2]" at xor_gate.vhd(16)
+Info (10041): Inferred latch for "s[3]" at xor_gate.vhd(16)
+Info (10041): Inferred latch for "s[4]" at xor_gate.vhd(16)
+Info (12128): Elaborating entity "xnor_gate" for hierarchy "xnor_gate:XNORGate"
+Warning (10631): VHDL Process Statement warning at xnor_gate.vhd(16): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at xnor_gate.vhd(16)
+Info (10041): Inferred latch for "s[1]" at xnor_gate.vhd(16)
+Info (10041): Inferred latch for "s[2]" at xnor_gate.vhd(16)
+Info (10041): Inferred latch for "s[3]" at xnor_gate.vhd(16)
+Info (10041): Inferred latch for "s[4]" at xnor_gate.vhd(16)
 Info (12128): Elaborating entity "comp_de_um" for hierarchy "comp_de_um:complementadorDeUm"
+Warning (10631): VHDL Process Statement warning at comp_de_um.vhd(15): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at comp_de_um.vhd(15)
+Info (10041): Inferred latch for "s[1]" at comp_de_um.vhd(15)
+Info (10041): Inferred latch for "s[2]" at comp_de_um.vhd(15)
+Info (10041): Inferred latch for "s[3]" at comp_de_um.vhd(15)
+Info (10041): Inferred latch for "s[4]" at comp_de_um.vhd(15)
+Info (12128): Elaborating entity "comp_de_dois" for hierarchy "comp_de_dois:complementadorDeDois"
+Info (12128): Elaborating entity "five_bits_sub_adder" for hierarchy "comp_de_dois:complementadorDeDois|five_bits_sub_adder:adder_sub"
+Warning (10873): Using initial value X (don't care) for net "s[3..0]" at five_bits_sub_adder.vhd(8)
+Info (12128): Elaborating entity "full_adder" for hierarchy "comp_de_dois:complementadorDeDois|five_bits_sub_adder:adder_sub|full_adder:soma1"
 Info (12128): Elaborating entity "shift_r" for hierarchy "shift_r:ShiftRight"
 Warning (10631): VHDL Process Statement warning at shift_r.vhd(24): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "s[0]" at shift_r.vhd(24)
@@ -378,44 +457,82 @@ Info (10041): Inferred latch for "s[1]" at shift_l.vhd(24)
 Info (10041): Inferred latch for "s[2]" at shift_l.vhd(24)
 Info (10041): Inferred latch for "s[3]" at shift_l.vhd(24)
 Info (10041): Inferred latch for "s[4]" at shift_l.vhd(24)
-Warning (14026): LATCH primitive "shift_r:ShiftRight|s[0]" is permanently enabled
-Warning (14026): LATCH primitive "nor_gate:NORGate|s[0]" is permanently enabled
-Warning (14026): LATCH primitive "nand_gate:NANDGate|s[0]" is permanently enabled
-Warning (14026): LATCH primitive "or_gate:ORGate|s[0]" is permanently enabled
-Warning (14026): LATCH primitive "and_gate:ANDGate|s[0]" is permanently enabled
-Warning (14026): LATCH primitive "shift_r:ShiftRight|s[1]" is permanently enabled
+Warning (12125): Using design file conversor_display7seg.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: conversor_display7Seg-arc_conversor_display7Seg
+    Info (12023): Found entity 1: conversor_display7Seg
+Info (12128): Elaborating entity "conversor_display7Seg" for hierarchy "conversor_display7Seg:Conversor7Seg"
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "conversor_display7Seg:Conversor7Seg|Ram0" is uninferred due to inappropriate RAM size
+Warning (14026): LATCH primitive "shift_l:ShiftLeft|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "shift_r:ShiftRight|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[0]" is permanently enabled
+Warning (14026): LATCH primitive "comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[1]" is permanently enabled
+Warning (14026): LATCH primitive "comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[2]" is permanently enabled
+Warning (14026): LATCH primitive "comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[3]" is permanently enabled
+Warning (14026): LATCH primitive "comp_de_um:complementadorDeUm|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "xnor_gate:XNORGate|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "xor_gate:XORGate|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "nor_gate:NORGate|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "nand_gate:NANDGate|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "or_gate:ORGate|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "and_gate:ANDGate|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "xnor_gate:XNORGate|s[1]" is permanently enabled
+Warning (14026): LATCH primitive "xor_gate:XORGate|s[1]" is permanently enabled
+Warning (14026): LATCH primitive "comp_de_um:complementadorDeUm|s[1]" is permanently enabled
 Warning (14026): LATCH primitive "and_gate:ANDGate|s[1]" is permanently enabled
 Warning (14026): LATCH primitive "or_gate:ORGate|s[1]" is permanently enabled
 Warning (14026): LATCH primitive "nand_gate:NANDGate|s[1]" is permanently enabled
 Warning (14026): LATCH primitive "nor_gate:NORGate|s[1]" is permanently enabled
+Warning (14026): LATCH primitive "shift_r:ShiftRight|s[1]" is permanently enabled
 Warning (14026): LATCH primitive "shift_l:ShiftLeft|s[1]" is permanently enabled
-Warning (14026): LATCH primitive "shift_r:ShiftRight|s[2]" is permanently enabled
+Warning (14026): LATCH primitive "xnor_gate:XNORGate|s[2]" is permanently enabled
+Warning (14026): LATCH primitive "xor_gate:XORGate|s[2]" is permanently enabled
+Warning (14026): LATCH primitive "comp_de_um:complementadorDeUm|s[2]" is permanently enabled
 Warning (14026): LATCH primitive "and_gate:ANDGate|s[2]" is permanently enabled
 Warning (14026): LATCH primitive "or_gate:ORGate|s[2]" is permanently enabled
 Warning (14026): LATCH primitive "nand_gate:NANDGate|s[2]" is permanently enabled
 Warning (14026): LATCH primitive "nor_gate:NORGate|s[2]" is permanently enabled
+Warning (14026): LATCH primitive "shift_r:ShiftRight|s[2]" is permanently enabled
 Warning (14026): LATCH primitive "shift_l:ShiftLeft|s[2]" is permanently enabled
 Warning (14026): LATCH primitive "shift_l:ShiftLeft|s[3]" is permanently enabled
+Warning (14026): LATCH primitive "comp_de_um:complementadorDeUm|s[3]" is permanently enabled
+Warning (14026): LATCH primitive "xnor_gate:XNORGate|s[3]" is permanently enabled
+Warning (14026): LATCH primitive "xor_gate:XORGate|s[3]" is permanently enabled
 Warning (14026): LATCH primitive "nor_gate:NORGate|s[3]" is permanently enabled
 Warning (14026): LATCH primitive "nand_gate:NANDGate|s[3]" is permanently enabled
 Warning (14026): LATCH primitive "or_gate:ORGate|s[3]" is permanently enabled
 Warning (14026): LATCH primitive "and_gate:ANDGate|s[3]" is permanently enabled
-Warning (14026): LATCH primitive "shift_r:ShiftRight|s[4]" is permanently enabled
-Warning (14026): LATCH primitive "and_gate:ANDGate|s[4]" is permanently enabled
-Warning (14026): LATCH primitive "or_gate:ORGate|s[4]" is permanently enabled
-Warning (14026): LATCH primitive "nand_gate:NANDGate|s[4]" is permanently enabled
-Warning (14026): LATCH primitive "nor_gate:NORGate|s[4]" is permanently enabled
-Warning (14026): LATCH primitive "shift_l:ShiftLeft|s[4]" is permanently enabled
+Warning (14026): LATCH primitive "shift_r:ShiftRight|s[0]" is permanently enabled
+Warning (14026): LATCH primitive "comp_de_um:complementadorDeUm|s[0]" is permanently enabled
+Warning (14026): LATCH primitive "xnor_gate:XNORGate|s[0]" is permanently enabled
+Warning (14026): LATCH primitive "xor_gate:XORGate|s[0]" is permanently enabled
+Warning (14026): LATCH primitive "nor_gate:NORGate|s[0]" is permanently enabled
+Warning (14026): LATCH primitive "nand_gate:NANDGate|s[0]" is permanently enabled
+Warning (14026): LATCH primitive "or_gate:ORGate|s[0]" is permanently enabled
+Warning (14026): LATCH primitive "and_gate:ANDGate|s[0]" is permanently enabled
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "s[1]" is stuck at VCC
+    Warning (13410): Pin "s[2]" is stuck at VCC
+    Warning (13410): Pin "s[3]" is stuck at VCC
+    Warning (13410): Pin "s[4]" is stuck at VCC
+    Warning (13410): Pin "s[5]" is stuck at VCC
+    Warning (13410): Pin "s[6]" is stuck at VCC
+    Warning (13410): Pin "s[7]" is stuck at VCC
+    Warning (13410): Pin "s[11]" is stuck at GND
+    Warning (13410): Pin "s[12]" is stuck at GND
+    Warning (13410): Pin "ledOverflow" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 43 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 91 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 24 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 41 warnings
-    Info: Peak virtual memory: 4633 megabytes
-    Info: Processing ended: Sat Mar 09 13:07:04 2024
-    Info: Elapsed time: 00:00:04
+    Info (21059): Implemented 24 output pins
+    Info (21061): Implemented 53 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 79 warnings
+    Info: Peak virtual memory: 4642 megabytes
+    Info: Processing ended: Sun Mar 10 11:21:31 2024
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:04
 
 

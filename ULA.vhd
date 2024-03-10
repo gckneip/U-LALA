@@ -6,10 +6,10 @@ ENTITY ULA IS
 	PORT(
 	a,b:IN std_logic_vector(4 downto 0);
 	c: IN std_logic_vector(3 downto 0);
-	s: out std_logic_vector(4 downto 0);
+	s: out std_logic_vector(20 downto 0);
 	ledNegativo: OUT std_logic;
 	ledZero: OUT std_logic;
-	led Overflow: OUT std_logic
+	ledOverflow: OUT std_logic
 	);
 END ULA;
 ARCHITECTURE arq_ULA OF ULA IS
@@ -60,6 +60,22 @@ COMPONENT nor_gate
 			enable: IN std_logic
 	);
 END COMPONENT;
+
+COMPONENT xor_gate
+	PORT(
+			a,b:IN std_logic_vector(4 downto 0);
+			s:OUT std_logic_vector(4 downto 0);
+			enable: IN std_logic
+	);
+END COMPONENT;
+
+COMPONENT xnor_gate
+	PORT(
+			a,b:IN std_logic_vector(4 downto 0);
+			s:OUT std_logic_vector(4 downto 0);
+			enable: IN std_logic
+	);
+END COMPONENT;
 	
 COMPONENT comp_de_um
     PORT(
@@ -67,6 +83,24 @@ COMPONENT comp_de_um
         s: OUT std_logic_vector(4 downto 0);
         enable: IN std_logic
     );
+END COMPONENT;
+
+COMPONENT comp_de_dois
+    PORT(
+        a: IN std_logic_vector(4 downto 0);
+        s: OUT std_logic_vector(4 downto 0);
+        enable: IN std_logic
+    );
+END COMPONENT;
+
+COMPONENT five_bits_sub_adder
+	PORT(
+			a,b:IN std_logic_vector(4 downto 0); 
+			isSubtrator:IN std_logic;
+			s: OUT std_logic_vector(4 downto 0); 
+			enable: IN std_logic;
+			overflow: OUT std_logic
+	);
 END COMPONENT;
 		
 COMPONENT shift_r
@@ -140,6 +174,7 @@ BEGIN
 			output => saidaMUXFinal
 		);
 	 
+---------------------------------------OPERACOES-----------------------------------------	 
 	 
 	ANDGate: and_gate
 		PORT MAP (
@@ -172,12 +207,50 @@ BEGIN
 			s => entradaMUXFinal(3),
 			enable => enable_components(3)
 		);
+		
+	XORGate: xor_gate
+		PORT MAP (
+			a => a,
+			b => b,
+			s => entradaMUXFinal(4),
+			enable => enable_components(4)
+		);
+	XNORGate: xnor_gate
+		PORT MAP (
+			a => a,
+			b => b,
+			s => entradaMUXFinal(5),
+			enable => enable_components(5)
+		);
 	
 	complementadorDeUm: comp_de_um
 		PORT MAP (
 			a     => a,
 			s => entradaMUXFinal(6),
 			enable => enable_components(6)
+		);
+	complementadorDeDois: comp_de_dois
+		PORT MAP (
+			a     => a,
+			s => entradaMUXFinal(7),
+			enable => enable_components(7)
+		);
+		
+	somador: five_bits_sub_adder
+		PORT MAP (
+			a => a,
+			b => b,
+			isSubtrator => '0',
+			enable => enable_components(8),
+			s => entradaMUXFinal(8) 
+		);
+	subtrator: five_bits_sub_adder
+		PORT MAP (
+			a => a,
+			b => b,
+			isSubtrator => '1',
+			enable => enable_components(9),
+			s => entradaMUXFinal(9) 
 		);
 		
 	ShiftRight: shift_r
@@ -197,15 +270,32 @@ BEGIN
 		
 	Conversor7Seg: conversor_display7Seg
 		PORT MAP (
-			entrada => saidaMUXFinal
+			entrada => saidaMUXFinal,
 			saida => s
-		)
+		);
 		
-		
-		
+-------------------------------------------- LEDS-------------------------------		
+		--Codigo do LED zero
 		PROCESS(saidaMUXFinal)
 		BEGIN
-			ledZero <= saidaMUXFinal(3 downto 0) NOR "0000"
-		END PROCESS
+			if saidaMUXFinal(3 downto 0) = "0000" THEN
+				ledZero <= '1';
+			ELSE 
+				ledZero <= '0';
+			END IF;
+		END PROCESS;
+		
+		--Codigo do LED negativo
+		PROCESS(saidaMUXFinal)
+		BEGIN
+			if saidaMUXFinal(4) = '1' THEN
+				ledNegativo <= '1';
+			ELSE 
+				ledNegativo <= '0';
+			END IF;
+		END PROCESS;
+		
+
+	
 
 END arq_ULA;
