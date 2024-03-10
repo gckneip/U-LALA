@@ -9,16 +9,7 @@ ENTITY shift_l IS
 	);
 END shift_l;
 
-ARCHITECTURE shift_l OF shift_l IS
-
-SIGNAL d: std_logic_vector(2 downto 0);
-
-COMPONENT mux_2_1
-	PORT(
-			a,b,control:IN std_logic;
-			s:OUT std_logic	
-	);
-END COMPONENT;
+ARCHITECTURE arc_shift_l OF shift_l IS
 
 BEGIN
 	PROCESS(enable,a)
@@ -29,4 +20,4 @@ BEGIN
 			s(3 downto 1) <= a(2 downto 0);
 		END IF;
 	END PROCESS;
-END shift_l;
+END arc_shift_l;

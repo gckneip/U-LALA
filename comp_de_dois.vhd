@@ -23,9 +23,10 @@ COMPONENT comp_de_um
 	
 COMPONENT five_bits_sub_adder
 	PORT(
-			a,b: IN std_logic_vector(4 downto 0); 
+			a,b:IN std_logic_vector(4 downto 0); 
 			isSubtrator:IN std_logic;
 			s: OUT std_logic_vector(4 downto 0); 
+			enable: IN std_logic;
 			overflow: OUT std_logic
 	);
 	END COMPONENT;
@@ -44,7 +45,8 @@ BEGIN
 		a => saida_comp_de_um,
 		b => "00001",
 		isSubtrator => '0',
-		s => s
+		s => s,
+		enable => enable
 	);
 
 END arq_comp_de_dois;

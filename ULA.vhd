@@ -6,7 +6,8 @@ ENTITY ULA IS
 	PORT(
 	a,b:IN std_logic_vector(4 downto 0);
 	c: IN std_logic_vector(3 downto 0);
-	s: out std_logic_vector(20 downto 0);
+	saida7SEG: out std_logic_vector(20 downto 0);
+	saidaLEDS: out std_logic_vector(4 downto 0);
 	ledNegativo: OUT std_logic;
 	ledZero: OUT std_logic;
 	ledOverflow: OUT std_logic
@@ -93,13 +94,12 @@ COMPONENT comp_de_dois
     );
 END COMPONENT;
 
-COMPONENT five_bits_sub_adder
+COMPONENT five_bits_adder
 	PORT(
 			a,b:IN std_logic_vector(4 downto 0); 
-			isSubtrator:IN std_logic;
 			s: OUT std_logic_vector(4 downto 0); 
-			enable: IN std_logic;
-			overflow: OUT std_logic
+			overflow: OUT std_logic;
+			enable: IN std_logic
 	);
 END COMPONENT;
 		
@@ -236,21 +236,12 @@ BEGIN
 			enable => enable_components(7)
 		);
 		
-	somador: five_bits_sub_adder
+	somador: five_bits_adder
 		PORT MAP (
 			a => a,
 			b => b,
-			isSubtrator => '0',
 			enable => enable_components(8),
 			s => entradaMUXFinal(8) 
-		);
-	subtrator: five_bits_sub_adder
-		PORT MAP (
-			a => a,
-			b => b,
-			isSubtrator => '1',
-			enable => enable_components(9),
-			s => entradaMUXFinal(9) 
 		);
 		
 	ShiftRight: shift_r
@@ -268,11 +259,11 @@ BEGIN
 			enable => enable_components(13)
 		);
 		
-	Conversor7Seg: conversor_display7Seg
-		PORT MAP (
-			entrada => saidaMUXFinal,
-			saida => s
-		);
+	--Conversor7Seg: conversor_display7Seg
+		--PORT MAP (
+			--entrada => saidaMUXFinal,
+			--saida => s
+		--);
 		
 -------------------------------------------- LEDS-------------------------------		
 		--Codigo do LED zero
@@ -294,6 +285,7 @@ BEGIN
 				ledNegativo <= '0';
 			END IF;
 		END PROCESS;
+		saidaLEDS <= saidaMUXFinal;
 		
 
 	

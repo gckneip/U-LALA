@@ -9,16 +9,7 @@ ENTITY shift_r IS
 	);
 END shift_r;
 
-ARCHITECTURE shift_r OF shift_r IS
-
-SIGNAL d: std_logic_vector(3 downto 1);
-
-COMPONENT mux_2_1
-	PORT(
-			a,b,control:IN std_logic;
-			s:OUT std_logic	
-	);
-END COMPONENT;
+ARCHITECTURE arc_shift_r OF shift_r IS
 
 BEGIN
 	PROCESS(enable,a)
@@ -31,4 +22,4 @@ BEGIN
 	END PROCESS;
 		
 		
-END shift_r;
+END arc_shift_r;
