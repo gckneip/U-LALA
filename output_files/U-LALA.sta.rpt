@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for U-LALA
-Sun Mar 10 13:27:08 2024
+Sun Mar 10 23:05:10 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -16,36 +16,42 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   8. Slow Model Recovery Summary
   9. Slow Model Removal Summary
  10. Slow Model Minimum Pulse Width Summary
- 11. Slow Model Setup: 'enable'
- 12. Slow Model Hold: 'enable'
- 13. Slow Model Minimum Pulse Width: 'enable'
+ 11. Slow Model Setup: 'c[0]'
+ 12. Slow Model Hold: 'c[0]'
+ 13. Slow Model Minimum Pulse Width: 'c[0]'
  14. Setup Times
  15. Hold Times
  16. Clock to Output Times
  17. Minimum Clock to Output Times
- 18. Fast Model Setup Summary
- 19. Fast Model Hold Summary
- 20. Fast Model Recovery Summary
- 21. Fast Model Removal Summary
- 22. Fast Model Minimum Pulse Width Summary
- 23. Fast Model Setup: 'enable'
- 24. Fast Model Hold: 'enable'
- 25. Fast Model Minimum Pulse Width: 'enable'
- 26. Setup Times
- 27. Hold Times
- 28. Clock to Output Times
- 29. Minimum Clock to Output Times
- 30. Multicorner Timing Analysis Summary
- 31. Setup Times
- 32. Hold Times
- 33. Clock to Output Times
- 34. Minimum Clock to Output Times
- 35. Setup Transfers
- 36. Hold Transfers
- 37. Report TCCS
- 38. Report RSKM
- 39. Unconstrained Paths
- 40. TimeQuest Timing Analyzer Messages
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'c[0]'
+ 26. Fast Model Hold: 'c[0]'
+ 27. Fast Model Minimum Pulse Width: 'c[0]'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
 
 
 
@@ -92,13 +98,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                             ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
-; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
-; enable     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { enable } ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                           ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; c[0]       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { c[0] } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
 
 
 +--------------------------------------------------+
@@ -106,27 +112,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 406.01 MHz ; 406.01 MHz      ; enable     ;      ;
+; 410.85 MHz ; 410.85 MHz      ; c[0]       ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+---------------------------------+
-; Slow Model Setup Summary        ;
-+--------+--------+---------------+
-; Clock  ; Slack  ; End Point TNS ;
-+--------+--------+---------------+
-; enable ; -1.463 ; -10.018       ;
-+--------+--------+---------------+
-
-
 +--------------------------------+
-; Slow Model Hold Summary        ;
-+--------+-------+---------------+
-; Clock  ; Slack ; End Point TNS ;
-+--------+-------+---------------+
-; enable ; 0.841 ; 0.000         ;
-+--------+-------+---------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; c[0]  ; -1.434 ; -20.785       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; c[0]  ; 0.701 ; 0.000         ;
++-------+-------+---------------+
 
 
 -------------------------------
@@ -143,130 +149,213 @@ No paths to report.
 
 +----------------------------------------+
 ; Slow Model Minimum Pulse Width Summary ;
-+--------+--------+----------------------+
-; Clock  ; Slack  ; End Point TNS        ;
-+--------+--------+----------------------+
-; enable ; -1.380 ; -1.380               ;
-+--------+--------+----------------------+
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; c[0]  ; -1.222 ; -1.222                ;
++-------+--------+-----------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'enable'                                                                                                     ;
-+--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
-; -1.463 ; full_adder:soma4|s     ; s[4]$latch             ; enable       ; enable      ; 1.000        ; 0.058      ; 1.532      ;
-; -1.443 ; full_adder:soma2|s     ; s[4]$latch             ; enable       ; enable      ; 1.000        ; 0.058      ; 1.512      ;
-; -1.266 ; full_adder:soma3|s     ; s[4]$latch             ; enable       ; enable      ; 1.000        ; 0.059      ; 1.336      ;
-; -1.144 ; full_adder:soma1|s     ; s[4]$latch             ; enable       ; enable      ; 1.000        ; 0.059      ; 1.214      ;
-; -1.093 ; full_adder:soma2|c_out ; full_adder:soma3|c_out ; enable       ; enable      ; 1.000        ; -0.001     ; 1.257      ;
-; -1.029 ; full_adder:soma4|c_out ; s[4]$latch             ; enable       ; enable      ; 1.000        ; 0.058      ; 1.098      ;
-; -0.953 ; full_adder:soma3|c_out ; full_adder:soma4|c_out ; enable       ; enable      ; 1.000        ; 0.001      ; 1.086      ;
-; -0.936 ; full_adder:soma2|c_out ; full_adder:soma3|s     ; enable       ; enable      ; 1.000        ; -0.001     ; 1.229      ;
-; -0.858 ; full_adder:soma1|c_out ; full_adder:soma2|c_out ; enable       ; enable      ; 1.000        ; 0.099      ; 1.113      ;
-; -0.822 ; full_adder:soma1|c_out ; full_adder:soma2|s     ; enable       ; enable      ; 1.000        ; 0.099      ; 1.073      ;
-; -0.815 ; full_adder:soma4|c_out ; overflow$latch         ; enable       ; enable      ; 1.000        ; -0.001     ; 0.945      ;
-; -0.806 ; full_adder:soma3|c_out ; full_adder:soma4|s     ; enable       ; enable      ; 1.000        ; 0.001      ; 0.940      ;
-; -0.603 ; full_adder:soma1|s     ; s[0]$latch             ; enable       ; enable      ; 1.000        ; -0.059     ; 0.861      ;
-; -0.593 ; full_adder:soma2|s     ; s[1]$latch             ; enable       ; enable      ; 1.000        ; -0.061     ; 0.855      ;
-; -0.566 ; full_adder:soma3|s     ; s[2]$latch             ; enable       ; enable      ; 1.000        ; -0.059     ; 0.826      ;
-; -0.510 ; full_adder:soma4|s     ; s[3]$latch             ; enable       ; enable      ; 1.000        ; 0.048      ; 0.889      ;
-+--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'c[0]'                                                                                                                                                                                                                               ;
++--------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                          ; To Node                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.434 ; five_bits_adder:somador|full_adder:soma1|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 1.000        ; 0.054      ; 1.538      ;
+; -1.412 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.068      ; 1.535      ;
+; -1.389 ; five_bits_adder:somador|full_adder:soma2|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 1.000        ; 0.056      ; 1.495      ;
+; -1.378 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.069      ; 1.502      ;
+; -1.224 ; five_bits_adder:somador|full_adder:soma3|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 1.000        ; 0.055      ; 1.329      ;
+; -1.201 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.072      ; 1.328      ;
+; -1.154 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[3]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; c[0]         ; c[0]        ; 1.000        ; -0.005     ; 1.257      ;
+; -1.125 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[1]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; c[0]         ; c[0]        ; 1.000        ; 0.001      ; 1.250      ;
+; -1.124 ; five_bits_adder:somador|full_adder:soma4|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 1.000        ; 0.055      ; 1.229      ;
+; -1.094 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; c[0]         ; c[0]        ; 1.000        ; -0.077     ; 1.125      ;
+; -1.092 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[1]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; c[0]         ; c[0]        ; 1.000        ; -0.049     ; 1.203      ;
+; -1.092 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.072      ; 1.219      ;
+; -0.999 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[4]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.068      ; 1.122      ;
+; -0.991 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; c[0]         ; c[0]        ; 1.000        ; 0.002      ; 1.117      ;
+; -0.964 ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; five_bits_adder:somador|full_adder:soma4|s                                         ; c[0]         ; c[0]        ; 1.000        ; 0.001      ; 1.091      ;
+; -0.962 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; c[0]         ; c[0]        ; 1.000        ; -0.048     ; 1.074      ;
+; -0.960 ; five_bits_adder:somador|full_adder:soma1|c_out                                     ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; c[0]         ; c[0]        ; 1.000        ; 0.027      ; 1.112      ;
+; -0.958 ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; five_bits_adder:somador|full_adder:soma4|c_out                                     ; c[0]         ; c[0]        ; 1.000        ; 0.002      ; 1.098      ;
+; -0.954 ; five_bits_adder:somador|full_adder:soma4|c_out                                     ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 1.000        ; 0.054      ; 1.058      ;
+; -0.922 ; five_bits_adder:somador|full_adder:soma1|c_out                                     ; five_bits_adder:somador|full_adder:soma2|s                                         ; c[0]         ; c[0]        ; 1.000        ; 0.026      ; 1.116      ;
+; -0.918 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[3]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; c[0]         ; c[0]        ; 1.000        ; -0.001     ; 1.081      ;
+; -0.915 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.068      ; 1.038      ;
+; -0.883 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[2]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; c[0]         ; c[0]        ; 1.000        ; 0.048      ; 1.087      ;
+; -0.860 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; c[0]         ; c[0]        ; 1.000        ; -0.073     ; 0.951      ;
+; -0.829 ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; five_bits_adder:somador|full_adder:soma3|s                                         ; c[0]         ; c[0]        ; 1.000        ; 0.000      ; 0.957      ;
+; -0.822 ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; c[0]         ; c[0]        ; 1.000        ; -0.001     ; 0.945      ;
+; -0.814 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[1]                   ; c[0]         ; c[0]        ; 1.000        ; -0.002     ; 1.126      ;
+; -0.806 ; five_bits_adder:somador|full_adder:soma3|s                                         ; five_bits_adder:somador|s[2]                                                       ; c[0]         ; c[0]        ; 1.000        ; -0.027     ; 0.947      ;
+; -0.800 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[2]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; c[0]         ; c[0]        ; 1.000        ; 0.122      ; 1.233      ;
+; -0.790 ; five_bits_adder:somador|full_adder:soma1|s                                         ; five_bits_adder:somador|s[0]                                                       ; c[0]         ; c[0]        ; 1.000        ; -0.027     ; 1.077      ;
+; -0.752 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; c[0]         ; c[0]        ; 1.000        ; 0.049      ; 0.957      ;
+; -0.672 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; c[0]         ; c[0]        ; 1.000        ; 0.123      ; 1.106      ;
+; -0.631 ; five_bits_adder:somador|full_adder:soma2|s                                         ; five_bits_adder:somador|s[1]                                                       ; c[0]         ; c[0]        ; 1.000        ; -0.030     ; 0.924      ;
+; -0.610 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[2]                   ; c[0]         ; c[0]        ; 1.000        ; 0.000      ; 0.917      ;
+; -0.605 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[3]                   ; c[0]         ; c[0]        ; 1.000        ; 0.004      ; 0.744      ;
+; -0.594 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[0]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; c[0]         ; c[0]        ; 1.000        ; -0.003     ; 0.890      ;
+; -0.577 ; five_bits_adder:somador|full_adder:soma4|s                                         ; five_bits_adder:somador|s[3]                                                       ; c[0]         ; c[0]        ; 1.000        ; -0.027     ; 0.864      ;
+; -0.557 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[0]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; c[0]         ; c[0]        ; 1.000        ; -0.001     ; 0.720      ;
+; -0.528 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[0]                   ; c[0]         ; c[0]        ; 1.000        ; 0.005      ; 0.706      ;
++--------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'enable'                                                                                                     ;
-+-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
-; 0.841 ; full_adder:soma4|s     ; s[3]$latch             ; enable       ; enable      ; 0.000        ; 0.048      ; 0.889      ;
-; 0.885 ; full_adder:soma3|s     ; s[2]$latch             ; enable       ; enable      ; 0.000        ; -0.059     ; 0.826      ;
-; 0.916 ; full_adder:soma2|s     ; s[1]$latch             ; enable       ; enable      ; 0.000        ; -0.061     ; 0.855      ;
-; 0.920 ; full_adder:soma1|s     ; s[0]$latch             ; enable       ; enable      ; 0.000        ; -0.059     ; 0.861      ;
-; 0.939 ; full_adder:soma3|c_out ; full_adder:soma4|s     ; enable       ; enable      ; 0.000        ; 0.001      ; 0.940      ;
-; 0.946 ; full_adder:soma4|c_out ; overflow$latch         ; enable       ; enable      ; 0.000        ; -0.001     ; 0.945      ;
-; 0.974 ; full_adder:soma1|c_out ; full_adder:soma2|s     ; enable       ; enable      ; 0.000        ; 0.099      ; 1.073      ;
-; 1.014 ; full_adder:soma1|c_out ; full_adder:soma2|c_out ; enable       ; enable      ; 0.000        ; 0.099      ; 1.113      ;
-; 1.040 ; full_adder:soma4|c_out ; s[4]$latch             ; enable       ; enable      ; 0.000        ; 0.058      ; 1.098      ;
-; 1.085 ; full_adder:soma3|c_out ; full_adder:soma4|c_out ; enable       ; enable      ; 0.000        ; 0.001      ; 1.086      ;
-; 1.155 ; full_adder:soma1|s     ; s[4]$latch             ; enable       ; enable      ; 0.000        ; 0.059      ; 1.214      ;
-; 1.230 ; full_adder:soma2|c_out ; full_adder:soma3|s     ; enable       ; enable      ; 0.000        ; -0.001     ; 1.229      ;
-; 1.258 ; full_adder:soma2|c_out ; full_adder:soma3|c_out ; enable       ; enable      ; 0.000        ; -0.001     ; 1.257      ;
-; 1.277 ; full_adder:soma3|s     ; s[4]$latch             ; enable       ; enable      ; 0.000        ; 0.059      ; 1.336      ;
-; 1.454 ; full_adder:soma2|s     ; s[4]$latch             ; enable       ; enable      ; 0.000        ; 0.058      ; 1.512      ;
-; 1.474 ; full_adder:soma4|s     ; s[4]$latch             ; enable       ; enable      ; 0.000        ; 0.058      ; 1.532      ;
-+-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'c[0]'                                                                                                                                                                                                                               ;
++-------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                          ; To Node                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.701 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[0]                   ; c[0]         ; c[0]        ; 0.000        ; 0.005      ; 0.706      ;
+; 0.721 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[0]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; c[0]         ; c[0]        ; 0.000        ; -0.001     ; 0.720      ;
+; 0.740 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[3]                   ; c[0]         ; c[0]        ; 0.000        ; 0.004      ; 0.744      ;
+; 0.891 ; five_bits_adder:somador|full_adder:soma4|s                                         ; five_bits_adder:somador|s[3]                                                       ; c[0]         ; c[0]        ; 0.000        ; -0.027     ; 0.864      ;
+; 0.893 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[0]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; c[0]         ; c[0]        ; 0.000        ; -0.003     ; 0.890      ;
+; 0.908 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; c[0]         ; c[0]        ; 0.000        ; 0.049      ; 0.957      ;
+; 0.917 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[2]                   ; c[0]         ; c[0]        ; 0.000        ; 0.000      ; 0.917      ;
+; 0.946 ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; c[0]         ; c[0]        ; 0.000        ; -0.001     ; 0.945      ;
+; 0.954 ; five_bits_adder:somador|full_adder:soma2|s                                         ; five_bits_adder:somador|s[1]                                                       ; c[0]         ; c[0]        ; 0.000        ; -0.030     ; 0.924      ;
+; 0.957 ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; five_bits_adder:somador|full_adder:soma3|s                                         ; c[0]         ; c[0]        ; 0.000        ; 0.000      ; 0.957      ;
+; 0.970 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.068      ; 1.038      ;
+; 0.974 ; five_bits_adder:somador|full_adder:soma3|s                                         ; five_bits_adder:somador|s[2]                                                       ; c[0]         ; c[0]        ; 0.000        ; -0.027     ; 0.947      ;
+; 0.983 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; c[0]         ; c[0]        ; 0.000        ; 0.123      ; 1.106      ;
+; 1.004 ; five_bits_adder:somador|full_adder:soma4|c_out                                     ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 0.000        ; 0.054      ; 1.058      ;
+; 1.024 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; c[0]         ; c[0]        ; 0.000        ; -0.073     ; 0.951      ;
+; 1.039 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[2]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; c[0]         ; c[0]        ; 0.000        ; 0.048      ; 1.087      ;
+; 1.054 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[4]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.068      ; 1.122      ;
+; 1.082 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[3]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; c[0]         ; c[0]        ; 0.000        ; -0.001     ; 1.081      ;
+; 1.085 ; five_bits_adder:somador|full_adder:soma1|c_out                                     ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; c[0]         ; c[0]        ; 0.000        ; 0.027      ; 1.112      ;
+; 1.090 ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; five_bits_adder:somador|full_adder:soma4|s                                         ; c[0]         ; c[0]        ; 0.000        ; 0.001      ; 1.091      ;
+; 1.090 ; five_bits_adder:somador|full_adder:soma1|c_out                                     ; five_bits_adder:somador|full_adder:soma2|s                                         ; c[0]         ; c[0]        ; 0.000        ; 0.026      ; 1.116      ;
+; 1.096 ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; five_bits_adder:somador|full_adder:soma4|c_out                                     ; c[0]         ; c[0]        ; 0.000        ; 0.002      ; 1.098      ;
+; 1.104 ; five_bits_adder:somador|full_adder:soma1|s                                         ; five_bits_adder:somador|s[0]                                                       ; c[0]         ; c[0]        ; 0.000        ; -0.027     ; 1.077      ;
+; 1.111 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[2]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; c[0]         ; c[0]        ; 0.000        ; 0.122      ; 1.233      ;
+; 1.115 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; c[0]         ; c[0]        ; 0.000        ; 0.002      ; 1.117      ;
+; 1.122 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; c[0]         ; c[0]        ; 0.000        ; -0.048     ; 1.074      ;
+; 1.128 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[1]                   ; c[0]         ; c[0]        ; 0.000        ; -0.002     ; 1.126      ;
+; 1.147 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.072      ; 1.219      ;
+; 1.174 ; five_bits_adder:somador|full_adder:soma4|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 0.000        ; 0.055      ; 1.229      ;
+; 1.202 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; c[0]         ; c[0]        ; 0.000        ; -0.077     ; 1.125      ;
+; 1.249 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[1]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; c[0]         ; c[0]        ; 0.000        ; 0.001      ; 1.250      ;
+; 1.252 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[1]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; c[0]         ; c[0]        ; 0.000        ; -0.049     ; 1.203      ;
+; 1.256 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.072      ; 1.328      ;
+; 1.262 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[3]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; c[0]         ; c[0]        ; 0.000        ; -0.005     ; 1.257      ;
+; 1.274 ; five_bits_adder:somador|full_adder:soma3|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 0.000        ; 0.055      ; 1.329      ;
+; 1.433 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.069      ; 1.502      ;
+; 1.439 ; five_bits_adder:somador|full_adder:soma2|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 0.000        ; 0.056      ; 1.495      ;
+; 1.467 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.068      ; 1.535      ;
+; 1.484 ; five_bits_adder:somador|full_adder:soma1|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 0.000        ; 0.054      ; 1.538      ;
++-------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
-; Slow Model Minimum Pulse Width: 'enable'                                                                  ;
-+--------+--------------+----------------+------------------+--------+------------+-------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                  ;
-+--------+--------------+----------------+------------------+--------+------------+-------------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; enable ; Rise       ; enable                  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; enable|combout          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; enable|combout          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; enable~clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; enable~clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; enable~clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; enable~clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma1|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma1|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma1|s      ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma1|s      ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma2|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma2|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma2|s      ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma2|s      ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma3|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma3|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma3|s      ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma3|s      ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma4|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma4|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma4|s      ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma4|s      ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; overflow$latch          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; overflow$latch          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; overflow$latch|datad    ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; overflow$latch|datad    ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; s[0]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; s[0]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; s[0]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; s[0]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; s[1]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; s[1]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; s[1]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; s[1]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; s[2]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; s[2]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; s[2]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; s[2]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; s[3]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; s[3]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; s[3]$latch|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; s[3]$latch|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; s[4]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; s[4]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; s[4]$latch|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; s[4]$latch|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma1|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma1|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma1|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma1|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma2|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma2|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma2|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma2|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma3|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma3|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma3|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma3|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma4|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma4|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma4|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma4|s|datad           ;
-+--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; Slow Model Minimum Pulse Width: 'c[0]'                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                   ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; c[0]  ; Rise       ; c[0]                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; ANDGate|s[0]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; ANDGate|s[0]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; ANDGate|s[1]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; ANDGate|s[1]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; ANDGate|s[2]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; ANDGate|s[2]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; ANDGate|s[3]|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; ANDGate|s[3]|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; ANDGate|s[4]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; ANDGate|s[4]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~0clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~0clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~0clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~0clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~10clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~10clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~10clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~10clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~10|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~10|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~10|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~10|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~1clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~1clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~1clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~1clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~1|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~1|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~2clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~2clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~2clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~2clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~2|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~2|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~2|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~2|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~3clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~3clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~3clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~3clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~3|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~3|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~3|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~3|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~4clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~4clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~4clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~4clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~4|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~4|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~4|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~4|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~5clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~5clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~5clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~5clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~5|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~5|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~5|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~5|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~6clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~6clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~6clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~6clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~6|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~6|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~6|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~6|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~7clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~7clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~7clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~7clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~7|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~7|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~7|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~7|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~8clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~8clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~8clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~8clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~8|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~8|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~8|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~8|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~9clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~9clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~9clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~9clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~9|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~9|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~9|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~9|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; NANDGate|s[0]|datad      ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -274,18 +363,30 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; a[*]      ; enable     ; 4.908 ; 4.908 ; Fall       ; enable          ;
-;  a[0]     ; enable     ; 4.815 ; 4.815 ; Fall       ; enable          ;
-;  a[1]     ; enable     ; 4.759 ; 4.759 ; Fall       ; enable          ;
-;  a[2]     ; enable     ; 4.853 ; 4.853 ; Fall       ; enable          ;
-;  a[3]     ; enable     ; 4.908 ; 4.908 ; Fall       ; enable          ;
-;  a[4]     ; enable     ; 1.124 ; 1.124 ; Fall       ; enable          ;
-; b[*]      ; enable     ; 5.146 ; 5.146 ; Fall       ; enable          ;
-;  b[0]     ; enable     ; 4.959 ; 4.959 ; Fall       ; enable          ;
-;  b[1]     ; enable     ; 4.867 ; 4.867 ; Fall       ; enable          ;
-;  b[2]     ; enable     ; 5.146 ; 5.146 ; Fall       ; enable          ;
-;  b[3]     ; enable     ; 4.995 ; 4.995 ; Fall       ; enable          ;
-;  b[4]     ; enable     ; 1.192 ; 1.192 ; Fall       ; enable          ;
+; a[*]      ; c[0]       ; 3.706 ; 3.706 ; Rise       ; c[0]            ;
+;  a[0]     ; c[0]       ; 3.706 ; 3.706 ; Rise       ; c[0]            ;
+;  a[1]     ; c[0]       ; 3.438 ; 3.438 ; Rise       ; c[0]            ;
+;  a[2]     ; c[0]       ; 3.340 ; 3.340 ; Rise       ; c[0]            ;
+;  a[3]     ; c[0]       ; 3.399 ; 3.399 ; Rise       ; c[0]            ;
+;  a[4]     ; c[0]       ; 3.637 ; 3.637 ; Rise       ; c[0]            ;
+; b[*]      ; c[0]       ; 4.086 ; 4.086 ; Rise       ; c[0]            ;
+;  b[0]     ; c[0]       ; 3.813 ; 3.813 ; Rise       ; c[0]            ;
+;  b[1]     ; c[0]       ; 3.284 ; 3.284 ; Rise       ; c[0]            ;
+;  b[2]     ; c[0]       ; 4.086 ; 4.086 ; Rise       ; c[0]            ;
+;  b[3]     ; c[0]       ; 3.461 ; 3.461 ; Rise       ; c[0]            ;
+;  b[4]     ; c[0]       ; 3.693 ; 3.693 ; Rise       ; c[0]            ;
+; a[*]      ; c[0]       ; 3.852 ; 3.852 ; Fall       ; c[0]            ;
+;  a[0]     ; c[0]       ; 3.342 ; 3.342 ; Fall       ; c[0]            ;
+;  a[1]     ; c[0]       ; 2.953 ; 2.953 ; Fall       ; c[0]            ;
+;  a[2]     ; c[0]       ; 3.073 ; 3.073 ; Fall       ; c[0]            ;
+;  a[3]     ; c[0]       ; 2.800 ; 2.800 ; Fall       ; c[0]            ;
+;  a[4]     ; c[0]       ; 3.852 ; 3.852 ; Fall       ; c[0]            ;
+; b[*]      ; c[0]       ; 3.773 ; 3.773 ; Fall       ; c[0]            ;
+;  b[0]     ; c[0]       ; 3.421 ; 3.421 ; Fall       ; c[0]            ;
+;  b[1]     ; c[0]       ; 3.048 ; 3.048 ; Fall       ; c[0]            ;
+;  b[2]     ; c[0]       ; 3.653 ; 3.653 ; Fall       ; c[0]            ;
+;  b[3]     ; c[0]       ; 3.142 ; 3.142 ; Fall       ; c[0]            ;
+;  b[4]     ; c[0]       ; 3.773 ; 3.773 ; Fall       ; c[0]            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -294,67 +395,293 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; a[*]      ; enable     ; -0.135 ; -0.135 ; Fall       ; enable          ;
-;  a[0]     ; enable     ; -3.694 ; -3.694 ; Fall       ; enable          ;
-;  a[1]     ; enable     ; -3.879 ; -3.879 ; Fall       ; enable          ;
-;  a[2]     ; enable     ; -3.979 ; -3.979 ; Fall       ; enable          ;
-;  a[3]     ; enable     ; -3.894 ; -3.894 ; Fall       ; enable          ;
-;  a[4]     ; enable     ; -0.135 ; -0.135 ; Fall       ; enable          ;
-; b[*]      ; enable     ; -0.020 ; -0.020 ; Fall       ; enable          ;
-;  b[0]     ; enable     ; -3.834 ; -3.834 ; Fall       ; enable          ;
-;  b[1]     ; enable     ; -3.981 ; -3.981 ; Fall       ; enable          ;
-;  b[2]     ; enable     ; -4.271 ; -4.271 ; Fall       ; enable          ;
-;  b[3]     ; enable     ; -3.990 ; -3.990 ; Fall       ; enable          ;
-;  b[4]     ; enable     ; -0.020 ; -0.020 ; Fall       ; enable          ;
+; a[*]      ; c[0]       ; -0.039 ; -0.039 ; Rise       ; c[0]            ;
+;  a[0]     ; c[0]       ; -0.264 ; -0.264 ; Rise       ; c[0]            ;
+;  a[1]     ; c[0]       ; -0.039 ; -0.039 ; Rise       ; c[0]            ;
+;  a[2]     ; c[0]       ; -0.236 ; -0.236 ; Rise       ; c[0]            ;
+;  a[3]     ; c[0]       ; -0.351 ; -0.351 ; Rise       ; c[0]            ;
+;  a[4]     ; c[0]       ; -0.695 ; -0.695 ; Rise       ; c[0]            ;
+; b[*]      ; c[0]       ; -0.741 ; -0.741 ; Rise       ; c[0]            ;
+;  b[0]     ; c[0]       ; -1.495 ; -1.495 ; Rise       ; c[0]            ;
+;  b[1]     ; c[0]       ; -0.741 ; -0.741 ; Rise       ; c[0]            ;
+;  b[2]     ; c[0]       ; -1.498 ; -1.498 ; Rise       ; c[0]            ;
+;  b[3]     ; c[0]       ; -0.855 ; -0.855 ; Rise       ; c[0]            ;
+;  b[4]     ; c[0]       ; -1.527 ; -1.527 ; Rise       ; c[0]            ;
+; a[*]      ; c[0]       ; -0.462 ; -0.462 ; Fall       ; c[0]            ;
+;  a[0]     ; c[0]       ; -0.526 ; -0.526 ; Fall       ; c[0]            ;
+;  a[1]     ; c[0]       ; -0.462 ; -0.462 ; Fall       ; c[0]            ;
+;  a[2]     ; c[0]       ; -0.652 ; -0.652 ; Fall       ; c[0]            ;
+;  a[3]     ; c[0]       ; -0.715 ; -0.715 ; Fall       ; c[0]            ;
+;  a[4]     ; c[0]       ; -1.069 ; -1.069 ; Fall       ; c[0]            ;
+; b[*]      ; c[0]       ; -0.843 ; -0.843 ; Fall       ; c[0]            ;
+;  b[0]     ; c[0]       ; -1.081 ; -1.081 ; Fall       ; c[0]            ;
+;  b[1]     ; c[0]       ; -0.843 ; -0.843 ; Fall       ; c[0]            ;
+;  b[2]     ; c[0]       ; -1.623 ; -1.623 ; Fall       ; c[0]            ;
+;  b[3]     ; c[0]       ; -0.911 ; -0.911 ; Fall       ; c[0]            ;
+;  b[4]     ; c[0]       ; -1.070 ; -1.070 ; Fall       ; c[0]            ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; overflow  ; enable     ; 6.072 ; 6.072 ; Fall       ; enable          ;
-; s[*]      ; enable     ; 6.271 ; 6.271 ; Fall       ; enable          ;
-;  s[0]     ; enable     ; 6.033 ; 6.033 ; Fall       ; enable          ;
-;  s[1]     ; enable     ; 6.271 ; 6.271 ; Fall       ; enable          ;
-;  s[2]     ; enable     ; 6.026 ; 6.026 ; Fall       ; enable          ;
-;  s[3]     ; enable     ; 6.133 ; 6.133 ; Fall       ; enable          ;
-;  s[4]     ; enable     ; 6.112 ; 6.112 ; Fall       ; enable          ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; ledNegativo    ; c[0]       ; 13.204 ; 13.204 ; Rise       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 8.354  ; 8.354  ; Rise       ; c[0]            ;
+; ledZero        ; c[0]       ; 14.369 ; 14.369 ; Rise       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 15.594 ; 15.594 ; Rise       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 13.215 ; 13.215 ; Rise       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 15.584 ; 15.584 ; Rise       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 15.584 ; 15.584 ; Rise       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 15.584 ; 15.584 ; Rise       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 15.594 ; 15.594 ; Rise       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 15.114 ; 15.114 ; Rise       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 15.243 ; 15.243 ; Rise       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 15.010 ; 15.010 ; Rise       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 14.989 ; 14.989 ; Rise       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 14.978 ; 14.978 ; Rise       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 14.968 ; 14.968 ; Rise       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 15.055 ; 15.055 ; Rise       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 13.260 ; 13.260 ; Rise       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 12.770 ; 12.770 ; Rise       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 13.095 ; 13.095 ; Rise       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 13.195 ; 13.195 ; Rise       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 13.260 ; 13.260 ; Rise       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 13.215 ; 13.215 ; Rise       ; c[0]            ;
+; ledNegativo    ; c[0]       ; 13.103 ; 13.103 ; Fall       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 7.015  ; 7.015  ; Fall       ; c[0]            ;
+; ledZero        ; c[0]       ; 14.140 ; 14.140 ; Fall       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 15.365 ; 15.365 ; Fall       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 13.114 ; 13.114 ; Fall       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 15.355 ; 15.355 ; Fall       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 15.355 ; 15.355 ; Fall       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 15.355 ; 15.355 ; Fall       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 15.365 ; 15.365 ; Fall       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 14.885 ; 14.885 ; Fall       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 15.014 ; 15.014 ; Fall       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 14.781 ; 14.781 ; Fall       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 14.758 ; 14.758 ; Fall       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 14.749 ; 14.749 ; Fall       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 14.739 ; 14.739 ; Fall       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 14.826 ; 14.826 ; Fall       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 13.114 ; 13.114 ; Fall       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 12.539 ; 12.539 ; Fall       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 12.662 ; 12.662 ; Fall       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 12.886 ; 12.886 ; Fall       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 13.031 ; 13.031 ; Fall       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 13.114 ; 13.114 ; Fall       ; c[0]            ;
++----------------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; overflow  ; enable     ; 6.072 ; 6.072 ; Fall       ; enable          ;
-; s[*]      ; enable     ; 6.026 ; 6.026 ; Fall       ; enable          ;
-;  s[0]     ; enable     ; 6.033 ; 6.033 ; Fall       ; enable          ;
-;  s[1]     ; enable     ; 6.271 ; 6.271 ; Fall       ; enable          ;
-;  s[2]     ; enable     ; 6.026 ; 6.026 ; Fall       ; enable          ;
-;  s[3]     ; enable     ; 6.133 ; 6.133 ; Fall       ; enable          ;
-;  s[4]     ; enable     ; 6.112 ; 6.112 ; Fall       ; enable          ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; ledNegativo    ; c[0]       ; 10.762 ; 10.762 ; Rise       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 7.015  ; 7.015  ; Rise       ; c[0]            ;
+; ledZero        ; c[0]       ; 10.830 ; 10.830 ; Rise       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 10.773 ; 10.773 ; Rise       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 10.773 ; 10.773 ; Rise       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 11.304 ; 11.304 ; Rise       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 11.304 ; 11.304 ; Rise       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 11.304 ; 11.304 ; Rise       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 11.314 ; 11.314 ; Rise       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 11.250 ; 11.250 ; Rise       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 11.355 ; 11.355 ; Rise       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 11.338 ; 11.338 ; Rise       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 10.925 ; 10.925 ; Rise       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 11.364 ; 11.364 ; Rise       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 11.202 ; 11.202 ; Rise       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 11.174 ; 11.174 ; Rise       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 9.825  ; 9.825  ; Rise       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 10.404 ; 10.404 ; Rise       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 9.825  ; 9.825  ; Rise       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 9.995  ; 9.995  ; Rise       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 10.541 ; 10.541 ; Rise       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 10.773 ; 10.773 ; Rise       ; c[0]            ;
+; ledNegativo    ; c[0]       ; 10.369 ; 10.369 ; Fall       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 7.015  ; 7.015  ; Fall       ; c[0]            ;
+; ledZero        ; c[0]       ; 10.853 ; 10.853 ; Fall       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 10.380 ; 10.380 ; Fall       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 10.380 ; 10.380 ; Fall       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 11.260 ; 11.260 ; Fall       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 11.260 ; 11.260 ; Fall       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 11.260 ; 11.260 ; Fall       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 11.270 ; 11.270 ; Fall       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 10.975 ; 10.975 ; Fall       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 10.944 ; 10.944 ; Fall       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 10.927 ; 10.927 ; Fall       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 10.663 ; 10.663 ; Fall       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 10.953 ; 10.953 ; Fall       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 11.090 ; 11.090 ; Fall       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 11.178 ; 11.178 ; Fall       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 9.744  ; 9.744  ; Fall       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 9.993  ; 9.993  ; Fall       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 10.224 ; 10.224 ; Fall       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 10.030 ; 10.030 ; Fall       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 9.744  ; 9.744  ; Fall       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 10.380 ; 10.380 ; Fall       ; c[0]            ;
++----------------+------------+--------+--------+------------+-----------------+
 
 
-+---------------------------------+
-; Fast Model Setup Summary        ;
-+--------+--------+---------------+
-; Clock  ; Slack  ; End Point TNS ;
-+--------+--------+---------------+
-; enable ; -0.036 ; -0.036        ;
-+--------+--------+---------------+
++----------------------------------------------------------------+
+; Propagation Delay                                              ;
++------------+---------------+--------+--------+--------+--------+
+; Input Port ; Output Port   ; RR     ; RF     ; FR     ; FF     ;
++------------+---------------+--------+--------+--------+--------+
+; a[4]       ; ledOverflow   ; 10.075 ; 10.075 ; 10.075 ; 10.075 ;
+; b[4]       ; ledOverflow   ; 10.337 ; 10.337 ; 10.337 ; 10.337 ;
+; c[1]       ; ledNegativo   ; 13.367 ; 13.367 ; 13.367 ; 13.367 ;
+; c[1]       ; ledOverflow   ;        ; 11.050 ; 11.050 ;        ;
+; c[1]       ; ledZero       ; 14.233 ; 14.233 ; 14.233 ; 14.233 ;
+; c[1]       ; saida7SEG[0]  ; 13.378 ; 13.378 ; 13.378 ; 13.378 ;
+; c[1]       ; saida7SEG[8]  ; 15.407 ; 15.407 ; 15.407 ; 15.407 ;
+; c[1]       ; saida7SEG[9]  ; 15.407 ; 15.407 ; 15.407 ; 15.407 ;
+; c[1]       ; saida7SEG[10] ; 15.407 ; 15.407 ; 15.407 ; 15.407 ;
+; c[1]       ; saida7SEG[13] ; 15.417 ; 15.417 ; 15.417 ; 15.417 ;
+; c[1]       ; saida7SEG[14] ; 15.243 ; 15.243 ; 15.243 ; 15.243 ;
+; c[1]       ; saida7SEG[15] ; 15.372 ; 15.372 ; 15.372 ; 15.372 ;
+; c[1]       ; saida7SEG[16] ; 15.140 ; 15.140 ; 15.140 ; 15.140 ;
+; c[1]       ; saida7SEG[17] ; 14.437 ; 14.437 ; 14.437 ; 14.437 ;
+; c[1]       ; saida7SEG[18] ; 15.099 ; 15.099 ; 15.099 ; 15.099 ;
+; c[1]       ; saida7SEG[19] ; 14.782 ; 14.782 ; 14.782 ; 14.782 ;
+; c[1]       ; saida7SEG[20] ; 14.539 ; 14.539 ; 14.539 ; 14.539 ;
+; c[1]       ; saidaLEDS[0]  ; 9.650  ; 10.416 ; 10.416 ; 9.650  ;
+; c[1]       ; saidaLEDS[1]  ; 12.697 ; 12.697 ; 12.697 ; 12.697 ;
+; c[1]       ; saidaLEDS[2]  ; 13.360 ; 13.360 ; 13.360 ; 13.360 ;
+; c[1]       ; saidaLEDS[3]  ; 9.843  ; 10.547 ; 10.547 ; 9.843  ;
+; c[1]       ; saidaLEDS[4]  ; 13.378 ; 13.378 ; 13.378 ; 13.378 ;
+; c[2]       ; ledNegativo   ; 8.833  ; 8.833  ; 8.833  ; 8.833  ;
+; c[2]       ; ledOverflow   ;        ; 7.071  ; 7.071  ;        ;
+; c[2]       ; ledZero       ; 10.221 ; 10.221 ; 10.221 ; 10.221 ;
+; c[2]       ; saida7SEG[0]  ; 8.844  ; 8.844  ; 8.844  ; 8.844  ;
+; c[2]       ; saida7SEG[8]  ; 11.436 ; 11.436 ; 11.436 ; 11.436 ;
+; c[2]       ; saida7SEG[9]  ; 11.436 ; 11.436 ; 11.436 ; 11.436 ;
+; c[2]       ; saida7SEG[10] ; 11.436 ; 11.436 ; 11.436 ; 11.436 ;
+; c[2]       ; saida7SEG[13] ; 11.446 ; 11.446 ; 11.446 ; 11.446 ;
+; c[2]       ; saida7SEG[14] ; 10.966 ; 10.966 ; 10.966 ; 10.966 ;
+; c[2]       ; saida7SEG[15] ; 11.095 ; 11.095 ; 11.095 ; 11.095 ;
+; c[2]       ; saida7SEG[16] ; 10.862 ; 10.862 ; 10.862 ; 10.862 ;
+; c[2]       ; saida7SEG[17] ; 11.226 ; 11.226 ; 11.226 ; 11.226 ;
+; c[2]       ; saida7SEG[18] ; 10.830 ; 10.830 ; 10.830 ; 10.830 ;
+; c[2]       ; saida7SEG[19] ; 10.820 ; 10.820 ; 10.820 ; 10.820 ;
+; c[2]       ; saida7SEG[20] ; 10.907 ; 10.907 ; 10.907 ; 10.907 ;
+; c[2]       ; saidaLEDS[0]  ; 9.007  ; 9.007  ; 9.007  ; 9.007  ;
+; c[2]       ; saidaLEDS[1]  ; 8.596  ; 8.596  ; 8.596  ; 8.596  ;
+; c[2]       ; saidaLEDS[2]  ; 8.607  ; 8.607  ; 8.607  ; 8.607  ;
+; c[2]       ; saidaLEDS[3]  ; 9.112  ; 9.112  ; 9.112  ; 9.112  ;
+; c[2]       ; saidaLEDS[4]  ; 8.844  ; 8.844  ; 8.844  ; 8.844  ;
+; c[3]       ; ledNegativo   ; 8.583  ; 8.583  ; 8.583  ; 8.583  ;
+; c[3]       ; ledOverflow   ; 7.151  ;        ;        ; 7.151  ;
+; c[3]       ; ledZero       ; 9.323  ; 9.323  ; 9.323  ; 9.323  ;
+; c[3]       ; saida7SEG[0]  ; 8.594  ; 8.594  ; 8.594  ; 8.594  ;
+; c[3]       ; saida7SEG[8]  ; 10.376 ; 10.376 ; 10.376 ; 10.376 ;
+; c[3]       ; saida7SEG[9]  ; 10.376 ; 10.376 ; 10.376 ; 10.376 ;
+; c[3]       ; saida7SEG[10] ; 10.376 ; 10.376 ; 10.376 ; 10.376 ;
+; c[3]       ; saida7SEG[13] ; 10.386 ; 10.386 ; 10.386 ; 10.386 ;
+; c[3]       ; saida7SEG[14] ; 10.212 ; 10.212 ; 10.212 ; 10.212 ;
+; c[3]       ; saida7SEG[15] ; 10.341 ; 10.341 ; 10.341 ; 10.341 ;
+; c[3]       ; saida7SEG[16] ; 10.109 ; 10.109 ; 10.109 ; 10.109 ;
+; c[3]       ; saida7SEG[17] ; 9.898  ; 9.898  ; 9.898  ; 9.898  ;
+; c[3]       ; saida7SEG[18] ; 10.068 ; 10.068 ; 10.068 ; 10.068 ;
+; c[3]       ; saida7SEG[19] ; 9.872  ; 9.872  ; 9.872  ; 9.872  ;
+; c[3]       ; saida7SEG[20] ; 9.970  ; 9.970  ; 9.970  ; 9.970  ;
+; c[3]       ; saidaLEDS[0]  ; 6.109  ; 6.109  ; 6.109  ; 6.109  ;
+; c[3]       ; saidaLEDS[1]  ; 8.318  ; 8.318  ; 8.318  ; 8.318  ;
+; c[3]       ; saidaLEDS[2]  ; 8.329  ; 8.329  ; 8.329  ; 8.329  ;
+; c[3]       ; saidaLEDS[3]  ; 6.650  ; 6.650  ; 6.650  ; 6.650  ;
+; c[3]       ; saidaLEDS[4]  ; 8.594  ; 8.594  ; 8.594  ; 8.594  ;
++------------+---------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------------+
+; Minimum Propagation Delay                                      ;
++------------+---------------+--------+--------+--------+--------+
+; Input Port ; Output Port   ; RR     ; RF     ; FR     ; FF     ;
++------------+---------------+--------+--------+--------+--------+
+; a[4]       ; ledOverflow   ; 10.075 ; 10.075 ; 10.075 ; 10.075 ;
+; b[4]       ; ledOverflow   ; 10.337 ; 10.337 ; 10.337 ; 10.337 ;
+; c[1]       ; ledNegativo   ; 11.146 ; 11.146 ; 11.146 ; 11.146 ;
+; c[1]       ; ledOverflow   ;        ; 11.050 ; 11.050 ;        ;
+; c[1]       ; ledZero       ; 11.513 ; 10.747 ; 10.747 ; 11.513 ;
+; c[1]       ; saida7SEG[0]  ; 11.157 ; 11.157 ; 11.157 ; 11.157 ;
+; c[1]       ; saida7SEG[8]  ; 11.468 ; 11.468 ; 11.468 ; 11.468 ;
+; c[1]       ; saida7SEG[9]  ; 11.468 ; 11.468 ; 11.468 ; 11.468 ;
+; c[1]       ; saida7SEG[10] ; 11.468 ; 11.468 ; 11.468 ; 11.468 ;
+; c[1]       ; saida7SEG[13] ; 11.478 ; 11.478 ; 11.478 ; 11.478 ;
+; c[1]       ; saida7SEG[14] ; 10.632 ; 10.632 ; 10.632 ; 10.632 ;
+; c[1]       ; saida7SEG[15] ; 10.601 ; 10.601 ; 10.601 ; 10.601 ;
+; c[1]       ; saida7SEG[16] ; 10.584 ; 11.350 ; 11.350 ; 10.584 ;
+; c[1]       ; saida7SEG[17] ; 10.762 ; 10.762 ; 10.762 ; 10.762 ;
+; c[1]       ; saida7SEG[18] ; 11.376 ; 10.610 ; 10.610 ; 11.376 ;
+; c[1]       ; saida7SEG[19] ; 11.337 ; 11.337 ; 11.337 ; 11.337 ;
+; c[1]       ; saida7SEG[20] ; 11.172 ; 11.172 ; 11.172 ; 11.172 ;
+; c[1]       ; saidaLEDS[0]  ; 9.650  ; 10.416 ; 10.416 ; 9.650  ;
+; c[1]       ; saidaLEDS[1]  ; 10.571 ; 10.571 ; 10.571 ; 10.571 ;
+; c[1]       ; saidaLEDS[2]  ; 10.803 ; 10.803 ; 10.803 ; 10.803 ;
+; c[1]       ; saidaLEDS[3]  ; 9.843  ; 10.547 ; 10.547 ; 9.843  ;
+; c[1]       ; saidaLEDS[4]  ; 11.157 ; 11.157 ; 11.157 ; 11.157 ;
+; c[2]       ; ledNegativo   ; 5.839  ; 5.839  ; 5.839  ; 5.839  ;
+; c[2]       ; ledOverflow   ;        ; 7.071  ; 7.071  ;        ;
+; c[2]       ; ledZero       ; 6.363  ; 6.363  ; 6.363  ; 6.363  ;
+; c[2]       ; saida7SEG[0]  ; 5.850  ; 5.850  ; 5.850  ; 5.850  ;
+; c[2]       ; saida7SEG[8]  ; 6.730  ; 6.730  ; 6.730  ; 6.730  ;
+; c[2]       ; saida7SEG[9]  ; 6.730  ; 6.730  ; 6.730  ; 6.730  ;
+; c[2]       ; saida7SEG[10] ; 6.730  ; 6.730  ; 6.730  ; 6.730  ;
+; c[2]       ; saida7SEG[13] ; 6.740  ; 6.740  ; 6.740  ; 6.740  ;
+; c[2]       ; saida7SEG[14] ; 6.682  ; 6.682  ; 6.682  ; 6.682  ;
+; c[2]       ; saida7SEG[15] ; 6.812  ; 6.812  ; 6.812  ; 6.812  ;
+; c[2]       ; saida7SEG[16] ; 6.855  ; 6.855  ; 6.855  ; 6.855  ;
+; c[2]       ; saida7SEG[17] ; 6.420  ; 6.420  ; 6.420  ; 6.420  ;
+; c[2]       ; saida7SEG[18] ; 6.823  ; 6.823  ; 6.823  ; 6.823  ;
+; c[2]       ; saida7SEG[19] ; 6.560  ; 6.560  ; 6.560  ; 6.560  ;
+; c[2]       ; saida7SEG[20] ; 6.648  ; 6.648  ; 6.648  ; 6.648  ;
+; c[2]       ; saidaLEDS[0]  ; 6.151  ; 6.151  ; 6.151  ; 6.151  ;
+; c[2]       ; saidaLEDS[1]  ; 5.469  ; 5.469  ; 5.469  ; 5.469  ;
+; c[2]       ; saidaLEDS[2]  ; 5.490  ; 5.490  ; 5.490  ; 5.490  ;
+; c[2]       ; saidaLEDS[3]  ; 6.405  ; 6.405  ; 6.405  ; 6.405  ;
+; c[2]       ; saidaLEDS[4]  ; 5.850  ; 5.850  ; 5.850  ; 5.850  ;
+; c[3]       ; ledNegativo   ; 6.151  ; 6.151  ; 6.151  ; 6.151  ;
+; c[3]       ; ledOverflow   ; 7.151  ;        ;        ; 7.151  ;
+; c[3]       ; ledZero       ; 6.536  ; 6.883  ; 6.883  ; 6.536  ;
+; c[3]       ; saida7SEG[0]  ; 6.162  ; 6.162  ; 6.162  ; 6.162  ;
+; c[3]       ; saida7SEG[8]  ; 7.042  ; 7.042  ; 7.042  ; 7.042  ;
+; c[3]       ; saida7SEG[9]  ; 7.042  ; 7.042  ; 7.042  ; 7.042  ;
+; c[3]       ; saida7SEG[10] ; 7.042  ; 7.042  ; 7.042  ; 7.042  ;
+; c[3]       ; saida7SEG[13] ; 7.052  ; 7.052  ; 7.052  ; 7.052  ;
+; c[3]       ; saida7SEG[14] ; 6.421  ; 6.421  ; 6.421  ; 6.421  ;
+; c[3]       ; saida7SEG[15] ; 6.390  ; 6.390  ; 6.390  ; 6.390  ;
+; c[3]       ; saida7SEG[16] ; 7.043  ; 6.373  ; 6.373  ; 7.043  ;
+; c[3]       ; saida7SEG[17] ; 6.870  ; 6.870  ; 6.870  ; 6.870  ;
+; c[3]       ; saida7SEG[18] ; 6.399  ; 7.069  ; 7.069  ; 6.399  ;
+; c[3]       ; saida7SEG[19] ; 6.872  ; 6.872  ; 6.872  ; 6.872  ;
+; c[3]       ; saida7SEG[20] ; 6.960  ; 6.960  ; 6.960  ; 6.960  ;
+; c[3]       ; saidaLEDS[0]  ; 6.109  ; 5.439  ; 5.439  ; 6.109  ;
+; c[3]       ; saidaLEDS[1]  ; 5.980  ; 5.980  ; 5.980  ; 5.980  ;
+; c[3]       ; saidaLEDS[2]  ; 6.010  ; 6.010  ; 6.010  ; 6.010  ;
+; c[3]       ; saidaLEDS[3]  ; 6.650  ; 5.951  ; 5.951  ; 6.650  ;
+; c[3]       ; saidaLEDS[4]  ; 6.162  ; 6.162  ; 6.162  ; 6.162  ;
++------------+---------------+--------+--------+--------+--------+
 
 
 +--------------------------------+
-; Fast Model Hold Summary        ;
-+--------+-------+---------------+
-; Clock  ; Slack ; End Point TNS ;
-+--------+-------+---------------+
-; enable ; 0.369 ; 0.000         ;
-+--------+-------+---------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; c[0]  ; -0.035 ; -0.053        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; c[0]  ; 0.303 ; 0.000         ;
++-------+-------+---------------+
 
 
 -------------------------------
@@ -371,130 +698,213 @@ No paths to report.
 
 +----------------------------------------+
 ; Fast Model Minimum Pulse Width Summary ;
-+--------+--------+----------------------+
-; Clock  ; Slack  ; End Point TNS        ;
-+--------+--------+----------------------+
-; enable ; -1.380 ; -1.380               ;
-+--------+--------+----------------------+
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; c[0]  ; -1.222 ; -1.222                ;
++-------+--------+-----------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'enable'                                                                                                     ;
-+--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
-; -0.036 ; full_adder:soma4|s     ; s[4]$latch             ; enable       ; enable      ; 1.000        ; 0.013      ; 0.643      ;
-; -0.033 ; full_adder:soma2|s     ; s[4]$latch             ; enable       ; enable      ; 1.000        ; 0.013      ; 0.640      ;
-; 0.036  ; full_adder:soma3|s     ; s[4]$latch             ; enable       ; enable      ; 1.000        ; 0.014      ; 0.572      ;
-; 0.100  ; full_adder:soma1|s     ; s[4]$latch             ; enable       ; enable      ; 1.000        ; 0.014      ; 0.508      ;
-; 0.120  ; full_adder:soma2|c_out ; full_adder:soma3|c_out ; enable       ; enable      ; 1.000        ; -0.002     ; 0.528      ;
-; 0.132  ; full_adder:soma4|c_out ; s[4]$latch             ; enable       ; enable      ; 1.000        ; 0.013      ; 0.475      ;
-; 0.176  ; full_adder:soma3|c_out ; full_adder:soma4|c_out ; enable       ; enable      ; 1.000        ; 0.001      ; 0.464      ;
-; 0.187  ; full_adder:soma2|c_out ; full_adder:soma3|s     ; enable       ; enable      ; 1.000        ; -0.002     ; 0.523      ;
-; 0.232  ; full_adder:soma1|c_out ; full_adder:soma2|c_out ; enable       ; enable      ; 1.000        ; 0.057      ; 0.470      ;
-; 0.242  ; full_adder:soma4|c_out ; overflow$latch         ; enable       ; enable      ; 1.000        ; -0.001     ; 0.398      ;
-; 0.244  ; full_adder:soma1|c_out ; full_adder:soma2|s     ; enable       ; enable      ; 1.000        ; 0.056      ; 0.457      ;
-; 0.249  ; full_adder:soma3|c_out ; full_adder:soma4|s     ; enable       ; enable      ; 1.000        ; 0.001      ; 0.394      ;
-; 0.326  ; full_adder:soma1|s     ; s[0]$latch             ; enable       ; enable      ; 1.000        ; -0.031     ; 0.370      ;
-; 0.328  ; full_adder:soma2|s     ; s[1]$latch             ; enable       ; enable      ; 1.000        ; -0.034     ; 0.367      ;
-; 0.333  ; full_adder:soma3|s     ; s[2]$latch             ; enable       ; enable      ; 1.000        ; -0.031     ; 0.363      ;
-; 0.362  ; full_adder:soma4|s     ; s[3]$latch             ; enable       ; enable      ; 1.000        ; 0.004      ; 0.373      ;
-+--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'c[0]'                                                                                                                                                                                                                               ;
++--------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                          ; To Node                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.035 ; five_bits_adder:somador|full_adder:soma1|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 1.000        ; 0.007      ; 0.650      ;
+; -0.018 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.016      ; 0.646      ;
+; -0.013 ; five_bits_adder:somador|full_adder:soma2|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 1.000        ; 0.009      ; 0.630      ;
+; -0.004 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.017      ; 0.633      ;
+; 0.046  ; five_bits_adder:somador|full_adder:soma3|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 1.000        ; 0.007      ; 0.569      ;
+; 0.064  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.020      ; 0.568      ;
+; 0.085  ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[1]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; c[0]         ; c[0]        ; 1.000        ; -0.027     ; 0.536      ;
+; 0.093  ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[3]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; c[0]         ; c[0]        ; 1.000        ; -0.005     ; 0.534      ;
+; 0.097  ; five_bits_adder:somador|full_adder:soma4|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 1.000        ; 0.007      ; 0.518      ;
+; 0.114  ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[1]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; c[0]         ; c[0]        ; 1.000        ; 0.001      ; 0.523      ;
+; 0.121  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.020      ; 0.511      ;
+; 0.128  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; c[0]         ; c[0]        ; 1.000        ; -0.021     ; 0.483      ;
+; 0.134  ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[4]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.015      ; 0.493      ;
+; 0.159  ; five_bits_adder:somador|full_adder:soma4|c_out                                     ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 1.000        ; 0.007      ; 0.456      ;
+; 0.164  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; c[0]         ; c[0]        ; 1.000        ; -0.026     ; 0.458      ;
+; 0.168  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; c[0]         ; c[0]        ; 1.000        ; 0.002      ; 0.470      ;
+; 0.169  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 1.000        ; 0.016      ; 0.459      ;
+; 0.170  ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[3]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; c[0]         ; c[0]        ; 1.000        ; -0.001     ; 0.479      ;
+; 0.175  ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; five_bits_adder:somador|full_adder:soma4|s                                         ; c[0]         ; c[0]        ; 1.000        ; 0.002      ; 0.468      ;
+; 0.175  ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; five_bits_adder:somador|full_adder:soma4|c_out                                     ; c[0]         ; c[0]        ; 1.000        ; 0.002      ; 0.474      ;
+; 0.181  ; five_bits_adder:somador|full_adder:soma1|c_out                                     ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; c[0]         ; c[0]        ; 1.000        ; 0.014      ; 0.469      ;
+; 0.194  ; five_bits_adder:somador|full_adder:soma1|c_out                                     ; five_bits_adder:somador|full_adder:soma2|s                                         ; c[0]         ; c[0]        ; 1.000        ; 0.012      ; 0.472      ;
+; 0.213  ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[2]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; c[0]         ; c[0]        ; 1.000        ; 0.044      ; 0.549      ;
+; 0.218  ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[2]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; c[0]         ; c[0]        ; 1.000        ; 0.026      ; 0.456      ;
+; 0.230  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[1]                   ; c[0]         ; c[0]        ; 1.000        ; -0.001     ; 0.493      ;
+; 0.232  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; c[0]         ; c[0]        ; 1.000        ; -0.017     ; 0.401      ;
+; 0.234  ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; five_bits_adder:somador|full_adder:soma3|s                                         ; c[0]         ; c[0]        ; 1.000        ; 0.000      ; 0.405      ;
+; 0.235  ; five_bits_adder:somador|full_adder:soma3|s                                         ; five_bits_adder:somador|s[2]                                                       ; c[0]         ; c[0]        ; 1.000        ; -0.015     ; 0.404      ;
+; 0.236  ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; c[0]         ; c[0]        ; 1.000        ; -0.002     ; 0.397      ;
+; 0.249  ; five_bits_adder:somador|full_adder:soma1|s                                         ; five_bits_adder:somador|s[0]                                                       ; c[0]         ; c[0]        ; 1.000        ; -0.014     ; 0.462      ;
+; 0.269  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; c[0]         ; c[0]        ; 1.000        ; 0.027      ; 0.406      ;
+; 0.289  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; c[0]         ; c[0]        ; 1.000        ; 0.045      ; 0.474      ;
+; 0.311  ; five_bits_adder:somador|full_adder:soma2|s                                         ; five_bits_adder:somador|s[1]                                                       ; c[0]         ; c[0]        ; 1.000        ; -0.017     ; 0.401      ;
+; 0.324  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[2]                   ; c[0]         ; c[0]        ; 1.000        ; 0.000      ; 0.396      ;
+; 0.334  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[3]                   ; c[0]         ; c[0]        ; 1.000        ; 0.005      ; 0.315      ;
+; 0.336  ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[0]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; c[0]         ; c[0]        ; 1.000        ; -0.002     ; 0.309      ;
+; 0.337  ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[0]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; c[0]         ; c[0]        ; 1.000        ; -0.004     ; 0.374      ;
+; 0.340  ; five_bits_adder:somador|full_adder:soma4|s                                         ; five_bits_adder:somador|s[3]                                                       ; c[0]         ; c[0]        ; 1.000        ; -0.014     ; 0.370      ;
+; 0.355  ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[0]                   ; c[0]         ; c[0]        ; 1.000        ; 0.005      ; 0.308      ;
++--------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'enable'                                                                                                     ;
-+-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
-; 0.369 ; full_adder:soma4|s     ; s[3]$latch             ; enable       ; enable      ; 0.000        ; 0.004      ; 0.373      ;
-; 0.393 ; full_adder:soma3|c_out ; full_adder:soma4|s     ; enable       ; enable      ; 0.000        ; 0.001      ; 0.394      ;
-; 0.394 ; full_adder:soma3|s     ; s[2]$latch             ; enable       ; enable      ; 0.000        ; -0.031     ; 0.363      ;
-; 0.399 ; full_adder:soma4|c_out ; overflow$latch         ; enable       ; enable      ; 0.000        ; -0.001     ; 0.398      ;
-; 0.401 ; full_adder:soma1|c_out ; full_adder:soma2|s     ; enable       ; enable      ; 0.000        ; 0.056      ; 0.457      ;
-; 0.401 ; full_adder:soma1|s     ; s[0]$latch             ; enable       ; enable      ; 0.000        ; -0.031     ; 0.370      ;
-; 0.401 ; full_adder:soma2|s     ; s[1]$latch             ; enable       ; enable      ; 0.000        ; -0.034     ; 0.367      ;
-; 0.413 ; full_adder:soma1|c_out ; full_adder:soma2|c_out ; enable       ; enable      ; 0.000        ; 0.057      ; 0.470      ;
-; 0.462 ; full_adder:soma4|c_out ; s[4]$latch             ; enable       ; enable      ; 0.000        ; 0.013      ; 0.475      ;
-; 0.463 ; full_adder:soma3|c_out ; full_adder:soma4|c_out ; enable       ; enable      ; 0.000        ; 0.001      ; 0.464      ;
-; 0.494 ; full_adder:soma1|s     ; s[4]$latch             ; enable       ; enable      ; 0.000        ; 0.014      ; 0.508      ;
-; 0.525 ; full_adder:soma2|c_out ; full_adder:soma3|s     ; enable       ; enable      ; 0.000        ; -0.002     ; 0.523      ;
-; 0.530 ; full_adder:soma2|c_out ; full_adder:soma3|c_out ; enable       ; enable      ; 0.000        ; -0.002     ; 0.528      ;
-; 0.558 ; full_adder:soma3|s     ; s[4]$latch             ; enable       ; enable      ; 0.000        ; 0.014      ; 0.572      ;
-; 0.627 ; full_adder:soma2|s     ; s[4]$latch             ; enable       ; enable      ; 0.000        ; 0.013      ; 0.640      ;
-; 0.630 ; full_adder:soma4|s     ; s[4]$latch             ; enable       ; enable      ; 0.000        ; 0.013      ; 0.643      ;
-+-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'c[0]'                                                                                                                                                                                                                               ;
++-------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                          ; To Node                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.303 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[0]                   ; c[0]         ; c[0]        ; 0.000        ; 0.005      ; 0.308      ;
+; 0.310 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[3]                   ; c[0]         ; c[0]        ; 0.000        ; 0.005      ; 0.315      ;
+; 0.311 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[0]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; c[0]         ; c[0]        ; 0.000        ; -0.002     ; 0.309      ;
+; 0.378 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[0]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; c[0]         ; c[0]        ; 0.000        ; -0.004     ; 0.374      ;
+; 0.379 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; c[0]         ; c[0]        ; 0.000        ; 0.027      ; 0.406      ;
+; 0.384 ; five_bits_adder:somador|full_adder:soma4|s                                         ; five_bits_adder:somador|s[3]                                                       ; c[0]         ; c[0]        ; 0.000        ; -0.014     ; 0.370      ;
+; 0.396 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[2]                   ; c[0]         ; c[0]        ; 0.000        ; 0.000      ; 0.396      ;
+; 0.399 ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; c[0]         ; c[0]        ; 0.000        ; -0.002     ; 0.397      ;
+; 0.405 ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; five_bits_adder:somador|full_adder:soma3|s                                         ; c[0]         ; c[0]        ; 0.000        ; 0.000      ; 0.405      ;
+; 0.418 ; five_bits_adder:somador|full_adder:soma2|s                                         ; five_bits_adder:somador|s[1]                                                       ; c[0]         ; c[0]        ; 0.000        ; -0.017     ; 0.401      ;
+; 0.418 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; c[0]         ; c[0]        ; 0.000        ; -0.017     ; 0.401      ;
+; 0.419 ; five_bits_adder:somador|full_adder:soma3|s                                         ; five_bits_adder:somador|s[2]                                                       ; c[0]         ; c[0]        ; 0.000        ; -0.015     ; 0.404      ;
+; 0.429 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; c[0]         ; c[0]        ; 0.000        ; 0.045      ; 0.474      ;
+; 0.430 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[2]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; c[0]         ; c[0]        ; 0.000        ; 0.026      ; 0.456      ;
+; 0.443 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.016      ; 0.459      ;
+; 0.449 ; five_bits_adder:somador|full_adder:soma4|c_out                                     ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 0.000        ; 0.007      ; 0.456      ;
+; 0.455 ; five_bits_adder:somador|full_adder:soma1|c_out                                     ; five_bits_adder:somador|full_adder:soma2|c_out                                     ; c[0]         ; c[0]        ; 0.000        ; 0.014      ; 0.469      ;
+; 0.460 ; five_bits_adder:somador|full_adder:soma1|c_out                                     ; five_bits_adder:somador|full_adder:soma2|s                                         ; c[0]         ; c[0]        ; 0.000        ; 0.012      ; 0.472      ;
+; 0.466 ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; five_bits_adder:somador|full_adder:soma4|s                                         ; c[0]         ; c[0]        ; 0.000        ; 0.002      ; 0.468      ;
+; 0.468 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; c[0]         ; c[0]        ; 0.000        ; 0.002      ; 0.470      ;
+; 0.472 ; five_bits_adder:somador|full_adder:soma3|c_out                                     ; five_bits_adder:somador|full_adder:soma4|c_out                                     ; c[0]         ; c[0]        ; 0.000        ; 0.002      ; 0.474      ;
+; 0.476 ; five_bits_adder:somador|full_adder:soma1|s                                         ; five_bits_adder:somador|s[0]                                                       ; c[0]         ; c[0]        ; 0.000        ; -0.014     ; 0.462      ;
+; 0.478 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[4]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.015      ; 0.493      ;
+; 0.480 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[3]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; c[0]         ; c[0]        ; 0.000        ; -0.001     ; 0.479      ;
+; 0.484 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; c[0]         ; c[0]        ; 0.000        ; -0.026     ; 0.458      ;
+; 0.491 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.020      ; 0.511      ;
+; 0.494 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[1]                   ; c[0]         ; c[0]        ; 0.000        ; -0.001     ; 0.493      ;
+; 0.504 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; c[0]         ; c[0]        ; 0.000        ; -0.021     ; 0.483      ;
+; 0.505 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[2]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; c[0]         ; c[0]        ; 0.000        ; 0.044      ; 0.549      ;
+; 0.511 ; five_bits_adder:somador|full_adder:soma4|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 0.000        ; 0.007      ; 0.518      ;
+; 0.522 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[1]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; c[0]         ; c[0]        ; 0.000        ; 0.001      ; 0.523      ;
+; 0.539 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[3]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; c[0]         ; c[0]        ; 0.000        ; -0.005     ; 0.534      ;
+; 0.548 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.020      ; 0.568      ;
+; 0.562 ; five_bits_adder:somador|full_adder:soma3|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 0.000        ; 0.007      ; 0.569      ;
+; 0.563 ; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[1]               ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; c[0]         ; c[0]        ; 0.000        ; -0.027     ; 0.536      ;
+; 0.616 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.017      ; 0.633      ;
+; 0.621 ; five_bits_adder:somador|full_adder:soma2|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 0.000        ; 0.009      ; 0.630      ;
+; 0.630 ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; c[0]         ; c[0]        ; 0.000        ; 0.016      ; 0.646      ;
+; 0.643 ; five_bits_adder:somador|full_adder:soma1|s                                         ; five_bits_adder:somador|s[4]                                                       ; c[0]         ; c[0]        ; 0.000        ; 0.007      ; 0.650      ;
++-------+------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
-; Fast Model Minimum Pulse Width: 'enable'                                                                  ;
-+--------+--------------+----------------+------------------+--------+------------+-------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                  ;
-+--------+--------------+----------------+------------------+--------+------------+-------------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; enable ; Rise       ; enable                  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; enable|combout          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; enable|combout          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; enable~clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; enable~clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; enable~clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; enable~clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma1|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma1|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma1|s      ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma1|s      ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma2|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma2|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma2|s      ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma2|s      ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma3|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma3|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma3|s      ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma3|s      ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma4|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma4|c_out  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; full_adder:soma4|s      ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; full_adder:soma4|s      ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; overflow$latch          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; overflow$latch          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; overflow$latch|datad    ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; overflow$latch|datad    ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; s[0]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; s[0]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; s[0]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; s[0]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; s[1]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; s[1]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; s[1]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; s[1]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; s[2]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; s[2]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; s[2]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; s[2]$latch|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; s[3]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; s[3]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; s[3]$latch|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; s[3]$latch|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Fall       ; s[4]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Fall       ; s[4]$latch              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; s[4]$latch|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; s[4]$latch|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma1|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma1|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma1|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma1|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma2|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma2|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma2|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma2|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma3|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma3|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma3|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma3|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma4|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma4|c_out|datad       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; soma4|s|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; soma4|s|datad           ;
-+--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; Fast Model Minimum Pulse Width: 'c[0]'                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                   ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; c[0]  ; Rise       ; c[0]                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; ANDGate|s[0]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; ANDGate|s[0]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; ANDGate|s[1]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; ANDGate|s[1]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; ANDGate|s[2]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; ANDGate|s[2]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; ANDGate|s[3]|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; ANDGate|s[3]|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; ANDGate|s[4]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; ANDGate|s[4]|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~0clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~0clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~0clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~0clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~10clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~10clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~10clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~10clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~10|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~10|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~10|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~10|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~1clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~1clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~1clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~1clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~1|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~1|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~2clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~2clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~2clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~2clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~2|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~2|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~2|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~2|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~3clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~3clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~3clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~3clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~3|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~3|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~3|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~3|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~4clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~4clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~4clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~4clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~4|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~4|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~4|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~4|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~5clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~5clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~5clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~5clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~5|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~5|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~5|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~5|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~6clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~6clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~6clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~6clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~6|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~6|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~6|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~6|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~7clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~7clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~7clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~7clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~7|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~7|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~7|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~7|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~8clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~8clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~8clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~8clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~8|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~8|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~8|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~8|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~9clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~9clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~9clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~9clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; Mux10~9|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Fall       ; Mux10~9|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Rise       ; Mux10~9|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; c[0]  ; Rise       ; Mux10~9|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; c[0]  ; Fall       ; NANDGate|s[0]|datad      ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -502,18 +912,30 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; a[*]      ; enable     ; 2.527 ; 2.527 ; Fall       ; enable          ;
-;  a[0]     ; enable     ; 2.481 ; 2.481 ; Fall       ; enable          ;
-;  a[1]     ; enable     ; 2.449 ; 2.449 ; Fall       ; enable          ;
-;  a[2]     ; enable     ; 2.506 ; 2.506 ; Fall       ; enable          ;
-;  a[3]     ; enable     ; 2.527 ; 2.527 ; Fall       ; enable          ;
-;  a[4]     ; enable     ; 0.200 ; 0.200 ; Fall       ; enable          ;
-; b[*]      ; enable     ; 2.622 ; 2.622 ; Fall       ; enable          ;
-;  b[0]     ; enable     ; 2.541 ; 2.541 ; Fall       ; enable          ;
-;  b[1]     ; enable     ; 2.506 ; 2.506 ; Fall       ; enable          ;
-;  b[2]     ; enable     ; 2.622 ; 2.622 ; Fall       ; enable          ;
-;  b[3]     ; enable     ; 2.564 ; 2.564 ; Fall       ; enable          ;
-;  b[4]     ; enable     ; 0.221 ; 0.221 ; Fall       ; enable          ;
+; a[*]      ; c[0]       ; 1.985 ; 1.985 ; Rise       ; c[0]            ;
+;  a[0]     ; c[0]       ; 1.985 ; 1.985 ; Rise       ; c[0]            ;
+;  a[1]     ; c[0]       ; 1.844 ; 1.844 ; Rise       ; c[0]            ;
+;  a[2]     ; c[0]       ; 1.792 ; 1.792 ; Rise       ; c[0]            ;
+;  a[3]     ; c[0]       ; 1.803 ; 1.803 ; Rise       ; c[0]            ;
+;  a[4]     ; c[0]       ; 1.950 ; 1.950 ; Rise       ; c[0]            ;
+; b[*]      ; c[0]       ; 2.153 ; 2.153 ; Rise       ; c[0]            ;
+;  b[0]     ; c[0]       ; 2.039 ; 2.039 ; Rise       ; c[0]            ;
+;  b[1]     ; c[0]       ; 1.781 ; 1.781 ; Rise       ; c[0]            ;
+;  b[2]     ; c[0]       ; 2.153 ; 2.153 ; Rise       ; c[0]            ;
+;  b[3]     ; c[0]       ; 1.886 ; 1.886 ; Rise       ; c[0]            ;
+;  b[4]     ; c[0]       ; 1.985 ; 1.985 ; Rise       ; c[0]            ;
+; a[*]      ; c[0]       ; 2.061 ; 2.061 ; Fall       ; c[0]            ;
+;  a[0]     ; c[0]       ; 1.843 ; 1.843 ; Fall       ; c[0]            ;
+;  a[1]     ; c[0]       ; 1.656 ; 1.656 ; Fall       ; c[0]            ;
+;  a[2]     ; c[0]       ; 1.680 ; 1.680 ; Fall       ; c[0]            ;
+;  a[3]     ; c[0]       ; 1.553 ; 1.553 ; Fall       ; c[0]            ;
+;  a[4]     ; c[0]       ; 2.061 ; 2.061 ; Fall       ; c[0]            ;
+; b[*]      ; c[0]       ; 2.009 ; 2.009 ; Fall       ; c[0]            ;
+;  b[0]     ; c[0]       ; 1.871 ; 1.871 ; Fall       ; c[0]            ;
+;  b[1]     ; c[0]       ; 1.702 ; 1.702 ; Fall       ; c[0]            ;
+;  b[2]     ; c[0]       ; 1.948 ; 1.948 ; Fall       ; c[0]            ;
+;  b[3]     ; c[0]       ; 1.741 ; 1.741 ; Fall       ; c[0]            ;
+;  b[4]     ; c[0]       ; 2.009 ; 2.009 ; Fall       ; c[0]            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -522,49 +944,275 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; a[*]      ; enable     ; 0.211  ; 0.211  ; Fall       ; enable          ;
-;  a[0]     ; enable     ; -2.017 ; -2.017 ; Fall       ; enable          ;
-;  a[1]     ; enable     ; -2.082 ; -2.082 ; Fall       ; enable          ;
-;  a[2]     ; enable     ; -2.144 ; -2.144 ; Fall       ; enable          ;
-;  a[3]     ; enable     ; -2.094 ; -2.094 ; Fall       ; enable          ;
-;  a[4]     ; enable     ; 0.211  ; 0.211  ; Fall       ; enable          ;
-; b[*]      ; enable     ; 0.272  ; 0.272  ; Fall       ; enable          ;
-;  b[0]     ; enable     ; -2.102 ; -2.102 ; Fall       ; enable          ;
-;  b[1]     ; enable     ; -2.137 ; -2.137 ; Fall       ; enable          ;
-;  b[2]     ; enable     ; -2.257 ; -2.257 ; Fall       ; enable          ;
-;  b[3]     ; enable     ; -2.138 ; -2.138 ; Fall       ; enable          ;
-;  b[4]     ; enable     ; 0.272  ; 0.272  ; Fall       ; enable          ;
+; a[*]      ; c[0]       ; -0.242 ; -0.242 ; Rise       ; c[0]            ;
+;  a[0]     ; c[0]       ; -0.347 ; -0.347 ; Rise       ; c[0]            ;
+;  a[1]     ; c[0]       ; -0.242 ; -0.242 ; Rise       ; c[0]            ;
+;  a[2]     ; c[0]       ; -0.282 ; -0.282 ; Rise       ; c[0]            ;
+;  a[3]     ; c[0]       ; -0.340 ; -0.340 ; Rise       ; c[0]            ;
+;  a[4]     ; c[0]       ; -0.519 ; -0.519 ; Rise       ; c[0]            ;
+; b[*]      ; c[0]       ; -0.574 ; -0.574 ; Rise       ; c[0]            ;
+;  b[0]     ; c[0]       ; -0.906 ; -0.906 ; Rise       ; c[0]            ;
+;  b[1]     ; c[0]       ; -0.574 ; -0.574 ; Rise       ; c[0]            ;
+;  b[2]     ; c[0]       ; -0.899 ; -0.899 ; Rise       ; c[0]            ;
+;  b[3]     ; c[0]       ; -0.647 ; -0.647 ; Rise       ; c[0]            ;
+;  b[4]     ; c[0]       ; -0.891 ; -0.891 ; Rise       ; c[0]            ;
+; a[*]      ; c[0]       ; -0.350 ; -0.350 ; Fall       ; c[0]            ;
+;  a[0]     ; c[0]       ; -0.381 ; -0.381 ; Fall       ; c[0]            ;
+;  a[1]     ; c[0]       ; -0.350 ; -0.350 ; Fall       ; c[0]            ;
+;  a[2]     ; c[0]       ; -0.416 ; -0.416 ; Fall       ; c[0]            ;
+;  a[3]     ; c[0]       ; -0.496 ; -0.496 ; Fall       ; c[0]            ;
+;  a[4]     ; c[0]       ; -0.622 ; -0.622 ; Fall       ; c[0]            ;
+; b[*]      ; c[0]       ; -0.588 ; -0.588 ; Fall       ; c[0]            ;
+;  b[0]     ; c[0]       ; -0.675 ; -0.675 ; Fall       ; c[0]            ;
+;  b[1]     ; c[0]       ; -0.588 ; -0.588 ; Fall       ; c[0]            ;
+;  b[2]     ; c[0]       ; -0.953 ; -0.953 ; Fall       ; c[0]            ;
+;  b[3]     ; c[0]       ; -0.613 ; -0.613 ; Fall       ; c[0]            ;
+;  b[4]     ; c[0]       ; -0.701 ; -0.701 ; Fall       ; c[0]            ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; overflow  ; enable     ; 3.388 ; 3.388 ; Fall       ; enable          ;
-; s[*]      ; enable     ; 3.481 ; 3.481 ; Fall       ; enable          ;
-;  s[0]     ; enable     ; 3.377 ; 3.377 ; Fall       ; enable          ;
-;  s[1]     ; enable     ; 3.481 ; 3.481 ; Fall       ; enable          ;
-;  s[2]     ; enable     ; 3.369 ; 3.369 ; Fall       ; enable          ;
-;  s[3]     ; enable     ; 3.405 ; 3.405 ; Fall       ; enable          ;
-;  s[4]     ; enable     ; 3.382 ; 3.382 ; Fall       ; enable          ;
-+-----------+------------+-------+-------+------------+-----------------+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; ledNegativo    ; c[0]       ; 6.758 ; 6.758 ; Rise       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 4.448 ; 4.448 ; Rise       ; c[0]            ;
+; ledZero        ; c[0]       ; 7.361 ; 7.361 ; Rise       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 7.868 ; 7.868 ; Rise       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 6.769 ; 6.769 ; Rise       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 7.858 ; 7.858 ; Rise       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 7.858 ; 7.858 ; Rise       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 7.858 ; 7.858 ; Rise       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 7.868 ; 7.868 ; Rise       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 7.665 ; 7.665 ; Rise       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 7.724 ; 7.724 ; Rise       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 7.620 ; 7.620 ; Rise       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 7.448 ; 7.448 ; Rise       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 7.615 ; 7.615 ; Rise       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 7.621 ; 7.621 ; Rise       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 7.637 ; 7.637 ; Rise       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 6.866 ; 6.866 ; Rise       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 6.485 ; 6.485 ; Rise       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 6.617 ; 6.617 ; Rise       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 6.763 ; 6.763 ; Rise       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 6.866 ; 6.866 ; Rise       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 6.769 ; 6.769 ; Rise       ; c[0]            ;
+; ledNegativo    ; c[0]       ; 6.758 ; 6.758 ; Fall       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 3.578 ; 3.578 ; Fall       ; c[0]            ;
+; ledZero        ; c[0]       ; 7.361 ; 7.361 ; Fall       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 7.868 ; 7.868 ; Fall       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 6.769 ; 6.769 ; Fall       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 7.858 ; 7.858 ; Fall       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 7.858 ; 7.858 ; Fall       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 7.858 ; 7.858 ; Fall       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 7.868 ; 7.868 ; Fall       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 7.665 ; 7.665 ; Fall       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 7.724 ; 7.724 ; Fall       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 7.620 ; 7.620 ; Fall       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 7.384 ; 7.384 ; Fall       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 7.615 ; 7.615 ; Fall       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 7.621 ; 7.621 ; Fall       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 7.637 ; 7.637 ; Fall       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 6.866 ; 6.866 ; Fall       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 6.421 ; 6.421 ; Fall       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 6.597 ; 6.597 ; Fall       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 6.763 ; 6.763 ; Fall       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 6.866 ; 6.866 ; Fall       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 6.769 ; 6.769 ; Fall       ; c[0]            ;
++----------------+------------+-------+-------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; overflow  ; enable     ; 3.388 ; 3.388 ; Fall       ; enable          ;
-; s[*]      ; enable     ; 3.369 ; 3.369 ; Fall       ; enable          ;
-;  s[0]     ; enable     ; 3.377 ; 3.377 ; Fall       ; enable          ;
-;  s[1]     ; enable     ; 3.481 ; 3.481 ; Fall       ; enable          ;
-;  s[2]     ; enable     ; 3.369 ; 3.369 ; Fall       ; enable          ;
-;  s[3]     ; enable     ; 3.405 ; 3.405 ; Fall       ; enable          ;
-;  s[4]     ; enable     ; 3.382 ; 3.382 ; Fall       ; enable          ;
-+-----------+------------+-------+-------+------------+-----------------+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; ledNegativo    ; c[0]       ; 5.451 ; 5.451 ; Rise       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 3.578 ; 3.578 ; Rise       ; c[0]            ;
+; ledZero        ; c[0]       ; 5.487 ; 5.487 ; Rise       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 5.462 ; 5.462 ; Rise       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 5.462 ; 5.462 ; Rise       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 5.700 ; 5.700 ; Rise       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 5.700 ; 5.700 ; Rise       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 5.700 ; 5.700 ; Rise       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 5.710 ; 5.710 ; Rise       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 5.675 ; 5.675 ; Rise       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 5.729 ; 5.729 ; Rise       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 5.749 ; 5.749 ; Rise       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 5.515 ; 5.515 ; Rise       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 5.740 ; 5.740 ; Rise       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 5.649 ; 5.649 ; Rise       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 5.621 ; 5.621 ; Rise       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 5.042 ; 5.042 ; Rise       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 5.334 ; 5.334 ; Rise       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 5.042 ; 5.042 ; Rise       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 5.119 ; 5.119 ; Rise       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 5.383 ; 5.383 ; Rise       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 5.462 ; 5.462 ; Rise       ; c[0]            ;
+; ledNegativo    ; c[0]       ; 5.298 ; 5.298 ; Fall       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 3.578 ; 3.578 ; Fall       ; c[0]            ;
+; ledZero        ; c[0]       ; 5.531 ; 5.531 ; Fall       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 5.309 ; 5.309 ; Fall       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 5.309 ; 5.309 ; Fall       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 5.692 ; 5.692 ; Fall       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 5.692 ; 5.692 ; Fall       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 5.692 ; 5.692 ; Fall       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 5.702 ; 5.702 ; Fall       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 5.571 ; 5.571 ; Fall       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 5.544 ; 5.544 ; Fall       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 5.558 ; 5.558 ; Fall       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 5.430 ; 5.430 ; Fall       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 5.554 ; 5.554 ; Fall       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 5.634 ; 5.634 ; Fall       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 5.642 ; 5.642 ; Fall       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 5.051 ; 5.051 ; Fall       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 5.143 ; 5.143 ; Fall       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 5.238 ; 5.238 ; Fall       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 5.155 ; 5.155 ; Fall       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 5.051 ; 5.051 ; Fall       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 5.309 ; 5.309 ; Fall       ; c[0]            ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------+
+; Propagation Delay                                          ;
++------------+---------------+-------+-------+-------+-------+
+; Input Port ; Output Port   ; RR    ; RF    ; FR    ; FF    ;
++------------+---------------+-------+-------+-------+-------+
+; a[4]       ; ledOverflow   ; 5.564 ; 5.564 ; 5.564 ; 5.564 ;
+; b[4]       ; ledOverflow   ; 5.707 ; 5.707 ; 5.707 ; 5.707 ;
+; c[1]       ; ledNegativo   ; 6.977 ; 6.977 ; 6.977 ; 6.977 ;
+; c[1]       ; ledOverflow   ;       ; 6.022 ; 6.022 ;       ;
+; c[1]       ; ledZero       ; 7.357 ; 7.357 ; 7.357 ; 7.357 ;
+; c[1]       ; saida7SEG[0]  ; 6.988 ; 6.988 ; 6.988 ; 6.988 ;
+; c[1]       ; saida7SEG[8]  ; 7.863 ; 7.863 ; 7.863 ; 7.863 ;
+; c[1]       ; saida7SEG[9]  ; 7.863 ; 7.863 ; 7.863 ; 7.863 ;
+; c[1]       ; saida7SEG[10] ; 7.863 ; 7.863 ; 7.863 ; 7.863 ;
+; c[1]       ; saida7SEG[13] ; 7.873 ; 7.873 ; 7.873 ; 7.873 ;
+; c[1]       ; saida7SEG[14] ; 7.799 ; 7.799 ; 7.799 ; 7.799 ;
+; c[1]       ; saida7SEG[15] ; 7.857 ; 7.857 ; 7.857 ; 7.857 ;
+; c[1]       ; saida7SEG[16] ; 7.752 ; 7.752 ; 7.752 ; 7.752 ;
+; c[1]       ; saida7SEG[17] ; 7.461 ; 7.461 ; 7.461 ; 7.461 ;
+; c[1]       ; saida7SEG[18] ; 7.749 ; 7.749 ; 7.749 ; 7.749 ;
+; c[1]       ; saida7SEG[19] ; 7.620 ; 7.620 ; 7.620 ; 7.620 ;
+; c[1]       ; saida7SEG[20] ; 7.483 ; 7.483 ; 7.483 ; 7.483 ;
+; c[1]       ; saidaLEDS[0]  ; 5.392 ; 5.748 ; 5.748 ; 5.392 ;
+; c[1]       ; saidaLEDS[1]  ; 6.717 ; 6.717 ; 6.717 ; 6.717 ;
+; c[1]       ; saidaLEDS[2]  ; 6.981 ; 6.981 ; 6.981 ; 6.981 ;
+; c[1]       ; saidaLEDS[3]  ; 5.483 ; 5.783 ; 5.783 ; 5.483 ;
+; c[1]       ; saidaLEDS[4]  ; 6.988 ; 6.988 ; 6.988 ; 6.988 ;
+; c[2]       ; ledNegativo   ; 4.329 ; 4.329 ; 4.329 ; 4.329 ;
+; c[2]       ; ledOverflow   ;       ; 3.600 ; 3.600 ;       ;
+; c[2]       ; ledZero       ; 4.936 ; 4.936 ; 4.936 ; 4.936 ;
+; c[2]       ; saida7SEG[0]  ; 4.340 ; 4.340 ; 4.340 ; 4.340 ;
+; c[2]       ; saida7SEG[8]  ; 5.433 ; 5.433 ; 5.433 ; 5.433 ;
+; c[2]       ; saida7SEG[9]  ; 5.433 ; 5.433 ; 5.433 ; 5.433 ;
+; c[2]       ; saida7SEG[10] ; 5.433 ; 5.433 ; 5.433 ; 5.433 ;
+; c[2]       ; saida7SEG[13] ; 5.443 ; 5.443 ; 5.443 ; 5.443 ;
+; c[2]       ; saida7SEG[14] ; 5.240 ; 5.240 ; 5.240 ; 5.240 ;
+; c[2]       ; saida7SEG[15] ; 5.299 ; 5.299 ; 5.299 ; 5.299 ;
+; c[2]       ; saida7SEG[16] ; 5.195 ; 5.195 ; 5.195 ; 5.195 ;
+; c[2]       ; saida7SEG[17] ; 5.358 ; 5.358 ; 5.358 ; 5.358 ;
+; c[2]       ; saida7SEG[18] ; 5.190 ; 5.190 ; 5.190 ; 5.190 ;
+; c[2]       ; saida7SEG[19] ; 5.196 ; 5.196 ; 5.196 ; 5.196 ;
+; c[2]       ; saida7SEG[20] ; 5.212 ; 5.212 ; 5.212 ; 5.212 ;
+; c[2]       ; saidaLEDS[0]  ; 4.395 ; 4.395 ; 4.395 ; 4.395 ;
+; c[2]       ; saidaLEDS[1]  ; 4.230 ; 4.230 ; 4.230 ; 4.230 ;
+; c[2]       ; saidaLEDS[2]  ; 4.241 ; 4.241 ; 4.241 ; 4.241 ;
+; c[2]       ; saidaLEDS[3]  ; 4.441 ; 4.441 ; 4.441 ; 4.441 ;
+; c[2]       ; saidaLEDS[4]  ; 4.340 ; 4.340 ; 4.340 ; 4.340 ;
+; c[3]       ; ledNegativo   ; 4.206 ; 4.206 ; 4.206 ; 4.206 ;
+; c[3]       ; ledOverflow   ; 3.615 ;       ;       ; 3.615 ;
+; c[3]       ; ledZero       ; 4.568 ; 4.568 ; 4.568 ; 4.568 ;
+; c[3]       ; saida7SEG[0]  ; 4.217 ; 4.217 ; 4.217 ; 4.217 ;
+; c[3]       ; saida7SEG[8]  ; 5.016 ; 5.016 ; 5.016 ; 5.016 ;
+; c[3]       ; saida7SEG[9]  ; 5.016 ; 5.016 ; 5.016 ; 5.016 ;
+; c[3]       ; saida7SEG[10] ; 5.016 ; 5.016 ; 5.016 ; 5.016 ;
+; c[3]       ; saida7SEG[13] ; 5.026 ; 5.026 ; 5.026 ; 5.026 ;
+; c[3]       ; saida7SEG[14] ; 4.952 ; 4.952 ; 4.952 ; 4.952 ;
+; c[3]       ; saida7SEG[15] ; 5.010 ; 5.010 ; 5.010 ; 5.010 ;
+; c[3]       ; saida7SEG[16] ; 4.905 ; 4.905 ; 4.905 ; 4.905 ;
+; c[3]       ; saida7SEG[17] ; 4.825 ; 4.825 ; 4.825 ; 4.825 ;
+; c[3]       ; saida7SEG[18] ; 4.902 ; 4.902 ; 4.902 ; 4.902 ;
+; c[3]       ; saida7SEG[19] ; 4.828 ; 4.828 ; 4.828 ; 4.828 ;
+; c[3]       ; saida7SEG[20] ; 4.854 ; 4.854 ; 4.854 ; 4.854 ;
+; c[3]       ; saidaLEDS[0]  ; 3.140 ; 3.140 ; 3.140 ; 3.140 ;
+; c[3]       ; saidaLEDS[1]  ; 4.123 ; 4.123 ; 4.123 ; 4.123 ;
+; c[3]       ; saidaLEDS[2]  ; 4.134 ; 4.134 ; 4.134 ; 4.134 ;
+; c[3]       ; saidaLEDS[3]  ; 3.378 ; 3.378 ; 3.378 ; 3.378 ;
+; c[3]       ; saidaLEDS[4]  ; 4.217 ; 4.217 ; 4.217 ; 4.217 ;
++------------+---------------+-------+-------+-------+-------+
+
+
++------------------------------------------------------------+
+; Minimum Propagation Delay                                  ;
++------------+---------------+-------+-------+-------+-------+
+; Input Port ; Output Port   ; RR    ; RF    ; FR    ; FF    ;
++------------+---------------+-------+-------+-------+-------+
+; a[4]       ; ledOverflow   ; 5.564 ; 5.564 ; 5.564 ; 5.564 ;
+; b[4]       ; ledOverflow   ; 5.707 ; 5.707 ; 5.707 ; 5.707 ;
+; c[1]       ; ledNegativo   ; 6.024 ; 6.024 ; 6.024 ; 6.024 ;
+; c[1]       ; ledOverflow   ;       ; 6.022 ; 6.022 ;       ;
+; c[1]       ; ledZero       ; 6.208 ; 5.881 ; 5.881 ; 6.208 ;
+; c[1]       ; saida7SEG[0]  ; 6.035 ; 6.035 ; 6.035 ; 6.035 ;
+; c[1]       ; saida7SEG[8]  ; 6.187 ; 6.187 ; 6.187 ; 6.187 ;
+; c[1]       ; saida7SEG[9]  ; 6.187 ; 6.187 ; 6.187 ; 6.187 ;
+; c[1]       ; saida7SEG[10] ; 6.187 ; 6.187 ; 6.187 ; 6.187 ;
+; c[1]       ; saida7SEG[13] ; 6.197 ; 6.197 ; 6.197 ; 6.197 ;
+; c[1]       ; saida7SEG[14] ; 5.820 ; 5.820 ; 5.820 ; 5.820 ;
+; c[1]       ; saida7SEG[15] ; 5.793 ; 5.793 ; 5.793 ; 5.793 ;
+; c[1]       ; saida7SEG[16] ; 5.807 ; 6.163 ; 6.163 ; 5.807 ;
+; c[1]       ; saida7SEG[17] ; 5.862 ; 5.862 ; 5.862 ; 5.862 ;
+; c[1]       ; saida7SEG[18] ; 6.159 ; 5.803 ; 5.803 ; 6.159 ;
+; c[1]       ; saida7SEG[19] ; 6.139 ; 6.139 ; 6.139 ; 6.139 ;
+; c[1]       ; saida7SEG[20] ; 6.033 ; 6.033 ; 6.033 ; 6.033 ;
+; c[1]       ; saidaLEDS[0]  ; 5.392 ; 5.748 ; 5.748 ; 5.392 ;
+; c[1]       ; saidaLEDS[1]  ; 5.763 ; 5.763 ; 5.763 ; 5.763 ;
+; c[1]       ; saidaLEDS[2]  ; 5.868 ; 5.868 ; 5.868 ; 5.868 ;
+; c[1]       ; saidaLEDS[3]  ; 5.483 ; 5.783 ; 5.783 ; 5.483 ;
+; c[1]       ; saidaLEDS[4]  ; 6.035 ; 6.035 ; 6.035 ; 6.035 ;
+; c[2]       ; ledNegativo   ; 3.006 ; 3.006 ; 3.006 ; 3.006 ;
+; c[2]       ; ledOverflow   ;       ; 3.600 ; 3.600 ;       ;
+; c[2]       ; ledZero       ; 3.252 ; 3.252 ; 3.252 ; 3.252 ;
+; c[2]       ; saida7SEG[0]  ; 3.017 ; 3.017 ; 3.017 ; 3.017 ;
+; c[2]       ; saida7SEG[8]  ; 3.400 ; 3.400 ; 3.400 ; 3.400 ;
+; c[2]       ; saida7SEG[9]  ; 3.400 ; 3.400 ; 3.400 ; 3.400 ;
+; c[2]       ; saida7SEG[10] ; 3.400 ; 3.400 ; 3.400 ; 3.400 ;
+; c[2]       ; saida7SEG[13] ; 3.410 ; 3.410 ; 3.410 ; 3.410 ;
+; c[2]       ; saida7SEG[14] ; 3.382 ; 3.382 ; 3.382 ; 3.382 ;
+; c[2]       ; saida7SEG[15] ; 3.435 ; 3.435 ; 3.435 ; 3.435 ;
+; c[2]       ; saida7SEG[16] ; 3.452 ; 3.452 ; 3.452 ; 3.452 ;
+; c[2]       ; saida7SEG[17] ; 3.272 ; 3.272 ; 3.272 ; 3.272 ;
+; c[2]       ; saida7SEG[18] ; 3.446 ; 3.446 ; 3.446 ; 3.446 ;
+; c[2]       ; saida7SEG[19] ; 3.342 ; 3.342 ; 3.342 ; 3.342 ;
+; c[2]       ; saida7SEG[20] ; 3.350 ; 3.350 ; 3.350 ; 3.350 ;
+; c[2]       ; saidaLEDS[0]  ; 3.149 ; 3.149 ; 3.149 ; 3.149 ;
+; c[2]       ; saidaLEDS[1]  ; 2.856 ; 2.856 ; 2.856 ; 2.856 ;
+; c[2]       ; saidaLEDS[2]  ; 2.876 ; 2.876 ; 2.876 ; 2.876 ;
+; c[2]       ; saidaLEDS[3]  ; 3.272 ; 3.272 ; 3.272 ; 3.272 ;
+; c[2]       ; saidaLEDS[4]  ; 3.017 ; 3.017 ; 3.017 ; 3.017 ;
+; c[3]       ; ledNegativo   ; 3.139 ; 3.139 ; 3.139 ; 3.139 ;
+; c[3]       ; ledOverflow   ; 3.615 ;       ;       ; 3.615 ;
+; c[3]       ; ledZero       ; 3.339 ; 3.473 ; 3.473 ; 3.339 ;
+; c[3]       ; saida7SEG[0]  ; 3.150 ; 3.150 ; 3.150 ; 3.150 ;
+; c[3]       ; saida7SEG[8]  ; 3.533 ; 3.533 ; 3.533 ; 3.533 ;
+; c[3]       ; saida7SEG[9]  ; 3.533 ; 3.533 ; 3.533 ; 3.533 ;
+; c[3]       ; saida7SEG[10] ; 3.533 ; 3.533 ; 3.533 ; 3.533 ;
+; c[3]       ; saida7SEG[13] ; 3.543 ; 3.543 ; 3.543 ; 3.543 ;
+; c[3]       ; saida7SEG[14] ; 3.278 ; 3.278 ; 3.278 ; 3.278 ;
+; c[3]       ; saida7SEG[15] ; 3.251 ; 3.251 ; 3.251 ; 3.251 ;
+; c[3]       ; saida7SEG[16] ; 3.555 ; 3.265 ; 3.265 ; 3.555 ;
+; c[3]       ; saida7SEG[17] ; 3.461 ; 3.461 ; 3.461 ; 3.461 ;
+; c[3]       ; saida7SEG[18] ; 3.261 ; 3.551 ; 3.551 ; 3.261 ;
+; c[3]       ; saida7SEG[19] ; 3.475 ; 3.475 ; 3.475 ; 3.475 ;
+; c[3]       ; saida7SEG[20] ; 3.483 ; 3.483 ; 3.483 ; 3.483 ;
+; c[3]       ; saidaLEDS[0]  ; 3.140 ; 2.850 ; 2.850 ; 3.140 ;
+; c[3]       ; saidaLEDS[1]  ; 3.068 ; 3.068 ; 3.068 ; 3.068 ;
+; c[3]       ; saidaLEDS[2]  ; 3.097 ; 3.097 ; 3.097 ; 3.097 ;
+; c[3]       ; saidaLEDS[3]  ; 3.378 ; 3.082 ; 3.082 ; 3.378 ;
+; c[3]       ; saidaLEDS[4]  ; 3.150 ; 3.150 ; 3.150 ; 3.150 ;
++------------+---------------+-------+-------+-------+-------+
 
 
 +-------------------------------------------------------------------------------+
@@ -572,10 +1220,10 @@ No paths to report.
 +------------------+---------+-------+----------+---------+---------------------+
 ; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+---------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -1.463  ; 0.369 ; N/A      ; N/A     ; -1.380              ;
-;  enable          ; -1.463  ; 0.369 ; N/A      ; N/A     ; -1.380              ;
-; Design-wide TNS  ; -10.018 ; 0.0   ; 0.0      ; 0.0     ; -1.38               ;
-;  enable          ; -10.018 ; 0.000 ; N/A      ; N/A     ; -1.380              ;
+; Worst-case Slack ; -1.434  ; 0.303 ; N/A      ; N/A     ; -1.222              ;
+;  c[0]            ; -1.434  ; 0.303 ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS  ; -20.785 ; 0.0   ; 0.0      ; 0.0     ; -1.222              ;
+;  c[0]            ; -20.785 ; 0.000 ; N/A      ; N/A     ; -1.222              ;
 +------------------+---------+-------+----------+---------+---------------------+
 
 
@@ -584,18 +1232,30 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; a[*]      ; enable     ; 4.908 ; 4.908 ; Fall       ; enable          ;
-;  a[0]     ; enable     ; 4.815 ; 4.815 ; Fall       ; enable          ;
-;  a[1]     ; enable     ; 4.759 ; 4.759 ; Fall       ; enable          ;
-;  a[2]     ; enable     ; 4.853 ; 4.853 ; Fall       ; enable          ;
-;  a[3]     ; enable     ; 4.908 ; 4.908 ; Fall       ; enable          ;
-;  a[4]     ; enable     ; 1.124 ; 1.124 ; Fall       ; enable          ;
-; b[*]      ; enable     ; 5.146 ; 5.146 ; Fall       ; enable          ;
-;  b[0]     ; enable     ; 4.959 ; 4.959 ; Fall       ; enable          ;
-;  b[1]     ; enable     ; 4.867 ; 4.867 ; Fall       ; enable          ;
-;  b[2]     ; enable     ; 5.146 ; 5.146 ; Fall       ; enable          ;
-;  b[3]     ; enable     ; 4.995 ; 4.995 ; Fall       ; enable          ;
-;  b[4]     ; enable     ; 1.192 ; 1.192 ; Fall       ; enable          ;
+; a[*]      ; c[0]       ; 3.706 ; 3.706 ; Rise       ; c[0]            ;
+;  a[0]     ; c[0]       ; 3.706 ; 3.706 ; Rise       ; c[0]            ;
+;  a[1]     ; c[0]       ; 3.438 ; 3.438 ; Rise       ; c[0]            ;
+;  a[2]     ; c[0]       ; 3.340 ; 3.340 ; Rise       ; c[0]            ;
+;  a[3]     ; c[0]       ; 3.399 ; 3.399 ; Rise       ; c[0]            ;
+;  a[4]     ; c[0]       ; 3.637 ; 3.637 ; Rise       ; c[0]            ;
+; b[*]      ; c[0]       ; 4.086 ; 4.086 ; Rise       ; c[0]            ;
+;  b[0]     ; c[0]       ; 3.813 ; 3.813 ; Rise       ; c[0]            ;
+;  b[1]     ; c[0]       ; 3.284 ; 3.284 ; Rise       ; c[0]            ;
+;  b[2]     ; c[0]       ; 4.086 ; 4.086 ; Rise       ; c[0]            ;
+;  b[3]     ; c[0]       ; 3.461 ; 3.461 ; Rise       ; c[0]            ;
+;  b[4]     ; c[0]       ; 3.693 ; 3.693 ; Rise       ; c[0]            ;
+; a[*]      ; c[0]       ; 3.852 ; 3.852 ; Fall       ; c[0]            ;
+;  a[0]     ; c[0]       ; 3.342 ; 3.342 ; Fall       ; c[0]            ;
+;  a[1]     ; c[0]       ; 2.953 ; 2.953 ; Fall       ; c[0]            ;
+;  a[2]     ; c[0]       ; 3.073 ; 3.073 ; Fall       ; c[0]            ;
+;  a[3]     ; c[0]       ; 2.800 ; 2.800 ; Fall       ; c[0]            ;
+;  a[4]     ; c[0]       ; 3.852 ; 3.852 ; Fall       ; c[0]            ;
+; b[*]      ; c[0]       ; 3.773 ; 3.773 ; Fall       ; c[0]            ;
+;  b[0]     ; c[0]       ; 3.421 ; 3.421 ; Fall       ; c[0]            ;
+;  b[1]     ; c[0]       ; 3.048 ; 3.048 ; Fall       ; c[0]            ;
+;  b[2]     ; c[0]       ; 3.653 ; 3.653 ; Fall       ; c[0]            ;
+;  b[3]     ; c[0]       ; 3.142 ; 3.142 ; Fall       ; c[0]            ;
+;  b[4]     ; c[0]       ; 3.773 ; 3.773 ; Fall       ; c[0]            ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -604,49 +1264,275 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; a[*]      ; enable     ; 0.211  ; 0.211  ; Fall       ; enable          ;
-;  a[0]     ; enable     ; -2.017 ; -2.017 ; Fall       ; enable          ;
-;  a[1]     ; enable     ; -2.082 ; -2.082 ; Fall       ; enable          ;
-;  a[2]     ; enable     ; -2.144 ; -2.144 ; Fall       ; enable          ;
-;  a[3]     ; enable     ; -2.094 ; -2.094 ; Fall       ; enable          ;
-;  a[4]     ; enable     ; 0.211  ; 0.211  ; Fall       ; enable          ;
-; b[*]      ; enable     ; 0.272  ; 0.272  ; Fall       ; enable          ;
-;  b[0]     ; enable     ; -2.102 ; -2.102 ; Fall       ; enable          ;
-;  b[1]     ; enable     ; -2.137 ; -2.137 ; Fall       ; enable          ;
-;  b[2]     ; enable     ; -2.257 ; -2.257 ; Fall       ; enable          ;
-;  b[3]     ; enable     ; -2.138 ; -2.138 ; Fall       ; enable          ;
-;  b[4]     ; enable     ; 0.272  ; 0.272  ; Fall       ; enable          ;
+; a[*]      ; c[0]       ; -0.039 ; -0.039 ; Rise       ; c[0]            ;
+;  a[0]     ; c[0]       ; -0.264 ; -0.264 ; Rise       ; c[0]            ;
+;  a[1]     ; c[0]       ; -0.039 ; -0.039 ; Rise       ; c[0]            ;
+;  a[2]     ; c[0]       ; -0.236 ; -0.236 ; Rise       ; c[0]            ;
+;  a[3]     ; c[0]       ; -0.340 ; -0.340 ; Rise       ; c[0]            ;
+;  a[4]     ; c[0]       ; -0.519 ; -0.519 ; Rise       ; c[0]            ;
+; b[*]      ; c[0]       ; -0.574 ; -0.574 ; Rise       ; c[0]            ;
+;  b[0]     ; c[0]       ; -0.906 ; -0.906 ; Rise       ; c[0]            ;
+;  b[1]     ; c[0]       ; -0.574 ; -0.574 ; Rise       ; c[0]            ;
+;  b[2]     ; c[0]       ; -0.899 ; -0.899 ; Rise       ; c[0]            ;
+;  b[3]     ; c[0]       ; -0.647 ; -0.647 ; Rise       ; c[0]            ;
+;  b[4]     ; c[0]       ; -0.891 ; -0.891 ; Rise       ; c[0]            ;
+; a[*]      ; c[0]       ; -0.350 ; -0.350 ; Fall       ; c[0]            ;
+;  a[0]     ; c[0]       ; -0.381 ; -0.381 ; Fall       ; c[0]            ;
+;  a[1]     ; c[0]       ; -0.350 ; -0.350 ; Fall       ; c[0]            ;
+;  a[2]     ; c[0]       ; -0.416 ; -0.416 ; Fall       ; c[0]            ;
+;  a[3]     ; c[0]       ; -0.496 ; -0.496 ; Fall       ; c[0]            ;
+;  a[4]     ; c[0]       ; -0.622 ; -0.622 ; Fall       ; c[0]            ;
+; b[*]      ; c[0]       ; -0.588 ; -0.588 ; Fall       ; c[0]            ;
+;  b[0]     ; c[0]       ; -0.675 ; -0.675 ; Fall       ; c[0]            ;
+;  b[1]     ; c[0]       ; -0.588 ; -0.588 ; Fall       ; c[0]            ;
+;  b[2]     ; c[0]       ; -0.953 ; -0.953 ; Fall       ; c[0]            ;
+;  b[3]     ; c[0]       ; -0.613 ; -0.613 ; Fall       ; c[0]            ;
+;  b[4]     ; c[0]       ; -0.701 ; -0.701 ; Fall       ; c[0]            ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; overflow  ; enable     ; 6.072 ; 6.072 ; Fall       ; enable          ;
-; s[*]      ; enable     ; 6.271 ; 6.271 ; Fall       ; enable          ;
-;  s[0]     ; enable     ; 6.033 ; 6.033 ; Fall       ; enable          ;
-;  s[1]     ; enable     ; 6.271 ; 6.271 ; Fall       ; enable          ;
-;  s[2]     ; enable     ; 6.026 ; 6.026 ; Fall       ; enable          ;
-;  s[3]     ; enable     ; 6.133 ; 6.133 ; Fall       ; enable          ;
-;  s[4]     ; enable     ; 6.112 ; 6.112 ; Fall       ; enable          ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; ledNegativo    ; c[0]       ; 13.204 ; 13.204 ; Rise       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 8.354  ; 8.354  ; Rise       ; c[0]            ;
+; ledZero        ; c[0]       ; 14.369 ; 14.369 ; Rise       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 15.594 ; 15.594 ; Rise       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 13.215 ; 13.215 ; Rise       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 15.584 ; 15.584 ; Rise       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 15.584 ; 15.584 ; Rise       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 15.584 ; 15.584 ; Rise       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 15.594 ; 15.594 ; Rise       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 15.114 ; 15.114 ; Rise       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 15.243 ; 15.243 ; Rise       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 15.010 ; 15.010 ; Rise       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 14.989 ; 14.989 ; Rise       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 14.978 ; 14.978 ; Rise       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 14.968 ; 14.968 ; Rise       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 15.055 ; 15.055 ; Rise       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 13.260 ; 13.260 ; Rise       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 12.770 ; 12.770 ; Rise       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 13.095 ; 13.095 ; Rise       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 13.195 ; 13.195 ; Rise       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 13.260 ; 13.260 ; Rise       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 13.215 ; 13.215 ; Rise       ; c[0]            ;
+; ledNegativo    ; c[0]       ; 13.103 ; 13.103 ; Fall       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 7.015  ; 7.015  ; Fall       ; c[0]            ;
+; ledZero        ; c[0]       ; 14.140 ; 14.140 ; Fall       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 15.365 ; 15.365 ; Fall       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 13.114 ; 13.114 ; Fall       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 15.355 ; 15.355 ; Fall       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 15.355 ; 15.355 ; Fall       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 15.355 ; 15.355 ; Fall       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 15.365 ; 15.365 ; Fall       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 14.885 ; 14.885 ; Fall       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 15.014 ; 15.014 ; Fall       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 14.781 ; 14.781 ; Fall       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 14.758 ; 14.758 ; Fall       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 14.749 ; 14.749 ; Fall       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 14.739 ; 14.739 ; Fall       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 14.826 ; 14.826 ; Fall       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 13.114 ; 13.114 ; Fall       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 12.539 ; 12.539 ; Fall       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 12.662 ; 12.662 ; Fall       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 12.886 ; 12.886 ; Fall       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 13.031 ; 13.031 ; Fall       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 13.114 ; 13.114 ; Fall       ; c[0]            ;
++----------------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; overflow  ; enable     ; 3.388 ; 3.388 ; Fall       ; enable          ;
-; s[*]      ; enable     ; 3.369 ; 3.369 ; Fall       ; enable          ;
-;  s[0]     ; enable     ; 3.377 ; 3.377 ; Fall       ; enable          ;
-;  s[1]     ; enable     ; 3.481 ; 3.481 ; Fall       ; enable          ;
-;  s[2]     ; enable     ; 3.369 ; 3.369 ; Fall       ; enable          ;
-;  s[3]     ; enable     ; 3.405 ; 3.405 ; Fall       ; enable          ;
-;  s[4]     ; enable     ; 3.382 ; 3.382 ; Fall       ; enable          ;
-+-----------+------------+-------+-------+------------+-----------------+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; ledNegativo    ; c[0]       ; 5.451 ; 5.451 ; Rise       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 3.578 ; 3.578 ; Rise       ; c[0]            ;
+; ledZero        ; c[0]       ; 5.487 ; 5.487 ; Rise       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 5.462 ; 5.462 ; Rise       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 5.462 ; 5.462 ; Rise       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 5.700 ; 5.700 ; Rise       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 5.700 ; 5.700 ; Rise       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 5.700 ; 5.700 ; Rise       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 5.710 ; 5.710 ; Rise       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 5.675 ; 5.675 ; Rise       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 5.729 ; 5.729 ; Rise       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 5.749 ; 5.749 ; Rise       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 5.515 ; 5.515 ; Rise       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 5.740 ; 5.740 ; Rise       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 5.649 ; 5.649 ; Rise       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 5.621 ; 5.621 ; Rise       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 5.042 ; 5.042 ; Rise       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 5.334 ; 5.334 ; Rise       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 5.042 ; 5.042 ; Rise       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 5.119 ; 5.119 ; Rise       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 5.383 ; 5.383 ; Rise       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 5.462 ; 5.462 ; Rise       ; c[0]            ;
+; ledNegativo    ; c[0]       ; 5.298 ; 5.298 ; Fall       ; c[0]            ;
+; ledOverflow    ; c[0]       ; 3.578 ; 3.578 ; Fall       ; c[0]            ;
+; ledZero        ; c[0]       ; 5.531 ; 5.531 ; Fall       ; c[0]            ;
+; saida7SEG[*]   ; c[0]       ; 5.309 ; 5.309 ; Fall       ; c[0]            ;
+;  saida7SEG[0]  ; c[0]       ; 5.309 ; 5.309 ; Fall       ; c[0]            ;
+;  saida7SEG[8]  ; c[0]       ; 5.692 ; 5.692 ; Fall       ; c[0]            ;
+;  saida7SEG[9]  ; c[0]       ; 5.692 ; 5.692 ; Fall       ; c[0]            ;
+;  saida7SEG[10] ; c[0]       ; 5.692 ; 5.692 ; Fall       ; c[0]            ;
+;  saida7SEG[13] ; c[0]       ; 5.702 ; 5.702 ; Fall       ; c[0]            ;
+;  saida7SEG[14] ; c[0]       ; 5.571 ; 5.571 ; Fall       ; c[0]            ;
+;  saida7SEG[15] ; c[0]       ; 5.544 ; 5.544 ; Fall       ; c[0]            ;
+;  saida7SEG[16] ; c[0]       ; 5.558 ; 5.558 ; Fall       ; c[0]            ;
+;  saida7SEG[17] ; c[0]       ; 5.430 ; 5.430 ; Fall       ; c[0]            ;
+;  saida7SEG[18] ; c[0]       ; 5.554 ; 5.554 ; Fall       ; c[0]            ;
+;  saida7SEG[19] ; c[0]       ; 5.634 ; 5.634 ; Fall       ; c[0]            ;
+;  saida7SEG[20] ; c[0]       ; 5.642 ; 5.642 ; Fall       ; c[0]            ;
+; saidaLEDS[*]   ; c[0]       ; 5.051 ; 5.051 ; Fall       ; c[0]            ;
+;  saidaLEDS[0]  ; c[0]       ; 5.143 ; 5.143 ; Fall       ; c[0]            ;
+;  saidaLEDS[1]  ; c[0]       ; 5.238 ; 5.238 ; Fall       ; c[0]            ;
+;  saidaLEDS[2]  ; c[0]       ; 5.155 ; 5.155 ; Fall       ; c[0]            ;
+;  saidaLEDS[3]  ; c[0]       ; 5.051 ; 5.051 ; Fall       ; c[0]            ;
+;  saidaLEDS[4]  ; c[0]       ; 5.309 ; 5.309 ; Fall       ; c[0]            ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------+
+; Progagation Delay                                              ;
++------------+---------------+--------+--------+--------+--------+
+; Input Port ; Output Port   ; RR     ; RF     ; FR     ; FF     ;
++------------+---------------+--------+--------+--------+--------+
+; a[4]       ; ledOverflow   ; 10.075 ; 10.075 ; 10.075 ; 10.075 ;
+; b[4]       ; ledOverflow   ; 10.337 ; 10.337 ; 10.337 ; 10.337 ;
+; c[1]       ; ledNegativo   ; 13.367 ; 13.367 ; 13.367 ; 13.367 ;
+; c[1]       ; ledOverflow   ;        ; 11.050 ; 11.050 ;        ;
+; c[1]       ; ledZero       ; 14.233 ; 14.233 ; 14.233 ; 14.233 ;
+; c[1]       ; saida7SEG[0]  ; 13.378 ; 13.378 ; 13.378 ; 13.378 ;
+; c[1]       ; saida7SEG[8]  ; 15.407 ; 15.407 ; 15.407 ; 15.407 ;
+; c[1]       ; saida7SEG[9]  ; 15.407 ; 15.407 ; 15.407 ; 15.407 ;
+; c[1]       ; saida7SEG[10] ; 15.407 ; 15.407 ; 15.407 ; 15.407 ;
+; c[1]       ; saida7SEG[13] ; 15.417 ; 15.417 ; 15.417 ; 15.417 ;
+; c[1]       ; saida7SEG[14] ; 15.243 ; 15.243 ; 15.243 ; 15.243 ;
+; c[1]       ; saida7SEG[15] ; 15.372 ; 15.372 ; 15.372 ; 15.372 ;
+; c[1]       ; saida7SEG[16] ; 15.140 ; 15.140 ; 15.140 ; 15.140 ;
+; c[1]       ; saida7SEG[17] ; 14.437 ; 14.437 ; 14.437 ; 14.437 ;
+; c[1]       ; saida7SEG[18] ; 15.099 ; 15.099 ; 15.099 ; 15.099 ;
+; c[1]       ; saida7SEG[19] ; 14.782 ; 14.782 ; 14.782 ; 14.782 ;
+; c[1]       ; saida7SEG[20] ; 14.539 ; 14.539 ; 14.539 ; 14.539 ;
+; c[1]       ; saidaLEDS[0]  ; 9.650  ; 10.416 ; 10.416 ; 9.650  ;
+; c[1]       ; saidaLEDS[1]  ; 12.697 ; 12.697 ; 12.697 ; 12.697 ;
+; c[1]       ; saidaLEDS[2]  ; 13.360 ; 13.360 ; 13.360 ; 13.360 ;
+; c[1]       ; saidaLEDS[3]  ; 9.843  ; 10.547 ; 10.547 ; 9.843  ;
+; c[1]       ; saidaLEDS[4]  ; 13.378 ; 13.378 ; 13.378 ; 13.378 ;
+; c[2]       ; ledNegativo   ; 8.833  ; 8.833  ; 8.833  ; 8.833  ;
+; c[2]       ; ledOverflow   ;        ; 7.071  ; 7.071  ;        ;
+; c[2]       ; ledZero       ; 10.221 ; 10.221 ; 10.221 ; 10.221 ;
+; c[2]       ; saida7SEG[0]  ; 8.844  ; 8.844  ; 8.844  ; 8.844  ;
+; c[2]       ; saida7SEG[8]  ; 11.436 ; 11.436 ; 11.436 ; 11.436 ;
+; c[2]       ; saida7SEG[9]  ; 11.436 ; 11.436 ; 11.436 ; 11.436 ;
+; c[2]       ; saida7SEG[10] ; 11.436 ; 11.436 ; 11.436 ; 11.436 ;
+; c[2]       ; saida7SEG[13] ; 11.446 ; 11.446 ; 11.446 ; 11.446 ;
+; c[2]       ; saida7SEG[14] ; 10.966 ; 10.966 ; 10.966 ; 10.966 ;
+; c[2]       ; saida7SEG[15] ; 11.095 ; 11.095 ; 11.095 ; 11.095 ;
+; c[2]       ; saida7SEG[16] ; 10.862 ; 10.862 ; 10.862 ; 10.862 ;
+; c[2]       ; saida7SEG[17] ; 11.226 ; 11.226 ; 11.226 ; 11.226 ;
+; c[2]       ; saida7SEG[18] ; 10.830 ; 10.830 ; 10.830 ; 10.830 ;
+; c[2]       ; saida7SEG[19] ; 10.820 ; 10.820 ; 10.820 ; 10.820 ;
+; c[2]       ; saida7SEG[20] ; 10.907 ; 10.907 ; 10.907 ; 10.907 ;
+; c[2]       ; saidaLEDS[0]  ; 9.007  ; 9.007  ; 9.007  ; 9.007  ;
+; c[2]       ; saidaLEDS[1]  ; 8.596  ; 8.596  ; 8.596  ; 8.596  ;
+; c[2]       ; saidaLEDS[2]  ; 8.607  ; 8.607  ; 8.607  ; 8.607  ;
+; c[2]       ; saidaLEDS[3]  ; 9.112  ; 9.112  ; 9.112  ; 9.112  ;
+; c[2]       ; saidaLEDS[4]  ; 8.844  ; 8.844  ; 8.844  ; 8.844  ;
+; c[3]       ; ledNegativo   ; 8.583  ; 8.583  ; 8.583  ; 8.583  ;
+; c[3]       ; ledOverflow   ; 7.151  ;        ;        ; 7.151  ;
+; c[3]       ; ledZero       ; 9.323  ; 9.323  ; 9.323  ; 9.323  ;
+; c[3]       ; saida7SEG[0]  ; 8.594  ; 8.594  ; 8.594  ; 8.594  ;
+; c[3]       ; saida7SEG[8]  ; 10.376 ; 10.376 ; 10.376 ; 10.376 ;
+; c[3]       ; saida7SEG[9]  ; 10.376 ; 10.376 ; 10.376 ; 10.376 ;
+; c[3]       ; saida7SEG[10] ; 10.376 ; 10.376 ; 10.376 ; 10.376 ;
+; c[3]       ; saida7SEG[13] ; 10.386 ; 10.386 ; 10.386 ; 10.386 ;
+; c[3]       ; saida7SEG[14] ; 10.212 ; 10.212 ; 10.212 ; 10.212 ;
+; c[3]       ; saida7SEG[15] ; 10.341 ; 10.341 ; 10.341 ; 10.341 ;
+; c[3]       ; saida7SEG[16] ; 10.109 ; 10.109 ; 10.109 ; 10.109 ;
+; c[3]       ; saida7SEG[17] ; 9.898  ; 9.898  ; 9.898  ; 9.898  ;
+; c[3]       ; saida7SEG[18] ; 10.068 ; 10.068 ; 10.068 ; 10.068 ;
+; c[3]       ; saida7SEG[19] ; 9.872  ; 9.872  ; 9.872  ; 9.872  ;
+; c[3]       ; saida7SEG[20] ; 9.970  ; 9.970  ; 9.970  ; 9.970  ;
+; c[3]       ; saidaLEDS[0]  ; 6.109  ; 6.109  ; 6.109  ; 6.109  ;
+; c[3]       ; saidaLEDS[1]  ; 8.318  ; 8.318  ; 8.318  ; 8.318  ;
+; c[3]       ; saidaLEDS[2]  ; 8.329  ; 8.329  ; 8.329  ; 8.329  ;
+; c[3]       ; saidaLEDS[3]  ; 6.650  ; 6.650  ; 6.650  ; 6.650  ;
+; c[3]       ; saidaLEDS[4]  ; 8.594  ; 8.594  ; 8.594  ; 8.594  ;
++------------+---------------+--------+--------+--------+--------+
+
+
++------------------------------------------------------------+
+; Minimum Progagation Delay                                  ;
++------------+---------------+-------+-------+-------+-------+
+; Input Port ; Output Port   ; RR    ; RF    ; FR    ; FF    ;
++------------+---------------+-------+-------+-------+-------+
+; a[4]       ; ledOverflow   ; 5.564 ; 5.564 ; 5.564 ; 5.564 ;
+; b[4]       ; ledOverflow   ; 5.707 ; 5.707 ; 5.707 ; 5.707 ;
+; c[1]       ; ledNegativo   ; 6.024 ; 6.024 ; 6.024 ; 6.024 ;
+; c[1]       ; ledOverflow   ;       ; 6.022 ; 6.022 ;       ;
+; c[1]       ; ledZero       ; 6.208 ; 5.881 ; 5.881 ; 6.208 ;
+; c[1]       ; saida7SEG[0]  ; 6.035 ; 6.035 ; 6.035 ; 6.035 ;
+; c[1]       ; saida7SEG[8]  ; 6.187 ; 6.187 ; 6.187 ; 6.187 ;
+; c[1]       ; saida7SEG[9]  ; 6.187 ; 6.187 ; 6.187 ; 6.187 ;
+; c[1]       ; saida7SEG[10] ; 6.187 ; 6.187 ; 6.187 ; 6.187 ;
+; c[1]       ; saida7SEG[13] ; 6.197 ; 6.197 ; 6.197 ; 6.197 ;
+; c[1]       ; saida7SEG[14] ; 5.820 ; 5.820 ; 5.820 ; 5.820 ;
+; c[1]       ; saida7SEG[15] ; 5.793 ; 5.793 ; 5.793 ; 5.793 ;
+; c[1]       ; saida7SEG[16] ; 5.807 ; 6.163 ; 6.163 ; 5.807 ;
+; c[1]       ; saida7SEG[17] ; 5.862 ; 5.862 ; 5.862 ; 5.862 ;
+; c[1]       ; saida7SEG[18] ; 6.159 ; 5.803 ; 5.803 ; 6.159 ;
+; c[1]       ; saida7SEG[19] ; 6.139 ; 6.139 ; 6.139 ; 6.139 ;
+; c[1]       ; saida7SEG[20] ; 6.033 ; 6.033 ; 6.033 ; 6.033 ;
+; c[1]       ; saidaLEDS[0]  ; 5.392 ; 5.748 ; 5.748 ; 5.392 ;
+; c[1]       ; saidaLEDS[1]  ; 5.763 ; 5.763 ; 5.763 ; 5.763 ;
+; c[1]       ; saidaLEDS[2]  ; 5.868 ; 5.868 ; 5.868 ; 5.868 ;
+; c[1]       ; saidaLEDS[3]  ; 5.483 ; 5.783 ; 5.783 ; 5.483 ;
+; c[1]       ; saidaLEDS[4]  ; 6.035 ; 6.035 ; 6.035 ; 6.035 ;
+; c[2]       ; ledNegativo   ; 3.006 ; 3.006 ; 3.006 ; 3.006 ;
+; c[2]       ; ledOverflow   ;       ; 3.600 ; 3.600 ;       ;
+; c[2]       ; ledZero       ; 3.252 ; 3.252 ; 3.252 ; 3.252 ;
+; c[2]       ; saida7SEG[0]  ; 3.017 ; 3.017 ; 3.017 ; 3.017 ;
+; c[2]       ; saida7SEG[8]  ; 3.400 ; 3.400 ; 3.400 ; 3.400 ;
+; c[2]       ; saida7SEG[9]  ; 3.400 ; 3.400 ; 3.400 ; 3.400 ;
+; c[2]       ; saida7SEG[10] ; 3.400 ; 3.400 ; 3.400 ; 3.400 ;
+; c[2]       ; saida7SEG[13] ; 3.410 ; 3.410 ; 3.410 ; 3.410 ;
+; c[2]       ; saida7SEG[14] ; 3.382 ; 3.382 ; 3.382 ; 3.382 ;
+; c[2]       ; saida7SEG[15] ; 3.435 ; 3.435 ; 3.435 ; 3.435 ;
+; c[2]       ; saida7SEG[16] ; 3.452 ; 3.452 ; 3.452 ; 3.452 ;
+; c[2]       ; saida7SEG[17] ; 3.272 ; 3.272 ; 3.272 ; 3.272 ;
+; c[2]       ; saida7SEG[18] ; 3.446 ; 3.446 ; 3.446 ; 3.446 ;
+; c[2]       ; saida7SEG[19] ; 3.342 ; 3.342 ; 3.342 ; 3.342 ;
+; c[2]       ; saida7SEG[20] ; 3.350 ; 3.350 ; 3.350 ; 3.350 ;
+; c[2]       ; saidaLEDS[0]  ; 3.149 ; 3.149 ; 3.149 ; 3.149 ;
+; c[2]       ; saidaLEDS[1]  ; 2.856 ; 2.856 ; 2.856 ; 2.856 ;
+; c[2]       ; saidaLEDS[2]  ; 2.876 ; 2.876 ; 2.876 ; 2.876 ;
+; c[2]       ; saidaLEDS[3]  ; 3.272 ; 3.272 ; 3.272 ; 3.272 ;
+; c[2]       ; saidaLEDS[4]  ; 3.017 ; 3.017 ; 3.017 ; 3.017 ;
+; c[3]       ; ledNegativo   ; 3.139 ; 3.139 ; 3.139 ; 3.139 ;
+; c[3]       ; ledOverflow   ; 3.615 ;       ;       ; 3.615 ;
+; c[3]       ; ledZero       ; 3.339 ; 3.473 ; 3.473 ; 3.339 ;
+; c[3]       ; saida7SEG[0]  ; 3.150 ; 3.150 ; 3.150 ; 3.150 ;
+; c[3]       ; saida7SEG[8]  ; 3.533 ; 3.533 ; 3.533 ; 3.533 ;
+; c[3]       ; saida7SEG[9]  ; 3.533 ; 3.533 ; 3.533 ; 3.533 ;
+; c[3]       ; saida7SEG[10] ; 3.533 ; 3.533 ; 3.533 ; 3.533 ;
+; c[3]       ; saida7SEG[13] ; 3.543 ; 3.543 ; 3.543 ; 3.543 ;
+; c[3]       ; saida7SEG[14] ; 3.278 ; 3.278 ; 3.278 ; 3.278 ;
+; c[3]       ; saida7SEG[15] ; 3.251 ; 3.251 ; 3.251 ; 3.251 ;
+; c[3]       ; saida7SEG[16] ; 3.555 ; 3.265 ; 3.265 ; 3.555 ;
+; c[3]       ; saida7SEG[17] ; 3.461 ; 3.461 ; 3.461 ; 3.461 ;
+; c[3]       ; saida7SEG[18] ; 3.261 ; 3.551 ; 3.551 ; 3.261 ;
+; c[3]       ; saida7SEG[19] ; 3.475 ; 3.475 ; 3.475 ; 3.475 ;
+; c[3]       ; saida7SEG[20] ; 3.483 ; 3.483 ; 3.483 ; 3.483 ;
+; c[3]       ; saidaLEDS[0]  ; 3.140 ; 2.850 ; 2.850 ; 3.140 ;
+; c[3]       ; saidaLEDS[1]  ; 3.068 ; 3.068 ; 3.068 ; 3.068 ;
+; c[3]       ; saidaLEDS[2]  ; 3.097 ; 3.097 ; 3.097 ; 3.097 ;
+; c[3]       ; saidaLEDS[3]  ; 3.378 ; 3.082 ; 3.082 ; 3.378 ;
+; c[3]       ; saidaLEDS[4]  ; 3.150 ; 3.150 ; 3.150 ; 3.150 ;
++------------+---------------+-------+-------+-------+-------+
 
 
 +-------------------------------------------------------------------+
@@ -654,7 +1540,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; enable     ; enable   ; 0        ; 0        ; 0        ; 16       ;
+; c[0]       ; c[0]     ; 15       ; 0        ; 0        ; 24       ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -664,7 +1550,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; enable     ; enable   ; 0        ; 0        ; 0        ; 16       ;
+; c[0]       ; c[0]     ; 15       ; 0        ; 0        ; 24       ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -688,10 +1574,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 10    ; 10   ;
-; Unconstrained Input Port Paths  ; 20    ; 20   ;
-; Unconstrained Output Ports      ; 6     ; 6    ;
-; Unconstrained Output Port Paths ; 6     ; 6    ;
+; Unconstrained Input Ports       ; 14    ; 14   ;
+; Unconstrained Input Port Paths  ; 178   ; 178  ;
+; Unconstrained Output Ports      ; 20    ; 20   ;
+; Unconstrained Output Port Paths ; 783   ; 783  ;
 +---------------------------------+-------+------+
 
 
@@ -701,58 +1587,58 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Mar 10 13:27:03 2024
+    Info: Processing started: Sun Mar 10 23:05:07 2024
 Info: Command: quartus_sta U-LALA -c U-LALA
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): TimeQuest Timing Analyzer is analyzing 14 combinational loops as latches.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 74 combinational loops as latches.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'U-LALA.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name enable enable
+    Info (332105): create_clock -period 1.000 -name c[0] c[0]
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.463
+Info (332146): Worst-case setup slack is -1.434
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.463       -10.018 enable 
-Info (332146): Worst-case hold slack is 0.841
+    Info (332119):    -1.434       -20.785 c[0] 
+Info (332146): Worst-case hold slack is 0.701
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.841         0.000 enable 
+    Info (332119):     0.701         0.000 c[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -1.380
+Info (332146): Worst-case minimum pulse width slack is -1.222
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -1.380 enable 
+    Info (332119):    -1.222        -1.222 c[0] 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.036
+Info (332146): Worst-case setup slack is -0.035
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.036        -0.036 enable 
-Info (332146): Worst-case hold slack is 0.369
+    Info (332119):    -0.035        -0.053 c[0] 
+Info (332146): Worst-case hold slack is 0.303
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.369         0.000 enable 
+    Info (332119):     0.303         0.000 c[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -1.380
+Info (332146): Worst-case minimum pulse width slack is -1.222
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -1.380 enable 
+    Info (332119):    -1.222        -1.222 c[0] 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4539 megabytes
-    Info: Processing ended: Sun Mar 10 13:27:08 2024
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4554 megabytes
+    Info: Processing ended: Sun Mar 10 23:05:10 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

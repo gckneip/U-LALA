@@ -19,6 +19,7 @@ SIGNAL n: std_logic_vector(4 downto 0);
 SIGNAL enable_components : std_logic_vector (15 downto 0);
 SIGNAL entradaMUXFinal: MatrizMUX;
 SIGNAL saidaMUXFinal: std_logic_vector (4 downto 0);
+SIGNAL overflowSOMADOR: std_logic;
 
 
 COMPONENT muxFinal 
@@ -130,6 +131,7 @@ END COMPONENT;
 BEGIN
     PROCESS (c)  
     BEGIN
+	 enable_components <= "0000000000000000";
         CASE c IS
             WHEN "0000" =>
                 enable_components(0) <= '1';  
@@ -241,7 +243,8 @@ BEGIN
 			a => a,
 			b => b,
 			enable => enable_components(8),
-			s => entradaMUXFinal(8) 
+			s => entradaMUXFinal(8), 
+			overflow => overflowSOMADOR
 		);
 		
 	ShiftRight: shift_r
@@ -259,11 +262,11 @@ BEGIN
 			enable => enable_components(13)
 		);
 		
-	--Conversor7Seg: conversor_display7Seg
-		--PORT MAP (
-			--entrada => saidaMUXFinal,
-			--saida => s
-		--);
+	Conversor7Seg: conversor_display7Seg
+		PORT MAP (
+			entrada => saidaMUXFinal,
+			saida => saida7SEG
+		);
 		
 -------------------------------------------- LEDS-------------------------------		
 		--Codigo do LED zero
@@ -286,6 +289,16 @@ BEGIN
 			END IF;
 		END PROCESS;
 		saidaLEDS <= saidaMUXFinal;
+		
+		PROCESS(overflowSOMADOR)
+		BEGIN	
+			IF overflowSOMADOR = '1' THEN
+				ledOverflow <= '1';
+			ELSE	
+				ledOverflow <='0';
+			END IF;
+		END PROCESS;
+		
 		
 
 	

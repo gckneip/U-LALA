@@ -71,6 +71,8 @@ soma4: full_adder
 				overflow <= (NOT(a(4)) AND NOT(b(4)) AND c(4)) OR (a(4) AND b(4) AND c(4)); 
 				s(3 downto 0) <= foda(3 downto 0);
 				s(4) <= ((a(4) AND b(4)) OR (a(4) AND NOT(c(4))) OR (b(4) AND NOT(c(4)))) AND (foda(0) OR foda(1) OR foda(2) OR foda(3));
+			ELSE
+				overflow <= '0';
 			END IF;
 	END PROCESS;
 	

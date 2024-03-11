@@ -21,10 +21,9 @@ COMPONENT comp_de_um
     );
 	 END COMPONENT	;
 	
-COMPONENT five_bits_sub_adder
+COMPONENT five_bits_adder
 	PORT(
 			a,b:IN std_logic_vector(4 downto 0); 
-			isSubtrator:IN std_logic;
 			s: OUT std_logic_vector(4 downto 0); 
 			enable: IN std_logic;
 			overflow: OUT std_logic
@@ -40,11 +39,10 @@ BEGIN
 			s => saida_comp_de_um,
 			enable => enable
 		);
-	adder_sub: five_bits_sub_adder
+	adder_sub: five_bits_adder
 	PORT MAP (
 		a => saida_comp_de_um,
 		b => "00001",
-		isSubtrator => '0',
 		s => s,
 		enable => enable
 	);
