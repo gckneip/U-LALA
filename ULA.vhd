@@ -21,6 +21,8 @@ SIGNAL entradaMUXFinal: MatrizMUX;
 SIGNAL saidaMUXFinal: std_logic_vector (4 downto 0);
 SIGNAL overflowSOMADOR: std_logic;
 SIGNAL overflowMULTIPLICADOR: std_logic;
+SIGNAL overflowRAIZ: std_logic;
+SIGNAL overflowLOG: std_logic;
 
 
 COMPONENT muxFinal 
@@ -129,6 +131,25 @@ COMPONENT shift_l
 			enable: IN std_logic
 	);
 END COMPONENT;
+
+COMPONENT square_root
+	PORT(
+			a:IN std_logic_vector(4 downto 0);
+			s: OUT std_logic_vector(4 downto 0);
+			overflow: OUT std_logic;
+			enable: IN std_logic
+	);
+END COMPONENT;
+
+COMPONENT log2
+	PORT(
+			a:IN std_logic_vector(4 downto 0);
+			s: OUT std_logic_vector(4 downto 0);
+			overflow: OUT std_logic;
+			enable: IN std_logic
+	);
+END COMPONENT;
+
 
 COMPONENT conversor_display7Seg
 	PORT (
@@ -257,7 +278,7 @@ BEGIN
 			overflow => overflowSOMADOR
 		);
 		
-	multiplicator: five_bits_multiplicator
+	Multiplicator: five_bits_multiplicator
 		PORT MAP(
 			a => a,
 			b => b,
@@ -281,6 +302,20 @@ BEGIN
 			enable => enable_components(13)
 		);
 		
+	SquareRoot: square_root
+		PORT MAP(
+			a => a,
+			enable => enable_components(14),
+			s => entradaMUXFinal(14),
+			overflow => overflowRAIZ
+		);
+	LOGARITMO_BASE2: log2
+		PORT MAP(
+			a=> a,
+			enable => enable_components(15),
+			s => entradaMUXFinal(15),
+			overflow => overflowLOG
+		);
 	Conversor7Seg: conversor_display7Seg
 		PORT MAP (
 			entrada => saidaMUXFinal,
@@ -309,9 +344,10 @@ BEGIN
 		END PROCESS;
 		saidaLEDS <= saidaMUXFinal;
 		
+		--Codigo LED overflow
 		PROCESS(overflowSOMADOR,overflowMULTIPLICADOR)
 		BEGIN	
-			IF overflowSOMADOR = '1' OR overflowMULTIPLICADOR = '1' THEN
+			IF overflowSOMADOR = '1' OR overflowMULTIPLICADOR = '1' OR overflowRAIZ = '1' OR overflowLOG = '1' THEN
 				ledOverflow <= '1';
 			ELSE	
 				ledOverflow <='0';

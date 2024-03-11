@@ -30,8 +30,12 @@ BEGIN
 						s <= "00011";
 						overflow <= '0';
 					WHEN OTHERS =>
+						s <= "00000";
 						overflow <= '1';
 				END CASE;
+		ELSE
+			s <= "00000";
+			overflow <= '0';
 		END IF;
 		END PROCESS;
 
