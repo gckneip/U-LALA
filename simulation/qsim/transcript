@@ -17,13 +17,13 @@
 # Loading work.ULA_vlg_vec_tst
 # Loading work.ULA
 # Loading cycloneii_ver.cycloneii_lcell_comb
-# Loading cycloneii_ver.cycloneii_clkctrl
-# Loading cycloneii_ver.cycloneii_mux41
-# Loading cycloneii_ver.cycloneii_ena_reg
 # Loading cycloneii_ver.cycloneii_io
 # Loading cycloneii_ver.cycloneii_mux21
 # Loading cycloneii_ver.cycloneii_dffe
 # Loading cycloneii_ver.cycloneii_asynch_io
+# Loading cycloneii_ver.cycloneii_clkctrl
+# Loading cycloneii_ver.cycloneii_mux41
+# Loading cycloneii_ver.cycloneii_ena_reg
 # Loading work.ULA_vlg_sample_tst
 # Loading work.ULA_vlg_check_tst
 # Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
@@ -31,10 +31,10 @@
 # 
 #           File in use by: gustavo.kneip  Hostname: ITLNB108  ProcessID: 10384
 # 
-#           Attempting to use alternate WLF file "./wlftds8mq2".
+#           Attempting to use alternate WLF file "./wlfti5ex49".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftds8mq2
+#           Using alternate file: ./wlfti5ex49
 # 
 # Simulation passed !
 # ** Note: $finish    : U-LALA.vt(690)

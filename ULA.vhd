@@ -20,6 +20,7 @@ SIGNAL enable_components : std_logic_vector (15 downto 0);
 SIGNAL entradaMUXFinal: MatrizMUX;
 SIGNAL saidaMUXFinal: std_logic_vector (4 downto 0);
 SIGNAL overflowSOMADOR: std_logic;
+SIGNAL overflowMULTIPLICADOR: std_logic;
 
 
 COMPONENT muxFinal 
@@ -96,6 +97,15 @@ COMPONENT comp_de_dois
 END COMPONENT;
 
 COMPONENT five_bits_adder
+	PORT(
+			a,b:IN std_logic_vector(4 downto 0); 
+			s: OUT std_logic_vector(4 downto 0); 
+			overflow: OUT std_logic;
+			enable: IN std_logic
+	);
+END COMPONENT;
+
+COMPONENT five_bits_multiplicator
 	PORT(
 			a,b:IN std_logic_vector(4 downto 0); 
 			s: OUT std_logic_vector(4 downto 0); 
@@ -247,6 +257,15 @@ BEGIN
 			overflow => overflowSOMADOR
 		);
 		
+	multiplicator: five_bits_multiplicator
+		PORT MAP(
+			a => a,
+			b => b,
+			enable => enable_components(10),
+			s => entradaMUXFinal(10),
+			overflow => overflowMULTIPLICADOR
+		);
+		
 	ShiftRight: shift_r
 		PORT MAP (
 			a(4 downto 0) => a,
@@ -272,7 +291,7 @@ BEGIN
 		--Codigo do LED zero
 		PROCESS(saidaMUXFinal)
 		BEGIN
-			if saidaMUXFinal(3 downto 0) = "0000" THEN
+			if saidaMUXFinal(4 downto 0) = "00000" THEN
 				ledZero <= '1';
 			ELSE 
 				ledZero <= '0';
@@ -290,9 +309,9 @@ BEGIN
 		END PROCESS;
 		saidaLEDS <= saidaMUXFinal;
 		
-		PROCESS(overflowSOMADOR)
+		PROCESS(overflowSOMADOR,overflowMULTIPLICADOR)
 		BEGIN	
-			IF overflowSOMADOR = '1' THEN
+			IF overflowSOMADOR = '1' OR overflowMULTIPLICADOR = '1' THEN
 				ledOverflow <= '1';
 			ELSE	
 				ledOverflow <='0';
