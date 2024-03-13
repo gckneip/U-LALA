@@ -2,37 +2,37 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module square_root
+# -- Compiling module divisor
 # 
 # Top level modules:
-# 	square_root
+# 	divisor
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module square_root_vlg_sample_tst
-# -- Compiling module square_root_vlg_check_tst
-# -- Compiling module square_root_vlg_vec_tst
+# -- Compiling module divisor_vlg_sample_tst
+# -- Compiling module divisor_vlg_check_tst
+# -- Compiling module divisor_vlg_vec_tst
 # 
 # Top level modules:
-# 	square_root_vlg_vec_tst
-# vsim -L cycloneii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.square_root_vlg_vec_tst 
-# Loading work.square_root_vlg_vec_tst
-# Loading work.square_root
+# 	divisor_vlg_vec_tst
+# vsim -L cycloneii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.divisor_vlg_vec_tst 
+# Loading work.divisor_vlg_vec_tst
+# Loading work.divisor
+# Loading cycloneii_ver.cycloneii_lcell_comb
 # Loading cycloneii_ver.cycloneii_io
 # Loading cycloneii_ver.cycloneii_mux21
 # Loading cycloneii_ver.cycloneii_dffe
 # Loading cycloneii_ver.cycloneii_asynch_io
-# Loading cycloneii_ver.cycloneii_lcell_comb
-# Loading work.square_root_vlg_sample_tst
-# Loading work.square_root_vlg_check_tst
+# Loading work.divisor_vlg_sample_tst
+# Loading work.divisor_vlg_check_tst
 # Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: gustavo.kneip  Hostname: ITLNB108  ProcessID: 10384
 # 
-#           Attempting to use alternate WLF file "./wlftha21cn".
+#           Attempting to use alternate WLF file "./wlft15v3hq".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftha21cn
+#           Using alternate file: ./wlft15v3hq
 # 
 # Simulation passed !
-# ** Note: $finish    : U-LALA.vt(248)
-#    Time: 1 us  Iteration: 0  Instance: /square_root_vlg_vec_tst/tb_out
+# ** Note: $finish    : U-LALA.vt(283)
+#    Time: 1 us  Iteration: 0  Instance: /divisor_vlg_vec_tst/tb_out

@@ -23,6 +23,7 @@ SIGNAL overflowSOMADOR: std_logic;
 SIGNAL overflowMULTIPLICADOR: std_logic;
 SIGNAL overflowRAIZ: std_logic;
 SIGNAL overflowLOG: std_logic;
+SIGNAL overflowSUBTRATOR: std_logic;
 
 
 COMPONENT muxFinal 
@@ -106,6 +107,17 @@ COMPONENT five_bits_adder
 			enable: IN std_logic
 	);
 END COMPONENT;
+
+COMPONENT five_bits_sub_adder
+		PORT(
+			a,b:IN std_logic_vector(4 downto 0); 
+			isSubtrator:IN std_logic;
+			s: OUT std_logic_vector(4 downto 0); 
+			overflow: OUT std_logic;
+			enable: IN std_logic
+	);
+END COMPONENT;
+
 
 COMPONENT five_bits_multiplicator
 	PORT(
@@ -278,6 +290,16 @@ BEGIN
 			overflow => overflowSOMADOR
 		);
 		
+	subtrator: five_bits_sub_adder
+		PORT MAP(
+		a=> a,
+		b=> b,
+		enable => enable_components(9),
+		isSubtrator => '1',
+		s=> entradaMUXFinal(9),
+		overflow => overflowSUBTRATOR
+		);
+		
 	Multiplicator: five_bits_multiplicator
 		PORT MAP(
 			a => a,
@@ -347,7 +369,7 @@ BEGIN
 		--Codigo LED overflow
 		PROCESS(overflowSOMADOR,overflowMULTIPLICADOR)
 		BEGIN	
-			IF overflowSOMADOR = '1' OR overflowMULTIPLICADOR = '1' OR overflowRAIZ = '1' OR overflowLOG = '1' THEN
+			IF overflowSOMADOR = '1' OR overflowMULTIPLICADOR = '1' OR overflowRAIZ = '1' OR overflowLOG = '1' OR overflowSUBTRATOR ='1' THEN
 				ledOverflow <= '1';
 			ELSE	
 				ledOverflow <='0';
