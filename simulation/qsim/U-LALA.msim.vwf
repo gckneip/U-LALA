@@ -32,207 +32,127 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
-SIGNAL("divisor_vlg_vec_tst|d")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|a")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
-	WIDTH = 4;
+	WIDTH = 5;
 	LSB_INDEX = 0;
 	DIRECTION = INPUT;
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|d[3]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|a[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "divisor_vlg_vec_tst|d";
+	PARENT = "five_bits_sub_adder_vlg_vec_tst|a";
 }
 
-SIGNAL("divisor_vlg_vec_tst|d[2]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|a[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "divisor_vlg_vec_tst|d";
+	PARENT = "five_bits_sub_adder_vlg_vec_tst|a";
 }
 
-SIGNAL("divisor_vlg_vec_tst|d[1]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|a[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "divisor_vlg_vec_tst|d";
+	PARENT = "five_bits_sub_adder_vlg_vec_tst|a";
 }
 
-SIGNAL("divisor_vlg_vec_tst|d[0]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|a[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "divisor_vlg_vec_tst|d";
+	PARENT = "five_bits_sub_adder_vlg_vec_tst|a";
 }
 
-SIGNAL("divisor_vlg_vec_tst|m")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|a[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "five_bits_sub_adder_vlg_vec_tst|a";
+}
+
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|b")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
-	WIDTH = 4;
+	WIDTH = 5;
 	LSB_INDEX = 0;
 	DIRECTION = INPUT;
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|m[3]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|b[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "divisor_vlg_vec_tst|m";
+	PARENT = "five_bits_sub_adder_vlg_vec_tst|b";
 }
 
-SIGNAL("divisor_vlg_vec_tst|m[2]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|b[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "divisor_vlg_vec_tst|m";
+	PARENT = "five_bits_sub_adder_vlg_vec_tst|b";
 }
 
-SIGNAL("divisor_vlg_vec_tst|m[1]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|b[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "divisor_vlg_vec_tst|m";
+	PARENT = "five_bits_sub_adder_vlg_vec_tst|b";
 }
 
-SIGNAL("divisor_vlg_vec_tst|m[0]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|b[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "divisor_vlg_vec_tst|m";
+	PARENT = "five_bits_sub_adder_vlg_vec_tst|b";
 }
 
-SIGNAL("divisor_vlg_vec_tst|q[3]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|b[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("divisor_vlg_vec_tst|q[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("divisor_vlg_vec_tst|q[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("divisor_vlg_vec_tst|q[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("divisor_vlg_vec_tst|r[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("divisor_vlg_vec_tst|r[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("divisor_vlg_vec_tst|r[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("divisor_vlg_vec_tst|r[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("divisor_vlg_vec_tst|sampler")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("divisor_vlg_vec_tst|i1|gnd")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
+	PARENT = "five_bits_sub_adder_vlg_vec_tst|b";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|vcc")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|enable")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -242,7 +162,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|vcc")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|unknown")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|isSubtrator")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -252,7 +172,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|unknown")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|devclrn")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|overflow")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -262,7 +182,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|devclrn")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|devpor")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|s[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -272,7 +192,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|devpor")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|devoe")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|s[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -282,7 +202,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|devoe")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add3~2_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|s[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -292,7 +212,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add3~2_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add6~2_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|s[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -302,7 +222,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add6~2_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add0~1")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|s[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -312,7 +232,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add0~1")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add0~3")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|sampler")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -322,7 +242,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add0~3")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add0~5")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|gnd")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -332,7 +252,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add0~5")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add0~6_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|vcc")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -342,7 +262,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add0~6_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add0~4_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|unknown")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -352,7 +272,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add0~4_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~5_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|devclrn")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -362,7 +282,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~5_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add0~2_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|devpor")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -372,7 +292,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add0~2_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~6_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|devoe")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -382,7 +302,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~6_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add3~1")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|enable~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -392,7 +312,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add3~1")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add3~3")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma1|s~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -402,7 +322,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add3~3")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add3~5")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|enable~clkctrl_outclk")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -412,7 +332,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add3~5")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add3~6_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma1|s~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -422,7 +342,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add3~6_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add0~0_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|s~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -432,7 +352,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add0~0_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~4_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma1|c_out~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -442,7 +362,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~4_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~7_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma1|c_out~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -452,7 +372,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~7_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add6~1")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma2|s~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -462,7 +382,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add6~1")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add6~3")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma2|s~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -472,7 +392,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add6~3")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add6~4_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|s~1_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -482,7 +402,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add6~4_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~9_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma2|c_out~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -492,7 +412,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~9_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add3~0_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma2|c_out~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -502,7 +422,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add3~0_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~8_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma3|s~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -512,7 +432,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~8_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add3~4_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma3|s~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -522,7 +442,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add3~4_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~15_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|s~2_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -532,7 +452,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~15_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add6~5")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|isSubtrator~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -542,7 +462,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add6~5")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add6~6_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma3|c_out~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -552,7 +472,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add6~6_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~10_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma3|c_out~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -562,7 +482,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~10_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add9~1")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma4|s~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -572,7 +492,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add9~1")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add9~3")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma4|s~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -582,7 +502,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add9~3")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add9~5")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|s~3_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -592,7 +512,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add9~5")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add9~6_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma4|c_out~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -602,7 +522,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add9~6_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add9~0_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma4|c_out~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -612,7 +532,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add9~0_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~12_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma5|s~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -622,7 +542,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~12_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add6~0_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma5|s~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -632,7 +552,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add6~0_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~11_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|s~4_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -642,7 +562,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~11_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add9~2_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma5|c_out~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -652,7 +572,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add9~2_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~13_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|soma5|c_out~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -662,7 +582,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~13_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|Add9~4_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|overflow~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -672,7 +592,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|Add9~4_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~14_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|a~combout[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -682,7 +602,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~14_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|ac~16_combout")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|a~combout[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -692,7 +612,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|ac~16_combout")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|d~combout[3]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|a~combout[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -702,7 +622,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|d~combout[3]")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|d~combout[2]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|a~combout[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -712,7 +632,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|d~combout[2]")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|d~combout[1]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|a~combout[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -722,7 +642,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|d~combout[1]")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|d~combout[0]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|b~combout[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -732,7 +652,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|d~combout[0]")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|m~combout[3]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|b~combout[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -742,7 +662,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|m~combout[3]")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|m~combout[2]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|b~combout[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -752,7 +672,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|m~combout[2]")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|m~combout[1]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|b~combout[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -762,7 +682,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|m~combout[1]")
 	PARENT = "";
 }
 
-SIGNAL("divisor_vlg_vec_tst|i1|m~combout[0]")
+SIGNAL("five_bits_sub_adder_vlg_vec_tst|i1|b~combout[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -772,7 +692,7 @@ SIGNAL("divisor_vlg_vec_tst|i1|m~combout[0]")
 	PARENT = "";
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|d[3]")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|a[4]")
 {
 	NODE
 	{
@@ -781,7 +701,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|d[3]")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|d[2]")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|a[3]")
 {
 	NODE
 	{
@@ -790,7 +710,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|d[2]")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|d[1]")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|a[2]")
 {
 	NODE
 	{
@@ -799,7 +719,16 @@ TRANSITION_LIST("divisor_vlg_vec_tst|d[1]")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|d[0]")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|a[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|a[0]")
 {
 	NODE
 	{
@@ -808,25 +737,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|d[0]")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|m[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|m[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|m[1]")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|b[4]")
 {
 	NODE
 	{
@@ -835,25 +746,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|m[1]")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|m[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|q[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|q[2]")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|b[3]")
 {
 	NODE
 	{
@@ -862,52 +755,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|q[2]")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|q[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|q[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|r[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|r[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|r[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|r[0]")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|b[2]")
 {
 	NODE
 	{
@@ -916,7 +764,97 @@ TRANSITION_LIST("divisor_vlg_vec_tst|r[0]")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|sampler")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|b[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|b[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|enable")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|isSubtrator")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|overflow")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|s[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|s[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|s[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|s[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|s[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|sampler")
 {
 	NODE
 	{
@@ -925,7 +863,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|sampler")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|gnd")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|gnd")
 {
 	NODE
 	{
@@ -934,7 +872,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|gnd")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|vcc")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|vcc")
 {
 	NODE
 	{
@@ -943,7 +881,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|vcc")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|unknown")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|unknown")
 {
 	NODE
 	{
@@ -952,7 +890,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|unknown")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|devclrn")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|devclrn")
 {
 	NODE
 	{
@@ -961,7 +899,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|devclrn")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|devpor")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|devpor")
 {
 	NODE
 	{
@@ -970,7 +908,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|devpor")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|devoe")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|devoe")
 {
 	NODE
 	{
@@ -979,7 +917,97 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|devoe")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~2_combout")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|enable~combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma1|s~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|enable~clkctrl_outclk")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma1|s~combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|s~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma1|c_out~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma1|c_out~combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma2|s~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma2|s~combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|s~1_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma2|c_out~0_combout")
 {
 	NODE
 	{
@@ -988,34 +1016,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~2_combout")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add6~2_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~1")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~3")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~5")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma2|c_out~combout")
 {
 	NODE
 	{
@@ -1024,7 +1025,34 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~5")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~6_combout")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma3|s~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma3|s~combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|s~2_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|isSubtrator~combout")
 {
 	NODE
 	{
@@ -1033,7 +1061,70 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~6_combout")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~4_combout")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma3|c_out~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma3|c_out~combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma4|s~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma4|s~combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|s~3_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma4|c_out~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma4|c_out~combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma5|s~0_combout")
 {
 	NODE
 	{
@@ -1042,16 +1133,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~4_combout")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~5_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~2_combout")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma5|s~combout")
 {
 	NODE
 	{
@@ -1060,16 +1142,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~2_combout")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~6_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~1")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|s~4_combout")
 {
 	NODE
 	{
@@ -1078,7 +1151,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~1")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~3")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma5|c_out~0_combout")
 {
 	NODE
 	{
@@ -1087,7 +1160,25 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~3")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~5")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|soma5|c_out~combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|overflow~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|a~combout[4]")
 {
 	NODE
 	{
@@ -1096,7 +1187,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~5")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~6_combout")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|a~combout[3]")
 {
 	NODE
 	{
@@ -1105,7 +1196,25 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~6_combout")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~0_combout")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|a~combout[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|a~combout[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|a~combout[0]")
 {
 	NODE
 	{
@@ -1114,7 +1223,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add0~0_combout")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~4_combout")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|b~combout[4]")
 {
 	NODE
 	{
@@ -1123,16 +1232,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~4_combout")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~7_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add6~1")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|b~combout[3]")
 {
 	NODE
 	{
@@ -1141,7 +1241,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add6~1")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add6~3")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|b~combout[2]")
 {
 	NODE
 	{
@@ -1150,7 +1250,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add6~3")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add6~4_combout")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|b~combout[1]")
 {
 	NODE
 	{
@@ -1159,259 +1259,7 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add6~4_combout")
 	}
 }
 
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~9_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~0_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~8_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add3~4_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~15_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add6~5")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add6~6_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~10_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add9~1")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add9~3")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add9~5")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add9~6_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add9~0_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~12_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add6~0_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~11_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add9~2_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~13_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|Add9~4_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~14_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|ac~16_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|d~combout[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|d~combout[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|d~combout[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|d~combout[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|m~combout[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|m~combout[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|m~combout[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("divisor_vlg_vec_tst|i1|m~combout[0]")
+TRANSITION_LIST("five_bits_sub_adder_vlg_vec_tst|i1|b~combout[0]")
 {
 	NODE
 	{
@@ -1422,17 +1270,17 @@ TRANSITION_LIST("divisor_vlg_vec_tst|i1|m~combout[0]")
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|d";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|a";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 0;
 	TREE_LEVEL = 0;
-	CHILDREN = 1, 2, 3, 4;
+	CHILDREN = 1, 2, 3, 4, 5;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|d[3]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|a[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -1442,7 +1290,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|d[2]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|a[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
@@ -1452,7 +1300,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|d[1]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|a[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 3;
@@ -1462,7 +1310,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|d[0]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|a[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 4;
@@ -1472,75 +1320,77 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|m";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|a[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 5;
-	TREE_LEVEL = 0;
-	CHILDREN = 6, 7, 8, 9;
+	TREE_LEVEL = 1;
+	PARENT = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|m[3]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|b";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 6;
-	TREE_LEVEL = 1;
-	PARENT = 5;
+	TREE_LEVEL = 0;
+	CHILDREN = 7, 8, 9, 10, 11;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|m[2]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|b[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 1;
-	PARENT = 5;
+	PARENT = 6;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|m[1]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|b[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
-	PARENT = 5;
+	PARENT = 6;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|m[0]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|b[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
-	PARENT = 5;
+	PARENT = 6;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|q[3]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|b[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 10;
-	TREE_LEVEL = 0;
+	TREE_LEVEL = 1;
+	PARENT = 6;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|q[2]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|b[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 11;
-	TREE_LEVEL = 0;
+	TREE_LEVEL = 1;
+	PARENT = 6;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|q[1]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|enable";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 12;
@@ -1549,7 +1399,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|q[0]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|isSubtrator";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 13;
@@ -1558,7 +1408,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|r[3]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|overflow";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 14;
@@ -1567,7 +1417,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|r[2]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|s[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 15;
@@ -1576,7 +1426,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|r[1]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|s[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 16;
@@ -1585,7 +1435,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|r[0]";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|s[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 17;
@@ -1594,7 +1444,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|sampler";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|s[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 18;
@@ -1603,7 +1453,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|gnd";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|s[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 19;
@@ -1612,7 +1462,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|vcc";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|sampler";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 20;
@@ -1621,7 +1471,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|unknown";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|gnd";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 21;
@@ -1630,7 +1480,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|devclrn";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|vcc";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 22;
@@ -1639,7 +1489,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|devpor";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|unknown";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 23;
@@ -1648,7 +1498,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|devoe";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|devclrn";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 24;
@@ -1657,7 +1507,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add3~2_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|devpor";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 25;
@@ -1666,7 +1516,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add6~2_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|devoe";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 26;
@@ -1675,7 +1525,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add0~1";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|enable~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 27;
@@ -1684,7 +1534,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add0~3";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma1|s~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 28;
@@ -1693,7 +1543,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add0~5";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|enable~clkctrl_outclk";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 29;
@@ -1702,7 +1552,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add0~6_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma1|s~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 30;
@@ -1711,7 +1561,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add0~4_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|s~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 31;
@@ -1720,7 +1570,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~5_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma1|c_out~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 32;
@@ -1729,7 +1579,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add0~2_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma1|c_out~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 33;
@@ -1738,7 +1588,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~6_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma2|s~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 34;
@@ -1747,7 +1597,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add3~1";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma2|s~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 35;
@@ -1756,7 +1606,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add3~3";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|s~1_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 36;
@@ -1765,7 +1615,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add3~5";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma2|c_out~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 37;
@@ -1774,7 +1624,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add3~6_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma2|c_out~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 38;
@@ -1783,7 +1633,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add0~0_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma3|s~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 39;
@@ -1792,7 +1642,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~4_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma3|s~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 40;
@@ -1801,7 +1651,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~7_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|s~2_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 41;
@@ -1810,7 +1660,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add6~1";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|isSubtrator~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 42;
@@ -1819,7 +1669,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add6~3";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma3|c_out~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 43;
@@ -1828,7 +1678,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add6~4_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma3|c_out~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 44;
@@ -1837,7 +1687,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~9_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma4|s~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 45;
@@ -1846,7 +1696,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add3~0_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma4|s~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 46;
@@ -1855,7 +1705,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~8_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|s~3_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 47;
@@ -1864,7 +1714,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add3~4_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma4|c_out~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 48;
@@ -1873,7 +1723,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~15_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma4|c_out~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 49;
@@ -1882,7 +1732,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add6~5";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma5|s~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 50;
@@ -1891,7 +1741,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add6~6_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma5|s~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 51;
@@ -1900,7 +1750,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~10_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|s~4_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 52;
@@ -1909,7 +1759,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add9~1";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma5|c_out~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 53;
@@ -1918,7 +1768,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add9~3";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|soma5|c_out~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 54;
@@ -1927,7 +1777,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add9~5";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|overflow~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 55;
@@ -1936,7 +1786,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add9~6_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|a~combout[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 56;
@@ -1945,7 +1795,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add9~0_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|a~combout[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 57;
@@ -1954,7 +1804,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~12_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|a~combout[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 58;
@@ -1963,7 +1813,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add6~0_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|a~combout[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 59;
@@ -1972,7 +1822,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~11_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|a~combout[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 60;
@@ -1981,7 +1831,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add9~2_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|b~combout[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 61;
@@ -1990,7 +1840,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~13_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|b~combout[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 62;
@@ -1999,7 +1849,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|Add9~4_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|b~combout[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 63;
@@ -2008,7 +1858,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~14_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|b~combout[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 64;
@@ -2017,82 +1867,10 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "divisor_vlg_vec_tst|i1|ac~16_combout";
+	CHANNEL = "five_bits_sub_adder_vlg_vec_tst|i1|b~combout[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 65;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "divisor_vlg_vec_tst|i1|d~combout[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 66;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "divisor_vlg_vec_tst|i1|d~combout[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 67;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "divisor_vlg_vec_tst|i1|d~combout[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 68;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "divisor_vlg_vec_tst|i1|d~combout[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 69;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "divisor_vlg_vec_tst|i1|m~combout[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 70;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "divisor_vlg_vec_tst|i1|m~combout[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 71;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "divisor_vlg_vec_tst|i1|m~combout[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 72;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "divisor_vlg_vec_tst|i1|m~combout[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 73;
 	TREE_LEVEL = 0;
 }
 ;

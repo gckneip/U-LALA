@@ -18,26 +18,30 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "03/11/2024 22:39:42"
+// Generated on "03/13/2024 09:38:40"
                                                                         
-// Verilog Self-Checking Test Bench (with test vectors) for design :    divisor
+// Verilog Self-Checking Test Bench (with test vectors) for design :    five_bits_sub_adder
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module divisor_vlg_sample_tst(
-	d,
-	m,
+module five_bits_sub_adder_vlg_sample_tst(
+	a,
+	b,
+	enable,
+	isSubtrator,
 	sampler_tx
 );
-input [3:0] d;
-input [3:0] m;
+input [4:0] a;
+input [4:0] b;
+input  enable;
+input  isSubtrator;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(d or m)
+always @(a or b or enable or isSubtrator)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -56,26 +60,26 @@ end
 assign sampler_tx = sample;
 endmodule
 
-module divisor_vlg_check_tst (
-	q,
-	r,
+module five_bits_sub_adder_vlg_check_tst (
+	overflow,
+	s,
 	sampler_rx
 );
-input [3:0] q;
-input [3:0] r;
+input  overflow;
+input [4:0] s;
 input sampler_rx;
 
-reg [3:0] q_expected;
-reg [3:0] r_expected;
+reg  overflow_expected;
+reg [4:0] s_expected;
 
-reg [3:0] q_prev;
-reg [3:0] r_prev;
+reg  overflow_prev;
+reg [4:0] s_prev;
 
-reg [3:0] q_expected_prev;
-reg [3:0] r_expected_prev;
+reg  overflow_expected_prev;
+reg [4:0] s_expected_prev;
 
-reg [3:0] last_q_exp;
-reg [3:0] last_r_exp;
+reg  last_overflow_exp;
+reg [4:0] last_s_exp;
 
 reg trigger;
 
@@ -97,61 +101,52 @@ end
 
 always @(trigger)
 begin
-	q_prev = q;
-	r_prev = r;
+	overflow_prev = overflow;
+	s_prev = s;
 end
 
 // update expected /o prevs
 
 always @(trigger)
 begin
-	q_expected_prev = q_expected;
-	r_expected_prev = r_expected;
+	overflow_expected_prev = overflow_expected;
+	s_expected_prev = s_expected;
 end
 
 
-// expected q[ 3 ]
+// expected s[ 4 ]
 initial
 begin
-	q_expected[3] = 1'bX;
+	s_expected[4] = 1'bX;
 end 
-// expected q[ 2 ]
+// expected s[ 3 ]
 initial
 begin
-	q_expected[2] = 1'bX;
+	s_expected[3] = 1'bX;
 end 
-// expected q[ 1 ]
+// expected s[ 2 ]
 initial
 begin
-	q_expected[1] = 1'bX;
+	s_expected[2] = 1'bX;
 end 
-// expected q[ 0 ]
+// expected s[ 1 ]
 initial
 begin
-	q_expected[0] = 1'bX;
+	s_expected[1] = 1'bX;
 end 
-// expected r[ 3 ]
+// expected s[ 0 ]
 initial
 begin
-	r_expected[3] = 1'bX;
+	s_expected[0] = 1'bX;
 end 
-// expected r[ 2 ]
+
+// expected overflow
 initial
 begin
-	r_expected[2] = 1'bX;
-end 
-// expected r[ 1 ]
-initial
-begin
-	r_expected[1] = 1'bX;
-end 
-// expected r[ 0 ]
-initial
-begin
-	r_expected[0] = 1'bX;
+	overflow_expected = 1'bX;
 end 
 // generate trigger
-always @(q_expected or q or r_expected or r)
+always @(overflow_expected or overflow or s_expected or s)
 begin
 	trigger <= ~trigger;
 end
@@ -161,112 +156,86 @@ begin
 `ifdef debug_tbench
 	$display("Scanning pattern %d @time = %t",i,$realtime );
 	i = i + 1;
-	$display("| expected q = %b | expected r = %b | ",q_expected_prev,r_expected_prev);
-	$display("| real q = %b | real r = %b | ",q_prev,r_prev);
+	$display("| expected overflow = %b | expected s = %b | ",overflow_expected_prev,s_expected_prev);
+	$display("| real overflow = %b | real s = %b | ",overflow_prev,s_prev);
 `endif
 	if (
-		( q_expected_prev[0] !== 1'bx ) && ( q_prev[0] !== q_expected_prev[0] )
-		&& ((q_expected_prev[0] !== last_q_exp[0]) ||
+		( overflow_expected_prev !== 1'bx ) && ( overflow_prev !== overflow_expected_prev )
+		&& ((overflow_expected_prev !== last_overflow_exp) ||
 			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port q[0] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", q_expected_prev);
-		$display ("     Real value = %b", q_prev);
+		$display ("ERROR! Vector Mismatch for output port overflow :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", overflow_expected_prev);
+		$display ("     Real value = %b", overflow_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[1] = 1'b0;
-		last_q_exp[0] = q_expected_prev[0];
+		last_overflow_exp = overflow_expected_prev;
 	end
 	if (
-		( q_expected_prev[1] !== 1'bx ) && ( q_prev[1] !== q_expected_prev[1] )
-		&& ((q_expected_prev[1] !== last_q_exp[1]) ||
-			on_first_change[1])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port q[1] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", q_expected_prev);
-		$display ("     Real value = %b", q_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[1] = 1'b0;
-		last_q_exp[1] = q_expected_prev[1];
-	end
-	if (
-		( q_expected_prev[2] !== 1'bx ) && ( q_prev[2] !== q_expected_prev[2] )
-		&& ((q_expected_prev[2] !== last_q_exp[2]) ||
-			on_first_change[1])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port q[2] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", q_expected_prev);
-		$display ("     Real value = %b", q_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[1] = 1'b0;
-		last_q_exp[2] = q_expected_prev[2];
-	end
-	if (
-		( q_expected_prev[3] !== 1'bx ) && ( q_prev[3] !== q_expected_prev[3] )
-		&& ((q_expected_prev[3] !== last_q_exp[3]) ||
-			on_first_change[1])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port q[3] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", q_expected_prev);
-		$display ("     Real value = %b", q_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[1] = 1'b0;
-		last_q_exp[3] = q_expected_prev[3];
-	end
-	if (
-		( r_expected_prev[0] !== 1'bx ) && ( r_prev[0] !== r_expected_prev[0] )
-		&& ((r_expected_prev[0] !== last_r_exp[0]) ||
+		( s_expected_prev[0] !== 1'bx ) && ( s_prev[0] !== s_expected_prev[0] )
+		&& ((s_expected_prev[0] !== last_s_exp[0]) ||
 			on_first_change[2])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port r[0] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", r_expected_prev);
-		$display ("     Real value = %b", r_prev);
+		$display ("ERROR! Vector Mismatch for output port s[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", s_expected_prev);
+		$display ("     Real value = %b", s_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[2] = 1'b0;
-		last_r_exp[0] = r_expected_prev[0];
+		last_s_exp[0] = s_expected_prev[0];
 	end
 	if (
-		( r_expected_prev[1] !== 1'bx ) && ( r_prev[1] !== r_expected_prev[1] )
-		&& ((r_expected_prev[1] !== last_r_exp[1]) ||
+		( s_expected_prev[1] !== 1'bx ) && ( s_prev[1] !== s_expected_prev[1] )
+		&& ((s_expected_prev[1] !== last_s_exp[1]) ||
 			on_first_change[2])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port r[1] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", r_expected_prev);
-		$display ("     Real value = %b", r_prev);
+		$display ("ERROR! Vector Mismatch for output port s[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", s_expected_prev);
+		$display ("     Real value = %b", s_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[2] = 1'b0;
-		last_r_exp[1] = r_expected_prev[1];
+		last_s_exp[1] = s_expected_prev[1];
 	end
 	if (
-		( r_expected_prev[2] !== 1'bx ) && ( r_prev[2] !== r_expected_prev[2] )
-		&& ((r_expected_prev[2] !== last_r_exp[2]) ||
+		( s_expected_prev[2] !== 1'bx ) && ( s_prev[2] !== s_expected_prev[2] )
+		&& ((s_expected_prev[2] !== last_s_exp[2]) ||
 			on_first_change[2])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port r[2] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", r_expected_prev);
-		$display ("     Real value = %b", r_prev);
+		$display ("ERROR! Vector Mismatch for output port s[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", s_expected_prev);
+		$display ("     Real value = %b", s_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[2] = 1'b0;
-		last_r_exp[2] = r_expected_prev[2];
+		last_s_exp[2] = s_expected_prev[2];
 	end
 	if (
-		( r_expected_prev[3] !== 1'bx ) && ( r_prev[3] !== r_expected_prev[3] )
-		&& ((r_expected_prev[3] !== last_r_exp[3]) ||
+		( s_expected_prev[3] !== 1'bx ) && ( s_prev[3] !== s_expected_prev[3] )
+		&& ((s_expected_prev[3] !== last_s_exp[3]) ||
 			on_first_change[2])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port r[3] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", r_expected_prev);
-		$display ("     Real value = %b", r_prev);
+		$display ("ERROR! Vector Mismatch for output port s[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", s_expected_prev);
+		$display ("     Real value = %b", s_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[2] = 1'b0;
-		last_r_exp[3] = r_expected_prev[3];
+		last_s_exp[3] = s_expected_prev[3];
+	end
+	if (
+		( s_expected_prev[4] !== 1'bx ) && ( s_prev[4] !== s_expected_prev[4] )
+		&& ((s_expected_prev[4] !== last_s_exp[4]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port s[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", s_expected_prev);
+		$display ("     Real value = %b", s_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_s_exp[4] = s_expected_prev[4];
 	end
 
 	trigger <= ~trigger;
@@ -284,75 +253,103 @@ $finish;
 end 
 endmodule
 
-module divisor_vlg_vec_tst();
+module five_bits_sub_adder_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg [3:0] d;
-reg [3:0] m;
+reg [4:0] a;
+reg [4:0] b;
+reg enable;
+reg isSubtrator;
 // wires                                               
-wire [3:0] q;
-wire [3:0] r;
+wire overflow;
+wire [4:0] s;
 
 wire sampler;                             
 
 // assign statements (if any)                          
-divisor i1 (
+five_bits_sub_adder i1 (
 // port map - connection between master ports and signals/registers   
-	.d(d),
-	.m(m),
-	.q(q),
-	.r(r)
+	.a(a),
+	.b(b),
+	.enable(enable),
+	.isSubtrator(isSubtrator),
+	.overflow(overflow),
+	.s(s)
 );
-// d[ 3 ]
+// a[ 4 ]
 initial
 begin
-	d[3] = 1'b1;
+	a[4] = 1'b1;
 end 
-// d[ 2 ]
+// a[ 3 ]
 initial
 begin
-	d[2] = 1'b0;
+	a[3] = 1'b0;
 end 
-// d[ 1 ]
+// a[ 2 ]
 initial
 begin
-	d[1] = 1'b0;
+	a[2] = 1'b0;
 end 
-// d[ 0 ]
+// a[ 1 ]
 initial
 begin
-	d[0] = 1'b1;
+	a[1] = 1'b0;
 end 
-// m[ 3 ]
+// a[ 0 ]
 initial
 begin
-	m[3] = 1'b0;
+	a[0] = 1'b1;
 end 
-// m[ 2 ]
+// b[ 4 ]
 initial
 begin
-	m[2] = 1'b0;
+	b[4] = 1'b1;
 end 
-// m[ 1 ]
+// b[ 3 ]
 initial
 begin
-	m[1] = 1'b1;
+	b[3] = 1'b1;
 end 
-// m[ 0 ]
+// b[ 2 ]
 initial
 begin
-	m[0] = 1'b0;
+	b[2] = 1'b1;
+end 
+// b[ 1 ]
+initial
+begin
+	b[1] = 1'b1;
+end 
+// b[ 0 ]
+initial
+begin
+	b[0] = 1'b0;
 end 
 
-divisor_vlg_sample_tst tb_sample (
-	.d(d),
-	.m(m),
+// enable
+initial
+begin
+	enable = 1'b1;
+end 
+
+// isSubtrator
+initial
+begin
+	isSubtrator = 1'b1;
+end 
+
+five_bits_sub_adder_vlg_sample_tst tb_sample (
+	.a(a),
+	.b(b),
+	.enable(enable),
+	.isSubtrator(isSubtrator),
 	.sampler_tx(sampler)
 );
 
-divisor_vlg_check_tst tb_out(
-	.q(q),
-	.r(r),
+five_bits_sub_adder_vlg_check_tst tb_out(
+	.overflow(overflow),
+	.s(s),
 	.sampler_rx(sampler)
 );
 endmodule

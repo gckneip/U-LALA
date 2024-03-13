@@ -1,5 +1,5 @@
 Analysis & Synthesis report for U-LALA
-Mon Mar 11 22:36:06 2024
+Wed Mar 13 10:24:08 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,9 +13,20 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "five_bits_multiplicator:Multiplicator|full_adder:soma3"
+ 12. Port Connectivity Checks: "five_bits_multiplicator:Multiplicator|full_adder:soma2_1"
+ 13. Port Connectivity Checks: "five_bits_multiplicator:Multiplicator|full_adder:soma2_0"
+ 14. Port Connectivity Checks: "five_bits_multiplicator:Multiplicator|full_adder:soma1_2"
+ 15. Port Connectivity Checks: "five_bits_multiplicator:Multiplicator|full_adder:soma1_0"
+ 16. Port Connectivity Checks: "five_bits_sub_adder:subtrator"
+ 17. Port Connectivity Checks: "five_bits_sub_adder:somador"
+ 18. Port Connectivity Checks: "comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1"
+ 19. Port Connectivity Checks: "comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -41,16 +52,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Mar 11 22:36:06 2024           ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 13 10:24:08 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; U-LALA                                          ;
-; Top-level Entity Name              ; divisor                                         ;
+; Top-level Entity Name              ; ULA                                             ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 29                                              ;
-;     Total combinational functions  ; 29                                              ;
+; Total logic elements               ; 315                                             ;
+;     Total combinational functions  ; 315                                             ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 16                                              ;
+; Total pins                         ; 43                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -64,7 +75,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; divisor            ; U-LALA             ;
+; Top-level entity name                                                      ; ULA                ; U-LALA             ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -154,53 +165,215 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
-; divisor.vhd                      ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/divisor.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                       ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
+; five_bits_sub_adder.vhd          ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/five_bits_sub_adder.vhd     ;         ;
+; conversor_display7Seg.vhd        ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/conversor_display7Seg.vhd   ;         ;
+; square_root.vhd                  ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/square_root.vhd             ;         ;
+; log2.vhd                         ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/log2.vhd                    ;         ;
+; five_bits_multiplicator.vhd      ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/five_bits_multiplicator.vhd ;         ;
+; full_adder.vhd                   ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/full_adder.vhd              ;         ;
+; xor_gate.vhd                     ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/xor_gate.vhd                ;         ;
+; xnor_gate.vhd                    ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/xnor_gate.vhd               ;         ;
+; shift_r.vhd                      ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/shift_r.vhd                 ;         ;
+; shift_l.vhd                      ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/shift_l.vhd                 ;         ;
+; or_gate.vhd                      ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/or_gate.vhd                 ;         ;
+; nor_gate.vhd                     ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/nor_gate.vhd                ;         ;
+; nand_gate.vhd                    ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/nand_gate.vhd               ;         ;
+; and_gate.vhd                     ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/and_gate.vhd                ;         ;
+; comp_de_um.vhd                   ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/comp_de_um.vhd              ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/ULA.vhd                     ;         ;
+; muxFinal.vhd                     ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/muxFinal.vhd                ;         ;
+; pacoteBodePunha.vhd              ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/pacoteBodePunha.vhd         ;         ;
+; comp_de_dois.vhd                 ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/comp_de_dois.vhd            ;         ;
+; five_bits_adder.vhd              ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/five_bits_adder.vhd         ;         ;
+; divisor.vhd                      ; yes             ; User VHDL File  ; C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/divisor.vhd                 ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimated Total logic elements              ; 29     ;
-;                                             ;        ;
-; Total combinational functions               ; 29     ;
-; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 2      ;
-;     -- 3 input functions                    ; 19     ;
-;     -- <=2 input functions                  ; 8      ;
-;                                             ;        ;
-; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 17     ;
-;     -- arithmetic mode                      ; 12     ;
-;                                             ;        ;
-; Total registers                             ; 0      ;
-;     -- Dedicated logic registers            ; 0      ;
-;     -- I/O registers                        ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 16     ;
-; Embedded Multiplier 9-bit elements          ; 0      ;
-; Maximum fan-out node                        ; Add0~6 ;
-; Maximum fan-out                             ; 5      ;
-; Total fan-out                               ; 88     ;
-; Average fan-out                             ; 1.96   ;
-+---------------------------------------------+--------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 315   ;
+;                                             ;       ;
+; Total combinational functions               ; 315   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 127   ;
+;     -- 3 input functions                    ; 152   ;
+;     -- <=2 input functions                  ; 36    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 303   ;
+;     -- arithmetic mode                      ; 12    ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 43    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; c[0]  ;
+; Maximum fan-out                             ; 36    ;
+; Total fan-out                               ; 1056  ;
+; Average fan-out                             ; 2.95  ;
++---------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |divisor                   ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |divisor            ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                       ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                               ; Library Name ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+--------------+
+; |ULA                                       ; 315 (23)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 43   ; 0            ; |ULA                                                                              ; work         ;
+;    |and_gate:ANDGate|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|and_gate:ANDGate                                                             ; work         ;
+;    |comp_de_dois:complementadorDeDois|     ; 26 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|comp_de_dois:complementadorDeDois                                            ; work         ;
+;       |comp_de_um:complementadorDeUm|      ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm              ; work         ;
+;       |five_bits_adder:adder_sub|          ; 21 (7)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub                  ; work         ;
+;          |full_adder:soma1|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1 ; work         ;
+;          |full_adder:soma2|                ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2 ; work         ;
+;          |full_adder:soma3|                ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3 ; work         ;
+;          |full_adder:soma4|                ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4 ; work         ;
+;    |comp_de_um:complementadorDeUm|         ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|comp_de_um:complementadorDeUm                                                ; work         ;
+;    |conversor_display7Seg:Conversor7Seg|   ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|conversor_display7Seg:Conversor7Seg                                          ; work         ;
+;    |divisor:divisor_foda|                  ; 61 (61)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|divisor:divisor_foda                                                         ; work         ;
+;    |five_bits_multiplicator:Multiplicator| ; 29 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_multiplicator:Multiplicator                                        ; work         ;
+;       |full_adder:soma1_0|                 ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_multiplicator:Multiplicator|full_adder:soma1_0                     ; work         ;
+;       |full_adder:soma1_1|                 ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_multiplicator:Multiplicator|full_adder:soma1_1                     ; work         ;
+;       |full_adder:soma1_2|                 ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_multiplicator:Multiplicator|full_adder:soma1_2                     ; work         ;
+;       |full_adder:soma2_0|                 ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_multiplicator:Multiplicator|full_adder:soma2_0                     ; work         ;
+;       |full_adder:soma2_1|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_multiplicator:Multiplicator|full_adder:soma2_1                     ; work         ;
+;       |full_adder:soma3|                   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_multiplicator:Multiplicator|full_adder:soma3                       ; work         ;
+;    |five_bits_sub_adder:somador|           ; 22 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:somador                                                  ; work         ;
+;       |full_adder:soma1|                   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:somador|full_adder:soma1                                 ; work         ;
+;       |full_adder:soma2|                   ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:somador|full_adder:soma2                                 ; work         ;
+;       |full_adder:soma3|                   ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:somador|full_adder:soma3                                 ; work         ;
+;       |full_adder:soma4|                   ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:somador|full_adder:soma4                                 ; work         ;
+;       |full_adder:soma5|                   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:somador|full_adder:soma5                                 ; work         ;
+;    |five_bits_sub_adder:subtrator|         ; 20 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:subtrator                                                ; work         ;
+;       |full_adder:soma1|                   ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:subtrator|full_adder:soma1                               ; work         ;
+;       |full_adder:soma2|                   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:subtrator|full_adder:soma2                               ; work         ;
+;       |full_adder:soma3|                   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:subtrator|full_adder:soma3                               ; work         ;
+;       |full_adder:soma4|                   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:subtrator|full_adder:soma4                               ; work         ;
+;       |full_adder:soma5|                   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|five_bits_sub_adder:subtrator|full_adder:soma5                               ; work         ;
+;    |log2:LOGARITMO_BASE2|                  ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|log2:LOGARITMO_BASE2                                                         ; work         ;
+;    |muxFinal:MUX_Final|                    ; 57 (57)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|muxFinal:MUX_Final                                                           ; work         ;
+;    |nand_gate:NANDGate|                    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|nand_gate:NANDGate                                                           ; work         ;
+;    |nor_gate:NORGate|                      ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|nor_gate:NORGate                                                             ; work         ;
+;    |or_gate:ORGate|                        ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|or_gate:ORGate                                                               ; work         ;
+;    |shift_l:ShiftLeft|                     ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|shift_l:ShiftLeft                                                            ; work         ;
+;    |shift_r:ShiftRight|                    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|shift_r:ShiftRight                                                           ; work         ;
+;    |square_root:SquareRoot|                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|square_root:SquareRoot                                                       ; work         ;
+;    |xnor_gate:XNORGate|                    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|xnor_gate:XNORGate                                                           ; work         ;
+;    |xor_gate:XORGate|                      ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|xor_gate:XORGate                                                             ; work         ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                               ;
++------------------------------------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------------------------------------+---------------------+------------------------+
+; five_bits_multiplicator:Multiplicator|detecta_0[1]                                 ; Mux15               ; yes                    ;
+; five_bits_sub_adder:subtrator|full_adder:soma5|s                                   ; Mux15               ; yes                    ;
+; five_bits_sub_adder:somador|full_adder:soma5|s                                     ; Mux15               ; yes                    ;
+; shift_r:ShiftRight|s[4]                                                            ; Mux15               ; yes                    ;
+; or_gate:ORGate|s[4]                                                                ; Mux15               ; yes                    ;
+; nand_gate:NANDGate|s[4]                                                            ; Mux15               ; yes                    ;
+; and_gate:ANDGate|s[4]                                                              ; Mux15               ; yes                    ;
+; nor_gate:NORGate|s[4]                                                              ; Mux15               ; yes                    ;
+; shift_l:ShiftLeft|s[4]                                                             ; Mux15               ; yes                    ;
+; comp_de_um:complementadorDeUm|s[4]                                                 ; Mux15               ; yes                    ;
+; xnor_gate:XNORGate|s[4]                                                            ; Mux15               ; yes                    ;
+; xor_gate:XORGate|s[4]                                                              ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[4]                   ; Mux15               ; yes                    ;
+; five_bits_multiplicator:Multiplicator|full_adder:soma2_0|s                         ; Mux15               ; yes                    ;
+; five_bits_sub_adder:subtrator|full_adder:soma3|s                                   ; Mux15               ; yes                    ;
+; five_bits_sub_adder:somador|full_adder:soma3|s                                     ; Mux15               ; yes                    ;
+; shift_r:ShiftRight|s[2]                                                            ; Mux15               ; yes                    ;
+; or_gate:ORGate|s[2]                                                                ; Mux15               ; yes                    ;
+; nand_gate:NANDGate|s[2]                                                            ; Mux15               ; yes                    ;
+; and_gate:ANDGate|s[2]                                                              ; Mux15               ; yes                    ;
+; nor_gate:NORGate|s[2]                                                              ; Mux15               ; yes                    ;
+; shift_l:ShiftLeft|s[2]                                                             ; Mux15               ; yes                    ;
+; comp_de_um:complementadorDeUm|s[2]                                                 ; Mux15               ; yes                    ;
+; xnor_gate:XNORGate|s[2]                                                            ; Mux15               ; yes                    ;
+; xor_gate:XORGate|s[2]                                                              ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[2]                   ; Mux15               ; yes                    ;
+; comp_de_um:complementadorDeUm|s[1]                                                 ; Mux15               ; yes                    ;
+; five_bits_multiplicator:Multiplicator|full_adder:soma1_0|s                         ; Mux15               ; yes                    ;
+; nand_gate:NANDGate|s[1]                                                            ; Mux15               ; yes                    ;
+; five_bits_sub_adder:subtrator|full_adder:soma2|s                                   ; Mux15               ; yes                    ;
+; xnor_gate:XNORGate|s[1]                                                            ; Mux15               ; yes                    ;
+; or_gate:ORGate|s[1]                                                                ; Mux15               ; yes                    ;
+; shift_l:ShiftLeft|s[1]                                                             ; Mux15               ; yes                    ;
+; xor_gate:XORGate|s[1]                                                              ; Mux15               ; yes                    ;
+; five_bits_sub_adder:somador|full_adder:soma2|s                                     ; Mux15               ; yes                    ;
+; and_gate:ANDGate|s[1]                                                              ; Mux15               ; yes                    ;
+; shift_r:ShiftRight|s[1]                                                            ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[1]                   ; Mux15               ; yes                    ;
+; nor_gate:NORGate|s[1]                                                              ; Mux15               ; yes                    ;
+; xnor_gate:XNORGate|s[3]                                                            ; Mux15               ; yes                    ;
+; comp_de_um:complementadorDeUm|s[3]                                                 ; Mux15               ; yes                    ;
+; xor_gate:XORGate|s[3]                                                              ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[3]                   ; Mux15               ; yes                    ;
+; five_bits_multiplicator:Multiplicator|full_adder:soma3|s                           ; Mux15               ; yes                    ;
+; five_bits_sub_adder:subtrator|full_adder:soma4|s                                   ; Mux15               ; yes                    ;
+; five_bits_sub_adder:somador|full_adder:soma4|s                                     ; Mux15               ; yes                    ;
+; nand_gate:NANDGate|s[3]                                                            ; Mux15               ; yes                    ;
+; or_gate:ORGate|s[3]                                                                ; Mux15               ; yes                    ;
+; and_gate:ANDGate|s[3]                                                              ; Mux15               ; yes                    ;
+; nor_gate:NORGate|s[3]                                                              ; Mux15               ; yes                    ;
+; shift_l:ShiftLeft|s[3]                                                             ; Mux15               ; yes                    ;
+; or_gate:ORGate|s[0]                                                                ; Mux15               ; yes                    ;
+; xnor_gate:XNORGate|s[0]                                                            ; Mux15               ; yes                    ;
+; five_bits_sub_adder:subtrator|full_adder:soma1|s                                   ; Mux15               ; yes                    ;
+; comp_de_um:complementadorDeUm|s[0]                                                 ; Mux15               ; yes                    ;
+; nand_gate:NANDGate|s[0]                                                            ; Mux15               ; yes                    ;
+; five_bits_sub_adder:somador|full_adder:soma1|s                                     ; Mux15               ; yes                    ;
+; xor_gate:XORGate|s[0]                                                              ; Mux15               ; yes                    ;
+; and_gate:ANDGate|s[0]                                                              ; Mux15               ; yes                    ;
+; shift_r:ShiftRight|s[0]                                                            ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|s[0]                   ; Mux15               ; yes                    ;
+; nor_gate:NORGate|s[0]                                                              ; Mux15               ; yes                    ;
+; five_bits_sub_adder:somador|full_adder:soma4|c_out                                 ; Mux15               ; yes                    ;
+; five_bits_sub_adder:somador|full_adder:soma5|c_out                                 ; Mux15               ; yes                    ;
+; five_bits_sub_adder:subtrator|full_adder:soma4|c_out                               ; Mux15               ; yes                    ;
+; five_bits_sub_adder:subtrator|full_adder:soma5|c_out                               ; Mux15               ; yes                    ;
+; five_bits_multiplicator:Multiplicator|detecta_0[0]                                 ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[4]               ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|s     ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|s     ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|s     ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|s     ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma4|c_out ; Mux15               ; yes                    ;
+; five_bits_multiplicator:Multiplicator|full_adder:soma1_1|s                         ; Mux15               ; yes                    ;
+; five_bits_sub_adder:subtrator|full_adder:soma2|c_out                               ; Mux15               ; yes                    ;
+; five_bits_sub_adder:somador|full_adder:soma2|c_out                                 ; Mux15               ; yes                    ;
+; five_bits_sub_adder:subtrator|full_adder:soma1|c_out                               ; Mux15               ; yes                    ;
+; five_bits_sub_adder:somador|full_adder:soma1|c_out                                 ; Mux15               ; yes                    ;
+; five_bits_multiplicator:Multiplicator|full_adder:soma2_0|c_out                     ; Mux15               ; yes                    ;
+; five_bits_multiplicator:Multiplicator|full_adder:soma2_1|s                         ; Mux15               ; yes                    ;
+; five_bits_sub_adder:subtrator|full_adder:soma3|c_out                               ; Mux15               ; yes                    ;
+; five_bits_sub_adder:somador|full_adder:soma3|c_out                                 ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[0]               ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[1]               ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1|c_out ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[2]               ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma2|c_out ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|comp_de_um:complementadorDeUm|s[3]               ; Mux15               ; yes                    ;
+; comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma3|c_out ; Mux15               ; yes                    ;
+; five_bits_multiplicator:Multiplicator|full_adder:soma1_0|c_out                     ; Mux15               ; yes                    ;
+; five_bits_multiplicator:Multiplicator|full_adder:soma1_2|s                         ; Mux15               ; yes                    ;
+; five_bits_multiplicator:Multiplicator|full_adder:soma1_1|c_out                     ; Mux15               ; yes                    ;
+; Number of user-specified and inferred latches = 92                                 ;                     ;                        ;
++------------------------------------------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -218,6 +391,98 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |ULA|muxFinal:MUX_Final|Mux0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "five_bits_multiplicator:Multiplicator|full_adder:soma3"                              ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; c_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "five_bits_multiplicator:Multiplicator|full_adder:soma2_1"                            ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; c_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "five_bits_multiplicator:Multiplicator|full_adder:soma2_0" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; c_in ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "five_bits_multiplicator:Multiplicator|full_adder:soma1_2"                            ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; c_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "five_bits_multiplicator:Multiplicator|full_adder:soma1_0" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; c_in ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "five_bits_sub_adder:subtrator" ;
++-------------+-------+----------+--------------------------+
+; Port        ; Type  ; Severity ; Details                  ;
++-------------+-------+----------+--------------------------+
+; issubtrator ; Input ; Info     ; Stuck at VCC             ;
++-------------+-------+----------+--------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "five_bits_sub_adder:somador" ;
++-------------+-------+----------+------------------------+
+; Port        ; Type  ; Severity ; Details                ;
++-------------+-------+----------+------------------------+
+; issubtrator ; Input ; Info     ; Stuck at GND           ;
++-------------+-------+----------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1" ;
++------+-------+----------+--------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                        ;
++------+-------+----------+--------------------------------------------------------------------------------+
+; c_in ; Input ; Info     ; Stuck at GND                                                                   ;
++------+-------+----------+--------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub"                            ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; b[4..1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -233,7 +498,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Mar 11 22:36:00 2024
+    Info: Processing started: Wed Mar 13 10:24:05 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off U-LALA -c U-LALA
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file five_bits_sub_adder.vhd
@@ -299,19 +564,128 @@ Info (12021): Found 2 design units, including 1 entities, in source file five_bi
     Info (12022): Found design unit 1: five_bits_adder-arq_five_bits_adder
     Info (12023): Found entity 1: five_bits_adder
 Info (12021): Found 2 design units, including 1 entities, in source file divisor.vhd
-    Info (12022): Found design unit 1: divisor-Behavioral
+    Info (12022): Found design unit 1: divisor-arq_divisor
     Info (12023): Found entity 1: divisor
-Info (12127): Elaborating entity "divisor" for the top level hierarchy
+Info (12127): Elaborating entity "ULA" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at ULA.vhd(395): signal "overflowDIVISOR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ULA.vhd(395): signal "overflowRAIZ" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ULA.vhd(395): signal "overflowLOG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ULA.vhd(395): signal "overflowSUBTRATOR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "muxFinal" for hierarchy "muxFinal:MUX_Final"
+Info (12128): Elaborating entity "and_gate" for hierarchy "and_gate:ANDGate"
+Warning (10631): VHDL Process Statement warning at and_gate.vhd(15): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at and_gate.vhd(15)
+Info (10041): Inferred latch for "s[1]" at and_gate.vhd(15)
+Info (10041): Inferred latch for "s[2]" at and_gate.vhd(15)
+Info (10041): Inferred latch for "s[3]" at and_gate.vhd(15)
+Info (10041): Inferred latch for "s[4]" at and_gate.vhd(15)
+Info (12128): Elaborating entity "or_gate" for hierarchy "or_gate:ORGate"
+Warning (10631): VHDL Process Statement warning at or_gate.vhd(15): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at or_gate.vhd(15)
+Info (10041): Inferred latch for "s[1]" at or_gate.vhd(15)
+Info (10041): Inferred latch for "s[2]" at or_gate.vhd(15)
+Info (10041): Inferred latch for "s[3]" at or_gate.vhd(15)
+Info (10041): Inferred latch for "s[4]" at or_gate.vhd(15)
+Info (12128): Elaborating entity "nand_gate" for hierarchy "nand_gate:NANDGate"
+Warning (10631): VHDL Process Statement warning at nand_gate.vhd(15): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at nand_gate.vhd(15)
+Info (10041): Inferred latch for "s[1]" at nand_gate.vhd(15)
+Info (10041): Inferred latch for "s[2]" at nand_gate.vhd(15)
+Info (10041): Inferred latch for "s[3]" at nand_gate.vhd(15)
+Info (10041): Inferred latch for "s[4]" at nand_gate.vhd(15)
+Info (12128): Elaborating entity "nor_gate" for hierarchy "nor_gate:NORGate"
+Warning (10631): VHDL Process Statement warning at nor_gate.vhd(15): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at nor_gate.vhd(15)
+Info (10041): Inferred latch for "s[1]" at nor_gate.vhd(15)
+Info (10041): Inferred latch for "s[2]" at nor_gate.vhd(15)
+Info (10041): Inferred latch for "s[3]" at nor_gate.vhd(15)
+Info (10041): Inferred latch for "s[4]" at nor_gate.vhd(15)
+Info (12128): Elaborating entity "xor_gate" for hierarchy "xor_gate:XORGate"
+Warning (10631): VHDL Process Statement warning at xor_gate.vhd(16): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at xor_gate.vhd(16)
+Info (10041): Inferred latch for "s[1]" at xor_gate.vhd(16)
+Info (10041): Inferred latch for "s[2]" at xor_gate.vhd(16)
+Info (10041): Inferred latch for "s[3]" at xor_gate.vhd(16)
+Info (10041): Inferred latch for "s[4]" at xor_gate.vhd(16)
+Info (12128): Elaborating entity "xnor_gate" for hierarchy "xnor_gate:XNORGate"
+Warning (10631): VHDL Process Statement warning at xnor_gate.vhd(16): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at xnor_gate.vhd(16)
+Info (10041): Inferred latch for "s[1]" at xnor_gate.vhd(16)
+Info (10041): Inferred latch for "s[2]" at xnor_gate.vhd(16)
+Info (10041): Inferred latch for "s[3]" at xnor_gate.vhd(16)
+Info (10041): Inferred latch for "s[4]" at xnor_gate.vhd(16)
+Info (12128): Elaborating entity "comp_de_um" for hierarchy "comp_de_um:complementadorDeUm"
+Warning (10631): VHDL Process Statement warning at comp_de_um.vhd(15): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at comp_de_um.vhd(15)
+Info (10041): Inferred latch for "s[1]" at comp_de_um.vhd(15)
+Info (10041): Inferred latch for "s[2]" at comp_de_um.vhd(15)
+Info (10041): Inferred latch for "s[3]" at comp_de_um.vhd(15)
+Info (10041): Inferred latch for "s[4]" at comp_de_um.vhd(15)
+Info (12128): Elaborating entity "comp_de_dois" for hierarchy "comp_de_dois:complementadorDeDois"
+Info (12128): Elaborating entity "five_bits_adder" for hierarchy "comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub"
+Warning (10631): VHDL Process Statement warning at five_bits_adder.vhd(68): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at five_bits_adder.vhd(68)
+Info (10041): Inferred latch for "s[1]" at five_bits_adder.vhd(68)
+Info (10041): Inferred latch for "s[2]" at five_bits_adder.vhd(68)
+Info (10041): Inferred latch for "s[3]" at five_bits_adder.vhd(68)
+Info (10041): Inferred latch for "s[4]" at five_bits_adder.vhd(68)
+Info (12128): Elaborating entity "full_adder" for hierarchy "comp_de_dois:complementadorDeDois|five_bits_adder:adder_sub|full_adder:soma1"
+Warning (10631): VHDL Process Statement warning at full_adder.vhd(14): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at full_adder.vhd(14): inferring latch(es) for signal or variable "c_out", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "c_out" at full_adder.vhd(14)
+Info (10041): Inferred latch for "s" at full_adder.vhd(14)
+Info (12128): Elaborating entity "five_bits_sub_adder" for hierarchy "five_bits_sub_adder:somador"
+Warning (10812): VHDL warning at five_bits_sub_adder.vhd(86): sensitivity list already contains carry
+Info (12128): Elaborating entity "five_bits_multiplicator" for hierarchy "five_bits_multiplicator:Multiplicator"
+Warning (10812): VHDL warning at five_bits_multiplicator.vhd(109): sensitivity list already contains adder_out_signal
+Warning (10492): VHDL Process Statement warning at five_bits_multiplicator.vhd(111): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at five_bits_multiplicator.vhd(113): signal "detecta_0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at five_bits_multiplicator.vhd(118): signal "detecta_0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at five_bits_multiplicator.vhd(109): inferring latch(es) for signal or variable "detecta_0", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "detecta_0[0]" at five_bits_multiplicator.vhd(109)
+Info (10041): Inferred latch for "detecta_0[1]" at five_bits_multiplicator.vhd(109)
+Info (12128): Elaborating entity "divisor" for hierarchy "divisor:divisor_foda"
+Warning (10036): Verilog HDL or VHDL warning at divisor.vhd(22): object "b_comp1" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at divisor.vhd(44): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "shift_r" for hierarchy "shift_r:ShiftRight"
+Warning (10631): VHDL Process Statement warning at shift_r.vhd(15): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at shift_r.vhd(15)
+Info (10041): Inferred latch for "s[1]" at shift_r.vhd(15)
+Info (10041): Inferred latch for "s[2]" at shift_r.vhd(15)
+Info (10041): Inferred latch for "s[3]" at shift_r.vhd(15)
+Info (10041): Inferred latch for "s[4]" at shift_r.vhd(15)
+Info (12128): Elaborating entity "shift_l" for hierarchy "shift_l:ShiftLeft"
+Warning (10631): VHDL Process Statement warning at shift_l.vhd(15): inferring latch(es) for signal or variable "s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "s[0]" at shift_l.vhd(15)
+Info (10041): Inferred latch for "s[1]" at shift_l.vhd(15)
+Info (10041): Inferred latch for "s[2]" at shift_l.vhd(15)
+Info (10041): Inferred latch for "s[3]" at shift_l.vhd(15)
+Info (10041): Inferred latch for "s[4]" at shift_l.vhd(15)
+Info (12128): Elaborating entity "square_root" for hierarchy "square_root:SquareRoot"
+Info (12128): Elaborating entity "log2" for hierarchy "log2:LOGARITMO_BASE2"
+Info (12128): Elaborating entity "conversor_display7Seg" for hierarchy "conversor_display7Seg:Conversor7Seg"
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "conversor_display7Seg:Conversor7Seg|Ram0" is uninferred due to inappropriate RAM size
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "saida7SEG[1]" is stuck at VCC
+    Warning (13410): Pin "saida7SEG[2]" is stuck at VCC
+    Warning (13410): Pin "saida7SEG[3]" is stuck at VCC
+    Warning (13410): Pin "saida7SEG[4]" is stuck at VCC
+    Warning (13410): Pin "saida7SEG[5]" is stuck at VCC
+    Warning (13410): Pin "saida7SEG[6]" is stuck at VCC
+    Warning (13410): Pin "saida7SEG[7]" is stuck at VCC
+    Warning (13410): Pin "saida7SEG[11]" is stuck at GND
+    Warning (13410): Pin "saida7SEG[12]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 45 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 29 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4642 megabytes
-    Info: Processing ended: Mon Mar 11 22:36:06 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:03
+Info (21057): Implemented 358 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 315 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 4637 megabytes
+    Info: Processing ended: Wed Mar 13 10:24:08 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

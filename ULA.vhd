@@ -24,6 +24,7 @@ SIGNAL overflowMULTIPLICADOR: std_logic;
 SIGNAL overflowRAIZ: std_logic;
 SIGNAL overflowLOG: std_logic;
 SIGNAL overflowSUBTRATOR: std_logic;
+SIGNAL overflowDIVISOR: std_logic;
 
 
 COMPONENT muxFinal 
@@ -117,6 +118,15 @@ COMPONENT five_bits_sub_adder
 			enable: IN std_logic
 	);
 END COMPONENT;
+
+COMPONENT divisor
+PORT(
+        a,b:IN std_logic_vector(4 downto 0);
+        enable:IN std_logic;
+        overflow:OUT std_logic;
+        s:OUT std_logic_vector(4 downto 0)
+);
+END COMPONENT	;
 
 
 COMPONENT five_bits_multiplicator
@@ -281,11 +291,12 @@ BEGIN
 			enable => enable_components(7)
 		);
 		
-	somador: five_bits_adder
+	somador: five_bits_sub_adder
 		PORT MAP (
 			a => a,
 			b => b,
 			enable => enable_components(8),
+			isSubtrator => '0',
 			s => entradaMUXFinal(8), 
 			overflow => overflowSOMADOR
 		);
@@ -299,6 +310,8 @@ BEGIN
 		s=> entradaMUXFinal(9),
 		overflow => overflowSUBTRATOR
 		);
+
+		
 		
 	Multiplicator: five_bits_multiplicator
 		PORT MAP(
@@ -308,6 +321,16 @@ BEGIN
 			s => entradaMUXFinal(10),
 			overflow => overflowMULTIPLICADOR
 		);
+		
+	divisor_foda: divisor
+		PORT MAP (
+		a => a,
+		b => b,
+		enable => enable_components(11),
+		s => entradaMUXFinal(11),
+		overflow => overflowDIVISOR
+		);
+		
 		
 	ShiftRight: shift_r
 		PORT MAP (
@@ -369,7 +392,7 @@ BEGIN
 		--Codigo LED overflow
 		PROCESS(overflowSOMADOR,overflowMULTIPLICADOR)
 		BEGIN	
-			IF overflowSOMADOR = '1' OR overflowMULTIPLICADOR = '1' OR overflowRAIZ = '1' OR overflowLOG = '1' OR overflowSUBTRATOR ='1' THEN
+			IF overflowSOMADOR = '1' OR overflowMULTIPLICADOR = '1' OR overflowDIVISOR = '1' OR overflowRAIZ = '1' OR overflowLOG = '1' OR overflowSUBTRATOR ='1' THEN
 				ledOverflow <= '1';
 			ELSE	
 				ledOverflow <='0';

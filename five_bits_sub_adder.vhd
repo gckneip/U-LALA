@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
 
-ENTITY five_bits_sub_adder IS -- criando entidade e definindo as entradas
+ENTITY five_bits_sub_adder IS 
 	PORT(
 			a,b:IN std_logic_vector(4 downto 0); 
 			isSubtrator:IN std_logic;
@@ -11,12 +11,12 @@ ENTITY five_bits_sub_adder IS -- criando entidade e definindo as entradas
 	);
 END five_bits_sub_adder;
 
-ARCHITECTURE arq_five_bits_sub_adder OF five_bits_sub_adder IS --criando arquitetura do somador de 4 bits
+ARCHITECTURE arq_five_bits_sub_adder OF five_bits_sub_adder IS
 
-SIGNAL c: std_logic_vector(4 downto 0); --carries dos somadores
-SIGNAL sexo: std_logic_vector(4 downto 0); --Sinal da XOR entre isSubtrator e b
-SIGNAL foda: std_logic_vector(3 downto 0); --Sinal das saidas dos somadores
-SIGNAL fodafinal: std_logic;
+SIGNAL b_xor: std_logic_vector(4 downto 0);
+SIGNAL overflow_xor: std_logic;
+SIGNAL carry: std_logic_vector(4 downto 0);
+SIGNAL adder_result: std_logic_vector(4 downto 0);
 
 COMPONENT full_adder 
 	PORT(
@@ -26,59 +26,68 @@ COMPONENT full_adder
 	);
 END COMPONENT;
 
-BEGIN -- mapeando entradas dos componentes com a do componente final (four bits adder)
-sexo(0) <= isSubtrator XOR b(0);
-sexo(1) <= isSubtrator XOR b(1);
-sexo(2) <= isSubtrator XOR b(2);
-sexo(3) <= isSubtrator XOR b(3);
-sexo(4) <= isSubtrator XOR b(4);
+BEGIN
+
+b_xor(0) <= isSubtrator XOR b(0);
+b_xor(1) <= isSubtrator XOR b(1);
+b_xor(2) <= isSubtrator XOR b(2);
+b_xor(3) <= isSubtrator XOR b(3);
+b_xor(4) <= isSubtrator XOR b(4);
 
 soma1: full_adder
 	port map(a => a(0) 
-				,b => sexo(0) --Precisa vir de um ex-or entre b e o controle
-				,c_in => isSubtrator --Vem direto do controle
+				,b => b_xor(0)
+				,c_in => isSubtrator 
 				,enable => enable
-				,s => foda(0)
-				,c_out => c(1)
+				,s => adder_result(0)
+				,c_out => carry(0)
 				);
 				
 				
 soma2: full_adder
 	port map(a=> a(1)
-				,b => sexo(1) --Precisa vir de um ex-or entre b e o controle
-				,c_in => c(1)
+				,b => b_xor(1)
+				,c_in => carry(0)
 				,enable => enable
-				,s => foda(1)
-				,c_out => c(2)
+				,s => adder_result(1)
+				,c_out => carry(1)
 				);
 				
 				
 soma3: full_adder
 	port map(a=> a(2)
-				,b => sexo(2) --Precisa vir de um ex-or entre b e o controle
-				,c_in => c(2)
+				,b => b_xor(2)
+				,c_in => carry(1)
 				,enable => enable
-				,s => foda(2)
-				,c_out => c(3)
+				,s => adder_result(2)
+				,c_out => carry(2)
 				);
 				
 				
 soma4: full_adder
 	port map(a=> a(3)
-				,b => sexo(3) --Precisa vir de um ex-or entre b e o controle
-				,c_in => c(3)
+				,b => b_xor(3)
+				,c_in => carry(2)
 				,enable => enable
-				,s => foda(3)
-				,c_out => c(4)
+				,s => adder_result(3)
+				,c_out => carry(3)
+				);
+				
+soma5: full_adder
+	port map(a=> a(4)
+				,b => b_xor(4)
+				,c_in => carry(3)
+				,enable => enable
+				,s => adder_result(4)
+				,c_out => carry(4)
 				);
 
 
-	PROCESS(enable, a(4), sexo(4), foda(3 downto 0), fodafinal)
+	PROCESS(enable, carry(3), carry(4), adder_result(4 downto 0))
 	BEGIN
 			IF enable = '1' THEN
-				overflow <= (NOT a(4) AND NOT sexo(4) AND c(4)) OR (a(4) AND sexo(4) AND NOT c(4));
-				fodafinal <= foda(0) OR foda(1) OR foda(2) OR foda(3);
-				s(4) <= (a(4) AND sexo(4)) OR (sexo(4) AND (NOT c(4)) AND fodafinal) OR (a(4) AND (NOT c(4)) AND fodafinal);
+				overflow <= carry(3) XOR carry(4);
+				s <= adder_result;
 			ELSE
 			s <= "00000";
 			overflow <= '0';

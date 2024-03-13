@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C35F672C6
-set_global_assignment -name TOP_LEVEL_ENTITY divisor
+set_global_assignment -name TOP_LEVEL_ENTITY ULA
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:13:12  FEBRUARY 25, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
@@ -77,9 +77,53 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name VHDL_FILE comp_de_dois.vhd
 set_global_assignment -name VHDL_FILE five_bits_adder.vhd
 set_global_assignment -name VHDL_FILE divisor.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/Waveform2.vwf"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_N25 -to a[4]
+set_location_assignment PIN_N26 -to a[3]
+set_location_assignment PIN_P25 -to a[2]
+set_location_assignment PIN_AE14 -to a[1]
+set_location_assignment PIN_AF14 -to a[0]
+set_location_assignment PIN_C13 -to b[4]
+set_location_assignment PIN_B13 -to b[3]
+set_location_assignment PIN_A13 -to b[2]
+set_location_assignment PIN_N1 -to b[1]
+set_location_assignment PIN_P1 -to b[0]
+set_location_assignment PIN_U3 -to c[3]
+set_location_assignment PIN_U4 -to c[2]
+set_location_assignment PIN_V1 -to c[1]
+set_location_assignment PIN_V2 -to c[0]
+set_location_assignment PIN_AD15 -to ledNegativo
+set_location_assignment PIN_AE15 -to ledOverflow
+set_location_assignment PIN_AF13 -to ledZero
+set_location_assignment PIN_AB23 -to saida7SEG[20]
+set_location_assignment PIN_V22 -to saida7SEG[19]
+set_location_assignment PIN_AC25 -to saida7SEG[18]
+set_location_assignment PIN_AC26 -to saida7SEG[17]
+set_location_assignment PIN_AB26 -to saida7SEG[16]
+set_location_assignment PIN_AB25 -to saida7SEG[15]
+set_location_assignment PIN_Y24 -to saida7SEG[14]
+set_location_assignment PIN_V20 -to saida7SEG[13]
+set_location_assignment PIN_V21 -to saida7SEG[12]
+set_location_assignment PIN_W21 -to saida7SEG[11]
+set_location_assignment PIN_Y22 -to saida7SEG[10]
+set_location_assignment PIN_AA24 -to saida7SEG[9]
+set_location_assignment PIN_AA23 -to saida7SEG[8]
+set_location_assignment PIN_AB24 -to saida7SEG[7]
+set_location_assignment PIN_AF10 -to saida7SEG[6]
+set_location_assignment PIN_AB12 -to saida7SEG[5]
+set_location_assignment PIN_AC12 -to saida7SEG[4]
+set_location_assignment PIN_AD11 -to saida7SEG[3]
+set_location_assignment PIN_AE11 -to saida7SEG[2]
+set_location_assignment PIN_V14 -to saida7SEG[1]
+set_location_assignment PIN_V13 -to saida7SEG[0]
+set_location_assignment PIN_AE22 -to saidaLEDS[4]
+set_location_assignment PIN_AF22 -to saidaLEDS[3]
+set_location_assignment PIN_W19 -to saidaLEDS[2]
+set_location_assignment PIN_V18 -to saidaLEDS[1]
+set_location_assignment PIN_U18 -to saidaLEDS[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/gustavo.kneip/Documents/ufpel/TD/trabalho_ULA_Antonio_Gustavo/Waveform2.vwf"
